@@ -1,0 +1,119 @@
+{
+	"name": "alexpage.com.au",
+	"version": "1.0.0",
+	"description": "Personal website of Alex Page.",
+	"author": {
+		"name": "Alex Page",
+		"email": "alex@alexpage.com.au",
+		"url": "http://alexpage.com.au/"
+	},
+	"contributors": [
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "http://alexpage.com.au"
+		}
+	],
+	"scripts": {
+		"docs": "cuttlebelle docs",
+		"build:autoprefix": "postcss src/assets/css/style.css -u autoprefixer -r --no-map",
+		"build:sass": "mkdir -p src/assets/css/ && node-sass --output-style compressed -o src/assets/css src/sass/style.scss",
+		"build:css": "npm run build:sass && npm run build:autoprefix",
+		"build:js-header": "concat-cli -f src/js/header/*.js -o src/assets/js/header.js",
+		"build:js-footer": "concat-cli -f src/js/footer/*.js -o src/assets/js/footer.js",
+		"build:uglify": "uglifyjs src/assets/js/header.js --compres --output src/assets/js/header.js && uglifyjs src/assets/js/footer.js --compres --output src/assets/js/footer.js",
+		"build:js": "mkdir -p src/assets/js/ && npm run build:js-header && npm run build:js-footer && npm run build:uglify",
+		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
+		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle",
+		"watch:sass": "onchange 'src/sass/**/*.scss' -- npm run build:css",
+		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
+		"watch:site": "cuttlebelle -w -n",
+		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:site"
+	},
+	"engines": {
+		"node": "8.8.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alex-page/alex-page.github.io"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alex-page/alex-page.github.io/issues"
+	},
+	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
+	"cuttlebelle": {
+		"folder": {
+			"site": "site/",
+			"code": "src/react",
+			"assets": "src/assets"
+		},
+		"site": {
+			"doctype": "<!DOCTYPE html><!--[if lt IE 8]><html class=\"no-js lt-ie8 lt-ie9\" lang=\"en\"><![endif]--><!--[if IE 8]><html class=\"no-js lt-ie9 ie8\" lang=\"en\"><![endif]--><!--[if IE 9 ]><html class=\"no-js ie9\" lang=\"en\"><![endif]--><!--[if !(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![endif]-->",
+			"markdownRenderer": "src/markdown/renderer.js"
+		}
+	},
+	"pancake": {
+		"auto-save": true,
+		"plugins": [],
+		"ignore": [
+			"@gov.au/pancake-react"
+		],
+		"json": {
+			"enable": false,
+			"location": "pancake/",
+			"name": "pancake",
+			"content": {
+				"name": true,
+				"version": true,
+				"dependencies": true,
+				"path": true,
+				"settings": true
+			}
+		},
+		"css": {
+			"minified": false,
+			"modules": false,
+			"browsers": [
+				"last 2 versions",
+				"ie 8",
+				"ie 9",
+				"ie 10"
+			],
+			"location": "pancake/css/",
+			"name": false
+		},
+		"sass": {
+			"modules": false,
+			"location": "src/sass/",
+			"name": "_uikit.scss"
+		},
+		"react": {
+			"location": false
+		}
+	},
+	"dependencies": {
+		"@gov.au/body": "latest",
+		"@gov.au/core": "latest",
+		"@gov.au/grid-12": "latest",
+		"@gov.au/headings": "latest",
+		"@gov.au/responsive-media": "latest",
+		"autoprefixer": "^7.2.3",
+		"concat-cli": "^4.0.0",
+		"copy": "^0.3.1",
+		"cuttlebelle": "^1.0.0-alpha.56",
+		"harmonograph": "^0.1.0",
+		"node-sass": "^4.7.2",
+		"postcss-cli": "^4.1.1",
+		"uglify-js": "^3.3.4"
+	},
+	"devDependencies": {
+		"onchange": "^3.3.0"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"ie 8",
+		"ie 9",
+		"ie 10"
+	]
+}

@@ -1,0 +1,27 @@
+layout: presentation
+pagetitle: React for Government
+
+slides:
+  - /_shared/intro.md
+  - slide-01.md
+  - slide-02.md
+  - slide-03.md
+  - slide-04.md
+  - slide-05.md
+  - slide-06.md
+  - slide-07.md
+  - slide-08.md
+  - slide-09.md
+  - slide-10.md
+  - slide-11.md
+  - slide-12.md
+  - slide-13.md
+  - slide-14.md
+  - slide-15.md
+  - slide-16.md
+  - slide-17.md
+  - slide-18.md
+  - slide-19.md
+
+footer:
+  - /_shared/presentation-footer.md

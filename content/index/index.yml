@@ -1,0 +1,7 @@
+pagetitle: Homepage
+
+header:
+  - header.md
+
+main:
+  - body.md

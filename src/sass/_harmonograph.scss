@@ -1,0 +1,17 @@
+.harmonograph {
+	position: absolute;
+	@include AU-space( margin-right, -2unit );
+	@include AU-space( top, 2unit );
+	right: 0;
+	max-width: 600px;
+	height: auto;
+	width: 80%;
+	opacity: 0.1;
+	z-index: -1;
+}
+
+.harmonograph-page .harmonograph {
+	position: static;
+	margin: 0;
+	opacity: 1;
+}

@@ -1,0 +1,58 @@
+html,
+body {
+	overflow-x: hidden;
+}
+
+.site-wrapper {
+	@include AU-space( max-width, 50unit );
+	@include AU-space( padding, 0 1unit );
+	@include AU-space( margin, 2unit auto );
+	@include AU-clearfix();
+	position: relative;
+
+	@include AU-media( sm ) {
+		@include AU-space( margin, 5unit auto );
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+}
+
+h3 em {
+	font-weight: normal;
+	@include AU-fontgrid( xs );
+}
+
+.au-body h3 + p {
+	@include AU-space( margin-top, 0.5unit );
+}
+
+.au-body code {
+	font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.au-body h1,
+.au-body .au-display-xxl,
+.au-display-xxl {
+	font-size: 38px;
+	font-size: 2.38rem;
+}
+
+@include AU-media( sm ) {
+	.au-body h1,
+	.au-body .au-display-xxl,
+	.au-display-xxl {
+		@include AU-fontgrid( xxl );
+	}
+}
+
+
+.coverletter main {
+	@include AU-fontgrid( md );
+}

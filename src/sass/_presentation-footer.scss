@@ -1,0 +1,34 @@
+.presenation__footer {
+	@include AU-clearfix();
+	@include AU-fontgrid( xs );
+	@include AU-space( padding-top, 1unit );
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+
+	.social-menu {
+		float: left;
+
+		li {
+			float: left;
+			@include AU-space( margin, 0 0.5unit 0 );
+		}
+
+		.icon:before {
+			@include AU-space( width, 1unit );
+			@include AU-space( height, 1unit );
+		}
+	}
+}
+
+.au-body .footer__logo {
+	float: right;
+	margin-top: 0;
+	@include AU-space( width, 1.5unit );
+}
+
+.au-body.au-body--dark .presenation__footer {
+	background-color: $AU-colordark-background;
+}
