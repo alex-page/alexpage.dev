@@ -1,12 +1,12 @@
 ## Code
 
-### [md] [🥇 GOLD](/gold) + [💻 Github ](https://github.com/govau/designsystem)
+### [md] [📚 Australian Government Design System](https://designsystem.gov.au) + [💻 Github ](https://github.com/govau/designsystem)
 Built the Australian Government Design System documentation website to align 1000+ websites over 200+ organisations. The documentation website is a world class example of a design system including accessibility guidance and rationales of design decisions. 
 
 Supported, maintained and created communities on discourse, github and slack that drove the future direction of the design system through a federated model.
 
 
-### [md] [🍱 UIKit](https://uikit.service.gov.au) + [💻 Github](https://github.com/govau/uikit)
+### [md] [🛠 UIKit](https://uikit.service.gov.au) + [💻 Github](https://github.com/govau/uikit)
 Created, maintained and enhanced the components of the Australian Government Design System. This included 20+ components using WCAG AA accessibility, HTML, React, JavaScript, jQuery, CSS and SASS best practices.
 
 Wrote fundamental code for generating different accessible light and dark themes. Solved system font typography and spacing snapping to a grid.
