@@ -33,12 +33,22 @@ const Page = ({ pagetitle, pageclass, stylesheet, header, main, script, _relativ
 <meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 <meta property="og:url" content="http://alexpage.com.au">
 <title>Alex Page - ${ pagetitle }</title>
-<link rel="stylesheet" href=${ _relativeURL( '/assets/css/style.css', _ID ) }>
+<style>
+body {
+	background: #24292e;
+	color: #fff;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+}
+</style>
 <!--[if lte IE 9]>
 	<script src="${ _relativeURL( '/assets/js/html5shiv.js', _ID ) }"></script>
 	<script src="${ _relativeURL( '/assets/js/respond.js', _ID ) }"></script>
 <![endif]-->
-<script src=${ _relativeURL( '/assets/js/header.js', _ID ) }></script>`;
+<!-- remove the no-js class with js, add analytics -->
+<script>
+var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-115006802-1", "auto");ga("send", "pageview");
+</script>`;
 
 	return (
 	<html>
@@ -51,7 +61,8 @@ const Page = ({ pagetitle, pageclass, stylesheet, header, main, script, _relativ
 			</main>
 			<canvas className="harmonograph" id="harmonograph" width="1200" height="1200"></canvas>
 		</div>
-		<script src={ _relativeURL( '/assets/js/harmonograph.min.js', _ID ) } />
+		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
+		<script src={ _relativeURL( '/assets/js/footer.min.js', _ID ) } />
 		</body>
 	</html>
 )};
