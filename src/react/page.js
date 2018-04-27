@@ -33,13 +33,7 @@ const Page = ({ pagetitle, pageclass, stylesheet, header, main, script, _relativ
 <meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 <meta property="og:url" content="http://alexpage.com.au">
 <title>Alex Page - ${ pagetitle }</title>
-<style>
-body {
-	background: #24292e;
-	color: #fff;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-}
-</style>
+<link rel="stylesheet" href=${ _relativeURL( '/assets/css/style.css', _ID ) } />
 <!--[if lte IE 9]>
 	<script src="${ _relativeURL( '/assets/js/html5shiv.js', _ID ) }"></script>
 	<script src="${ _relativeURL( '/assets/js/respond.js', _ID ) }"></script>
@@ -61,8 +55,7 @@ var $html=document.documentElement;if($html.classList)$html.classList.remove("no
 			</main>
 			<canvas className="harmonograph" id="harmonograph" width="1200" height="1200"></canvas>
 		</div>
-		<link rel="stylesheet" href={ _relativeURL( '/assets/css/style.css', _ID ) } />
-		<script src={ _relativeURL( '/assets/js/footer.min.js', _ID ) } />
+		<script async src={ _relativeURL( '/assets/js/footer.min.js', _ID ) } />
 		</body>
 	</html>
 )};
