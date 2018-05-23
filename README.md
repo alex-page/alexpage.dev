@@ -18,7 +18,7 @@ Created, maintained and enhanced the components of the Australian Government Des
 
 Wrote fundamental code for generating different accessible light and dark themes. Solved system font typography and spacing snapping to a grid.
 
-### [🔥 Furnace](http://alexpage.com.au/gold/download) + [💻 Github](https://github.com/govau/furnace)
+### [🔥 Furnace](https://designsystem.gov.au/download) + [💻 Github](https://github.com/govau/furnace)
 Removed the barrier to entry for users unfamiliar to _npm_ by allowing them to easily download a zip file of the design system.
 
 Furnace is a NodeJS API that collects component dependencies and users options to output them into a zip file. This included continuous integration, continuous deployment, unit and integration tests.
