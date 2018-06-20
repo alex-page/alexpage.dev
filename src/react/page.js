@@ -69,7 +69,7 @@ Page.propTypes = {
 	/**
 	 * main: (partials)(5)
 	 */
-	main: PropTypes.node.isRequired,
+	main: PropTypes.node,
 };
 
 Page.defaultProps = {};

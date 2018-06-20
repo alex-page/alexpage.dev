@@ -17,7 +17,6 @@ const SocialMenu = ({ items }) => (
 );
 
 SocialMenu.propTypes = {
-
 	items: PropTypes.array.isRequired,
 };
 

@@ -22,8 +22,7 @@ const SocialMenu = ({ items, logo_pic, _relativeURL, _ID }) => (
 );
 
 SocialMenu.propTypes = {
-
-	items: PropTypes.object.isRequired,
+	items: PropTypes.array.isRequired,
 };
 
 SocialMenu.defaultProps = {};
