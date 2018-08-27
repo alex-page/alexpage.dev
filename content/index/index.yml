@@ -1,4 +1,5 @@
 pagetitle: Homepage
+harmonograph: true
 
 header:
   - header.md

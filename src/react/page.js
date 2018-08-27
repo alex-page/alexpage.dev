@@ -5,7 +5,7 @@ import React from 'react';
 /**
  * The page layout component
  */
-const Page = ({ pagetitle, pageclass, stylesheet, header, main, script, _relativeURL, _ID }) => {
+const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, _ID }) => {
 	const headContent = `
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -53,7 +53,11 @@ var $html=document.documentElement;if($html.classList)$html.classList.remove("no
 			<main>
 				{ main }
 			</main>
-			<canvas className="harmonograph" id="harmonograph" width="1200" height="1200"></canvas>
+			{
+				harmonograph
+					? <canvas className="harmonograph" id="harmonograph" width="1200" height="1200"></canvas>
+					: null
+			}
 		</div>
 		<script async src={ _relativeURL( '/assets/js/footer.min.js', _ID ) } />
 		</body>
