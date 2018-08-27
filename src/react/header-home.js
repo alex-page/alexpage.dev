@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 
 /**
- * The page layout component
+ * The home page header
  */
 const Header = ({ profile_pic, social_menu, logo_pic, _body, _relativeURL, _ID }) => (
 	<header>

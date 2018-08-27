@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: presentation/slide
 align: left
 image: /assets/img/slides/artifact-based.png
 image_layout: right

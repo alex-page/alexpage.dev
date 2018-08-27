@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: presentation/slide
 align: left
 ---
 ## { main }
