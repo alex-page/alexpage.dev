@@ -1,5 +1,5 @@
 ---
-layout: presentation-footer
+layout: presentation/footer
 items:
   - link: https://github.com/alex-page
     text: alex-page

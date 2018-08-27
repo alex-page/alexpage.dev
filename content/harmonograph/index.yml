@@ -3,3 +3,6 @@ pageclass: harmonograph-page
 
 header:
   - header.md
+
+main:
+  - body.md

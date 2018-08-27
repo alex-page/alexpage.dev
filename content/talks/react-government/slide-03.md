@@ -1,4 +1,4 @@
 ---
-layout: slide
+layout: presentation/slide
 ---
 ## Render react to HTML
