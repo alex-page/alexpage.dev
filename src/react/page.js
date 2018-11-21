@@ -34,7 +34,7 @@ const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, 
 <meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 <meta property="og:url" content="http://alexpage.com.au">
 <title>Alex Page - ${ pagetitle }</title>
-<link rel="stylesheet" href=${ _relativeURL( '/assets/css/style.css', _ID ) } />
+<link rel="stylesheet" href="${ _relativeURL( '/assets/css/style.css', _ID ) }" />
 <!--[if lte IE 9]>
 	<script src="${ _relativeURL( '/assets/js/html5shiv.js', _ID ) }"></script>
 	<script src="${ _relativeURL( '/assets/js/respond.js', _ID ) }"></script>
