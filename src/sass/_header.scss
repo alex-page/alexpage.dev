@@ -1,5 +1,8 @@
 .header__me {
-	@include AU-space( width, 10unit );
+	@include AU-space( width, 6unit );
+	@include AU-media( sm ){
+		@include AU-space( width, 10unit );
+	}
 }
 
 .au-body * + .header__logo {
