@@ -1,9 +1,6 @@
 # 👋 [alexpage.com.au](http://alexpage.com.au)
 
-> I'm a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.
-> 
-> Currently I live in Australia and am looking for a new challenge.
-
+> I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.
 
 ## Code
 

@@ -30,6 +30,7 @@ const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, 
 <meta property="og:title" content="Alex Page">
 <meta property="og:site_name" content="Alex Page">
 <meta property="og:description" content="Modern technology and thoughtful design - Alex Page">
+<meta name="Description" content="I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.">
 <meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 <meta property="og:url" content="http://alexpage.com.au">
 <title>Alex Page - ${ pagetitle }</title>
