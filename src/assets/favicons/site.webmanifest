@@ -1,19 +1,20 @@
 {
-    "name": "Alex Page",
-    "short_name": "Alex Page",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+	"name": "Alex Page",
+	"short_name": "Alex Page",
+	"description": "I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.",
+	"icons": [
+		{
+			"src": "android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "android-chrome-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#24292e",
+	"background_color": "#24292e",
+	"display": "standalone"
 }
