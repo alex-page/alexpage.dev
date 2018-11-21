@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import FindA11yColor from './find-a11y-color';
+
 
 /**
  * The page layout component
@@ -57,6 +59,11 @@ var $html=document.documentElement;if($html.classList)$html.classList.remove("no
 				harmonograph
 					? <canvas className="harmonograph" id="harmonograph" width="1200" height="1200"></canvas>
 					: null
+			}
+			{
+				pageclass === 'a11y-color-page'
+				? <FindA11yColor />
+				: null
 			}
 		</div>
 		<script async src={ _relativeURL( '/assets/js/footer.min.js', _ID ) } />

@@ -7,4 +7,4 @@ documentation: https://github.com/alex-page/a11ycolor
 
 # a11ycolor
 
-Find the closest accessible color, when they don't meet contrast.
+Find the closest accessible color for two colors.
