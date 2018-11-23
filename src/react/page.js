@@ -17,8 +17,8 @@ const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, 
 <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#06262d">
 <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
 <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#24292e">
+<meta name="theme-color" content="#24292e">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Alex Page">
 <meta name="twitter:card" content="summary_large_image">
