@@ -24,7 +24,7 @@
 		"build:js": "mkdir -p src/assets/js/ && npm run build:js-footer && npm run build:uglify",
 		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
 		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
-		"build": "npm run build:assets && npm run build:sw && ./node_modules/.bin/cuttlebelle",
+		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle && npm run build:sw",
 		"watch:sass": "onchange 'src/sass/**/*.scss' -- npm run build:css",
 		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
 		"watch:sw": "onchange 'src/js/sw.js' -- npm run build:sw",
