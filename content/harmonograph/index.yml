@@ -1,6 +1,6 @@
 pagetitle: Harmonograph
 pageclass: harmonograph-page
-harmonograph: true
 
-header:
-  - header.md
+header: header.md
+
+main: main.md

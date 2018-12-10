@@ -1,8 +1,6 @@
 pagetitle: A11yColor
 pageclass: a11y-color-page
 
-header:
-  - header.md
+header: header.md
 
-main:
-  - body.md
+main: main.md

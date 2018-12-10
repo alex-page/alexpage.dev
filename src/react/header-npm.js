@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 /**
  * The page layout component
  */
-const Header = ({ logo_pic, npm, documentation, _body, _relativeURL, _ID }) => (
+const HeaderNPM = ({ logo_pic, npm, documentation, _body, _relativeURL, _ID }) => (
 	<header className="header__npm">
 		<div className="header__top">
 			<div className="header__top__left">
@@ -23,12 +23,12 @@ const Header = ({ logo_pic, npm, documentation, _body, _relativeURL, _ID }) => (
 	</header>
 );
 
-Header.propTypes = {
+HeaderNPM.propTypes = {
 
 
 	logo_pic: PropTypes.string.isRequired,
 };
 
-Header.defaultProps = {};
+HeaderNPM.defaultProps = {};
 
-export default Header;
+export default HeaderNPM;

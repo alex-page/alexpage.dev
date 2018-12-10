@@ -60,7 +60,7 @@ Page.propTypes = {
 	pagetitle: PropTypes.string.isRequired,
 
 	/**
-	 * main: (partials)(5)
+	 * body: (partials)(5)
 	 */
 	slides: PropTypes.node.isRequired,
 };

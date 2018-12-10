@@ -1,0 +1,3 @@
+---
+layout: a11ycolor
+---

@@ -1,8 +1,6 @@
 pagetitle: Homepage
 harmonograph: true
 
-header:
-  - header.md
+header: header.md
 
-main:
-  - body.md
+main: main.md

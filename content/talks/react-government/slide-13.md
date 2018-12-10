@@ -8,7 +8,7 @@ align: left
 layout: page
 title: Homepage
 header: /_shared/header.md
-main:
+body:
   - main.md
 ```
 
