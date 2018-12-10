@@ -19,8 +19,8 @@ const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, 
 <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#06262d">
 <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
 <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#24292e">
+<meta name="theme-color" content="#24292e">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Alex Page">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,10 +32,11 @@ const Page = ({ pagetitle, pageclass, header, harmonograph, main, _relativeURL, 
 <meta property="og:title" content="Alex Page">
 <meta property="og:site_name" content="Alex Page">
 <meta property="og:description" content="Modern technology and thoughtful design - Alex Page">
+<meta name="Description" content="I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.">
 <meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 <meta property="og:url" content="http://alexpage.com.au">
 <title>Alex Page - ${ pagetitle }</title>
-<link rel="stylesheet" href=${ _relativeURL( '/assets/css/style.css', _ID ) } />
+<link rel="stylesheet" href="${ _relativeURL( '/assets/css/style.css', _ID ) }" />
 <!--[if lte IE 9]>
 	<script src="${ _relativeURL( '/assets/js/html5shiv.js', _ID ) }"></script>
 	<script src="${ _relativeURL( '/assets/js/respond.js', _ID ) }"></script>

@@ -22,12 +22,14 @@
 		"build:js-footer": "concat-cli -f src/js/footer/*.js -o src/assets/js/footer.min.js",
 		"build:uglify": "uglifyjs src/assets/js/footer.min.js --compress --output src/assets/js/footer.min.js",
 		"build:js": "mkdir -p src/assets/js/ && npm run build:js-footer && npm run build:uglify",
+		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
 		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
-		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle",
+		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle && npm run build:sw",
 		"watch:sass": "onchange 'src/sass/**/*.scss' -- npm run build:css",
 		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
+		"watch:sw": "onchange 'src/js/sw.js' -- npm run build:sw",
 		"watch:site": "cuttlebelle -w -n",
-		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:site"
+		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:sw | npm run watch:site"
 	},
 	"engines": {
 		"node": "8.8.0"

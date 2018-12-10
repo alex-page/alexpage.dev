@@ -1,6 +1,5 @@
 .harmonograph {
 	position: absolute;
-	@include AU-space( margin-right, -2unit );
 	@include AU-space( top, 2unit );
 	right: 0;
 	max-width: 600px;
