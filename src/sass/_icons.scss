@@ -4,9 +4,9 @@
 }
 
 .icon:before {
-	content: " ";
 	@include AU-space( width, 1.5unit );
 	@include AU-space( height, 1.5unit );
+	content: " ";
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;

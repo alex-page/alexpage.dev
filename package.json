@@ -16,8 +16,8 @@
 	],
 	"scripts": {
 		"docs": "cuttlebelle docs",
-		"build:autoprefix": "postcss src/assets/css/style.css -u autoprefixer -r --no-map",
-		"build:sass": "mkdir -p src/assets/css/ && sass --style compressed src/sass/style.scss src/assets/css/style.css",
+		"build:autoprefix": "postcss src/assets/css/style.css -u autoprefixer -r",
+		"build:sass": "mkdir -p src/assets/css/ && node-sass src/sass/style.scss src/assets/css/style.css --output-style compressed",
 		"build:css": "npm run build:sass && npm run build:autoprefix",
 		"build:js-footer": "concat-cli -f src/js/footer/*.js -o src/assets/js/footer.min.js",
 		"build:uglify": "uglifyjs src/assets/js/footer.min.js --compress --output src/assets/js/footer.min.js",
@@ -105,7 +105,7 @@
 		"cuttlebelle": "^1.0.0-alpha.56",
 		"harmonograph": "^0.1.0",
 		"postcss-cli": "^4.1.1",
-		"sass": "^1.6.2",
+		"node-sass": "^4.11.0",
 		"uglify-js": "^3.3.4"
 	},
 	"devDependencies": {

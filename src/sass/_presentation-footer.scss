@@ -12,8 +12,8 @@
 		float: left;
 
 		li {
-			float: left;
 			@include AU-space( margin, 0 0.5unit 0 );
+			float: left;
 		}
 
 		.icon:before {
@@ -24,9 +24,9 @@
 }
 
 .au-body .footer__logo {
+	@include AU-space( width, 1.5unit );
 	float: right;
 	margin-top: 0;
-	@include AU-space( width, 1.5unit );
 }
 
 .au-body.au-body--dark .presenation__footer {

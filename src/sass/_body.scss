@@ -18,15 +18,7 @@
 	}
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 0;
-}
-
+// Coming soon text
 h3 em {
 	font-weight: normal;
 	@include AU-fontgrid( xs );
@@ -34,10 +26,6 @@ h3 em {
 
 .au-body h3 + p {
 	@include AU-space( margin-top, 0.5unit );
-}
-
-.au-body code {
-	font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .au-body h1,

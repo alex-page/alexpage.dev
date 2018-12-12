@@ -1,4 +1,4 @@
-const cacheName = "alexpage-1.0.3";
+const cacheName = "alexpage-1.0.4";
 const filesToCache = [
 	"/assets/css/style.css",
 	"/assets/js/footer.min.js",

@@ -16,10 +16,16 @@ const Header = ({ profile_pic, social_menu, logo_pic, _body, _relativeURL, _ID }
 				{ social_menu }
 			</div>
 		</div>
-		<div className="header__body">
-			<img alt="Alex Page" className="header__me au-responsive-media-img" src={ _relativeURL( profile_pic, _ID ) } />
-			{ _body }
-		</div>
+		{
+			_ID === 'index'
+				?
+					<div className="header__body">
+						<img alt="Alex Page" className="header__me au-responsive-media-img" src={ _relativeURL( profile_pic, _ID ) } />
+						{ _body }
+					</div>
+				: null
+		}
+
 	</header>
 );
 

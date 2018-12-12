@@ -8,8 +8,8 @@
 	}
 
 	& > li {
-		display: block;
 		@include AU-clearfix();
+		display: block;
 
 		& > a:before {
 			@include AU-space( margin-right, 0.5unit );

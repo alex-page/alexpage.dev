@@ -1,0 +1,19 @@
+.palette__container {
+	border-radius: $AU-border-radius;
+	overflow: hidden;
+
+	* + & {
+		@include AU-space( margin-top, 2unit );
+	}
+}
+
+.palette {
+	@include AU-space( padding, 2unit );
+	background: #fff;
+	color: #000;
+}
+
+.palette--reverse {
+	background: #000;
+	color: #fff;
+}

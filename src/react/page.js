@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
  */
 const Page = ({
 	pagetitle,
-	pageclass,
 	header,
 	main,
 	_relativeURL,
@@ -55,7 +54,7 @@ var $html=document.documentElement;if($html.classList)$html.classList.remove("no
 	return (
 	<html>
 	<head dangerouslySetInnerHTML={{ __html: headContent }} />
-	<body className={ `au-body au-body--dark ${ pageclass !== undefined  ? pageclass : '' }` }>
+	<body className={ `au-body au-body--dark` }>
 		<div className="site-wrapper">
 			{ header }
 			<main>
