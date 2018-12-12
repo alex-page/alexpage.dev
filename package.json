@@ -96,7 +96,6 @@
 	"dependencies": {
 		"@gov.au/body": "latest",
 		"@gov.au/core": "latest",
-		"@gov.au/grid-12": "latest",
 		"@gov.au/headings": "latest",
 		"@gov.au/responsive-media": "latest",
 		"autoprefixer": "^7.2.3",

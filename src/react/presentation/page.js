@@ -44,7 +44,7 @@ const Page = ({ pagetitle, stylesheet, header, footer, slides, script, _relative
 	return (
 	<html>
 	<head dangerouslySetInnerHTML={{ __html: headContent }} />
-	<body className="au-body au-body--dark au-grid presenation-page">
+	<body className="au-body au-body--dark presenation-page">
 		<main id="presentation" className="presenation">{ slides }</main>
 		{ footer }
 		<script src={ _relativeURL( '/assets/js/prism.js', _ID ) } />

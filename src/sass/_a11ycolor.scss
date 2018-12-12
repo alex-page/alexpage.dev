@@ -1,16 +1,35 @@
 .palette__container {
-	border-radius: $AU-border-radius;
-	overflow: hidden;
+	@include AU-clearfix();
 
 	* + & {
 		@include AU-space( margin-top, 2unit );
 	}
+
+	&.palette__container--fail {
+		outline: 3px solid $AU-color-error;
+		outline-offset: 3px;
+	}
+
+	@include AU-media( sm ){
+		@include AU-space( grid-column-gap, 1unit );
+		display: grid;
+		grid-template-columns: repeat( 3, 1fr );
+	}
 }
 
 .palette {
-	@include AU-space( padding, 2unit );
+	grid-row: 1;
+	border-radius: $AU-border-radius;
 	background: #fff;
 	color: #000;
+
+	p {
+		@include AU-space( padding, 1unit 2unit );
+	}
+
+	* + p {
+		margin: 0;
+	}
 }
 
 .palette--reverse {

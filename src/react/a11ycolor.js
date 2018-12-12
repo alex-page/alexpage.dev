@@ -4,10 +4,19 @@ import PropTypes from 'prop-types';
 const A11yColor = () => (
 	<Fragment>
 		<div className="a11ycolor">
-			<p><input type="text" value="#fff"/> on <input type="text" value="#000"/></p>
 			<div className="palette__container">
-				<div className="palette">Hello Helen my old friend</div>
-				<div className="palette palette--reverse">Potato cabbage till the end</div>
+				<div className="palette">
+					<p className="result">Passes AA with a color contrast ratio of 21</p>
+					<p className="palette__test">Hello Helen my old friend</p>
+				</div>
+				<div className="palette">
+					<p className="result">Passes AA with a color contrast ratio of 21</p>
+					<p className="palette__test">Hello Helen my old friend</p>
+				</div>
+				<div className="palette">
+					<p className="result">Passes AA with a color contrast ratio of 21</p>
+					<p className="palette__test">Hello Helen my old friend</p>
+				</div>
 			</div>
 		</div>
 	</Fragment>
