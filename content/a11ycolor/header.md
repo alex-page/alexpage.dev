@@ -7,4 +7,4 @@ documentation: https://github.com/alex-page/a11ycolor
 
 # a11ycolor
 
-Find the closest accessible color for #fff on #000.
+WCAG 2.1 AA and AAA color contrast checker and finder

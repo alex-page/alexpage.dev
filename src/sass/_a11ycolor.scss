@@ -17,6 +17,13 @@
 	}
 }
 
+.palette__inputs {
+	input {
+		display: inline-block;
+		@include AU-fontgrid( md );
+	}
+}
+
 .palette {
 	grid-row: 1;
 	border-radius: $AU-border-radius;
