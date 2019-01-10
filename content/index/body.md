@@ -6,7 +6,7 @@ Built the Australian Government Design System documentation website to align 100
 Supported, maintained and created communities on discourse, github and slack that drove the future direction of the design system through a federated model.
 
 
-### [🛠 GovAU Design System Components](https://uikit.service.gov.au) + [💻 Github](https://github.com/govau/design-system-components)
+### [🛠 GovAU Design System Components](https://auds.service.gov.au) + [💻 Github](https://github.com/govau/design-system-components)
 Created, maintained and enhanced the components of the Australian Government Design System. This included 20+ components using WCAG AA accessibility, HTML, React, JavaScript, jQuery, CSS and SASS best practices.
 
 Wrote fundamental code for generating different accessible light and dark themes. Solved system font typography and spacing snapping to a grid.
