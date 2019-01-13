@@ -17,11 +17,11 @@
 	"scripts": {
 		"deploy": "npm run build && gh-pages -d site/",
 		"build:autoprefix": "postcss src/assets/css/*.css --use autoprefixer --replace --no-map",
-		"build:sass": "mkdir -p src/assets/css/ && node-sass src/sass/ --output-style compressed --output src/assets/css",
+		"build:sass": "mkdirp src/assets/css/ && node-sass src/sass/ --output-style compressed --output src/assets/css",
 		"build:css": "npm run build:sass && npm run build:autoprefix",
 		"build:js-footer": "concat-cli -f src/js/footer/*.js -o src/assets/js/footer.min.js",
 		"build:uglify": "uglifyjs src/assets/js/footer.min.js --compress --output src/assets/js/footer.min.js",
-		"build:js": "mkdir -p src/assets/js/ && npm run build:js-footer && npm run build:uglify",
+		"build:js": "mkdirp src/assets/js/ && npm run build:js-footer && npm run build:uglify",
 		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
 		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
 		"build": "npm run build:assets && npm run build:sw && ./node_modules/.bin/cuttlebelle",
@@ -105,6 +105,7 @@
 		"cuttlebelle": "^1.0.0-alpha.56",
 		"gh-pages": "^2.0.1",
 		"harmonograph": "^0.1.0",
+		"mkdirp": "^0.5.1",
 		"node-sass": "^4.11.0",
 		"postcss-cli": "^4.1.1",
 		"uglify-js": "^3.3.4"
