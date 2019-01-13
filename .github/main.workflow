@@ -5,17 +5,17 @@ workflow "Build and deploy on push" {
 
 action "Install" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "install"
+  runs = "npm run install"
 }
 
 action "Build" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "build"
+  runs = "npm run build"
   needs = ["Install"]
 }
 
 action "Deploy" {
   uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "deploy"
+  runs = "npm run deploy"
   needs = ["Build"]
 }
