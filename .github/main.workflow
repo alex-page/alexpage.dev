@@ -11,12 +11,12 @@ action "Install" {
 action "Build" {
   needs = "Install"
   uses = "actions/npm@master"
-  args = "build"
+  args = "run build"
 }
 
 
 action "Deploy" {
   needs = "Build"
   uses = "actions/npm@master"
-  args = "deploy"
+  args = "run deploy"
 }
