@@ -3,7 +3,20 @@ workflow "Build and deploy on push" {
   resolves = ["Install, build and deploy"]
 }
 
-action "Install, build and deploy" {
-  uses = "actions/npm@e7aaefed7c9f2e83d493ff810f17fa5ccd7ed437"
-  runs = "npm install && npm run build && npm run deploy"
+action "Install" {
+  uses = "actions/npm@master"
+  runs = "npm install"
+}
+
+action "Build" {
+  needs = "Install"
+  uses = "actions/npm@master"
+  args = "build"
+}
+
+
+action "Deploy" {
+  needs = "Build"
+  uses = "actions/npm@master"
+  args = "deploy"
 }
