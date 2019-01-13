@@ -14,7 +14,6 @@ action "Build" {
   args = "run build"
 }
 
-
 action "Deploy" {
   needs = "Build"
   uses = "actions/npm@master"
