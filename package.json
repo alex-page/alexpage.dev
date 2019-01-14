@@ -15,7 +15,7 @@
 		}
 	],
 	"scripts": {
-		"deploy": "gh-pages -d site/",
+		"deploy": "git subtree push --prefix site origin gh-pages",
 		"build:autoprefix": "postcss src/assets/css/*.css --use autoprefixer --replace --no-map",
 		"build:sass": "mkdirp src/assets/css/ && node-sass src/sass/ --output-style compressed --output src/assets/css",
 		"build:css": "npm run build:sass && npm run build:autoprefix",
@@ -103,7 +103,6 @@
 		"concat-cli": "^4.0.0",
 		"copy": "^0.3.1",
 		"cuttlebelle": "^1.0.0-alpha.56",
-		"gh-pages": "^2.0.1",
 		"harmonograph": "^0.1.0",
 		"mkdirp": "^0.5.1",
 		"node-sass": "^4.11.0",
