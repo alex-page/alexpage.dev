@@ -15,7 +15,7 @@
 		}
 	],
 	"scripts": {
-		"deploy": "npm run build && gh-pages -d site/",
+		"deploy": "gh-pages -d site/",
 		"build:autoprefix": "postcss src/assets/css/*.css --use autoprefixer --replace --no-map",
 		"build:sass": "mkdirp src/assets/css/ && node-sass src/sass/ --output-style compressed --output src/assets/css",
 		"build:css": "npm run build:sass && npm run build:autoprefix",
