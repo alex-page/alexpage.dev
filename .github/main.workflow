@@ -6,14 +6,14 @@ workflow "Build and deploy on push" {
 # Install dependencies
 action "Install" {
   uses = "actions/npm@master"
-  runs = "npm install"
+  args = "install"
 }
 
 # Build the website
 action "Build" {
   needs = "Install"
   uses = "actions/npm@master"
-  args = "run build"
+  args = "build"
 }
 
 # Only deploy if master branch
@@ -27,5 +27,5 @@ action "Master" {
 action "Deploy" {
   needs = "Master"
   uses = "actions/npm@master"
-  args = "run deploy"
+  args = "deploy"
 }
