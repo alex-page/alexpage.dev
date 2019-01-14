@@ -20,7 +20,7 @@ Removed the barrier to entry for users unfamiliar to _npm_ by allowing them to e
 
 Furnace is a NodeJS API that collects component dependencies and users options to output them into a zip file. This included continuous integration, continuous deployment, unit and integration tests.
 
-### [md] [🦎 Chameleon](https://designsystem.gov.au/templates/home/customise/) + [💻 Github](https://github.com/govau/chameleon)
+### [🦎 Chameleon](https://designsystem.gov.au/templates/home/customise/) + [💻 Github](https://github.com/govau/chameleon)
 Chameleon allows users to change and share different colour palettes using the Australian Government Design System. It is a server that takes query parameters altering the appearance of full page templates.
 
 ### [🖌 Harmonograph](http://alexpage.com.au/harmonograph) + [💻 Github](https://github.com/alex-page/harmonograph)
