@@ -24,15 +24,15 @@
 		"build:js": "mkdirp src/assets/js/ && npm run build:js-footer && npm run build:uglify",
 		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
 		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
-		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle && npm run build:sw",
+		"build": "npm run build:assets && npm run build:sw",
 		"watch:sass": "onchange 'src/sass/**/*.scss' -- npm run build:css",
 		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
 		"watch:sw": "onchange 'src/js/sw.js' -- npm run build:sw",
-		"watch:site": "cuttlebelle -w -n",
-		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:sw | npm run watch:site"
+		"watch:site": "",
+		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:sw"
 	},
 	"engines": {
-		"node": "8.8.0"
+		"node": "10"
 	},
 	"repository": {
 		"type": "git",
@@ -43,62 +43,7 @@
 		"url": "https://github.com/alex-page/alex-page.github.io/issues"
 	},
 	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
-	"cuttlebelle": {
-		"folder": {
-			"site": "site/",
-			"code": "src/react",
-			"assets": "src/assets"
-		},
-		"site": {
-			"doctype": "<!DOCTYPE html><!--[if lt IE 8]><html class=\"no-js lt-ie8 lt-ie9\" lang=\"en\"><![endif]--><!--[if IE 8]><html class=\"no-js lt-ie9 ie8\" lang=\"en\"><![endif]--><!--[if IE 9 ]><html class=\"no-js ie9\" lang=\"en\"><![endif]--><!--[if !(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![endif]-->",
-			"markdownRenderer": "src/markdown/renderer.js"
-		}
-	},
-	"pancake": {
-		"auto-save": true,
-		"plugins": [],
-		"ignore": [
-			"@gov.au/pancake-react"
-		],
-		"json": {
-			"enable": false,
-			"location": "pancake/",
-			"name": "pancake",
-			"content": {
-				"name": true,
-				"version": true,
-				"dependencies": true,
-				"path": true,
-				"settings": true
-			}
-		},
-		"css": {
-			"minified": false,
-			"modules": false,
-			"browsers": [
-				"last 2 versions",
-				"ie 8",
-				"ie 9",
-				"ie 10"
-			],
-			"location": "pancake/css/",
-			"name": false
-		},
-		"sass": {
-			"modules": false,
-			"location": "src/sass/",
-			"name": "_uikit.scss"
-		},
-		"react": {
-			"location": false
-		}
-	},
 	"dependencies": {
-		"@gov.au/body": "latest",
-		"@gov.au/core": "latest",
-		"@gov.au/grid-12": "latest",
-		"@gov.au/headings": "latest",
-		"@gov.au/responsive-media": "latest",
 		"autoprefixer": "^7.2.3",
 		"concat-cli": "^4.0.0",
 		"copy": "^0.3.1",

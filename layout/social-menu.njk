@@ -1,0 +1,9 @@
+<ul className="social-menu social-menu--inline social-menu--hide-text">
+	{{
+		items.map( ( item, key ) => (
+			<li key={ key }>
+				<a className={ 'icon icon--' + item.icon } href={ item.link }>{ item.text }</a>
+			</li>
+		))
+	}}
+</ul>

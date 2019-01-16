@@ -1,0 +1,16 @@
+<header>
+	<div className="header__top">
+		<div className="header__top__left">
+			<a className="header__home" href="/">
+				<img className="header__logo au-responsive-media-img" alt="Alex Page logo" src={{ _relativeURL( logo_pic, _ID ) }} />
+			</a>
+		</div>
+		<div className="header__top__right">
+			{{ social_menu }}
+		</div>
+	</div>
+	<div className="header__body">
+		<img alt="Alex Page" className="header__me au-responsive-media-img" src={{ _relativeURL( profile_pic, _ID ) }} />
+		{{ _body }}
+	</div>
+</header>
