@@ -1,0 +1,20 @@
+/**
+	* Text selection styling
+	*/
+::selection {
+	color: var( --text-color--dark );
+	background-color: rgba( 61, 252, 179, 0.99 );
+	/* Why RGBA 0.99? https://stackoverflow.com/a/7224621 */
+}
+
+/* Decrease the opacity for certain elements */
+img::selection,
+video::selection,
+iframe::selection {
+	background-color: rgba( 61, 252, 179, 0.75 );
+}
+
+/* Gradient background */
+.gradient-bg {
+	background: linear-gradient( to top right, var( --bg-color-shade ), var( --bg-color ) );
+}

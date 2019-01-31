@@ -1,4 +1,0 @@
----
-layout: presentation/slide
----
-# Basics

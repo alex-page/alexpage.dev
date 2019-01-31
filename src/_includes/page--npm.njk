@@ -1,0 +1,20 @@
+{% extends 'page.njk' %}
+
+{% block header_right %}
+	<code>npm install <a href="https://www.npmjs.com/package/{{ npm }}">{{ npm }}</a></code>
+{% endblock %}
+
+
+{% block harmonograph %}
+	{% if npm == 'harmonograph' %}
+		<canvas class="harmonograph" id="harmonograph" width="1760" height="1760"></canvas>
+	{% endif %}
+{% endblock %}
+
+{% block main %}
+	{% if documentation %}
+		<a href={{ documentation }}>Read documentation</a>
+	{% endif %}
+
+	{{ content | safe }}
+{% endblock %}

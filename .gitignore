@@ -4,14 +4,8 @@
 
 # node / npm / sass
 node_modules
-.sass-cache
-validation-report.json
-validation-status.json
-npm-debug.log
 
 
 # artifacts
-site
-_uikit.scss
-src/assets/css/style.css
-src/assets/js/header.js
+site/*
+!site/assets/

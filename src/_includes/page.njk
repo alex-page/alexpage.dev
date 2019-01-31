@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#06262d">
+	<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+	<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+	<meta name="msapplication-TileColor" content="#24292e">
+	<meta name="theme-color" content="#24292e">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Alex Page">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Alex Page">
+	<meta name="twitter:description" content="Modern technology and thoughtful design - Alex Page">
+	<meta name="twitter:name" content="Alex Page">
+	<meta name="twitter:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Alex Page">
+	<meta property="og:site_name" content="Alex Page">
+	<meta property="og:description" content="Modern technology and thoughtful design - Alex Page">
+	<meta name="Description" content="I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.">
+	<meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
+	<meta property="og:url" content="http://alexpage.com.au">
+	<title>{{ pagetitle }} - Alex Page</title>
+	{% set basecss %}{% include 'css/base.css' %}{% endset %}
+	<style>{{ basecss | cssmin | safe }}</style>
+	{% set basejs %}{% include 'js/base.js' %}{% endset %}
+	<script>{{ basejs | jsmin | safe }}</script>
+</head>
+<body class="{{ layout | lower }}{% if npm == 'harmonograph' %} page--harmonograph{% endif %}">
+	<div class="container">
+		<a class="skip-link sr-only" href="#content">Skip to content</a>
+		<!-- The default header block -->
+		<header class="header clearfix">
+			<div class="header__left">
+				<a class="header__home" href="/">
+					<img class="header__logo" alt="Alex Page logo" src="/assets/img/logo.svg" />
+				</a>
+			</div>
+			<div class="header__right">
+				{% block header_right %}
+					{% include 'social-menu.njk' %}
+				{% endblock %}
+			</div>
+			{% block header_content %}{% endblock %}
+		</header>
+		{% block harmonograph %}{% endblock %}
+
+		<!-- The main content area -->
+		<main class="content" id="content">
+			<div class="content__inner">
+				{% block main %}
+				{{ content | safe }}
+				{% endblock %}
+			</div>
+		</main>
+	</div>
+	<div class="gradient-bg"></div>
+	{% set extracss %}{% include 'css/extra.css' %}{% endset %}
+	<style>{{ extracss | cssmin | safe }}</style>
+	{% set extrajs %}{% include 'js/extra.js' %}{% endset %}
+	<script>{{ extrajs | jsmin | safe }}</script>
+</body>
+</html>

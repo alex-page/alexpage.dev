@@ -1,7 +1,0 @@
-pagetitle: Talks
-
-header:
-  - /_shared/header.md
-
-main:
-  - body.md
