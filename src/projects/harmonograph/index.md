@@ -2,7 +2,6 @@
 layout: page--npm
 pagetitle: Harmonograph
 npm: harmonograph
-documentation: https://github.com/alex-page/harmonograph#readme
 ---
 # Harmonograph
 

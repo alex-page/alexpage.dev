@@ -15,7 +15,7 @@
 	--base-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	--code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
-	--base-font-size: 1.2rem;
+	--base-font-size: 1.4rem;
 }
 
 
@@ -51,8 +51,12 @@ body {
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.5;
+}
 
-	/* Hide the overlapping harmonograph */
+/* Stop the harmonograph from overflowing */
+html,
+body {
+	max-width: 100%;
 	overflow-x: hidden;
 }
 
@@ -81,15 +85,16 @@ body {
  * Layout
  */
 body {
-	padding: 1rem 0rem 5rem 0rem;
+	padding: 1rem 1rem 5rem 1rem;
+	margin: 0;
 }
 
 header {
-	padding: 0 1rem 1rem 1rem;
+	padding-top: 1rem;
 }
 
 main {
-	padding: 1.5rem;
+	padding: 1.5rem 1.5rem 3rem 1.5rem;
 }
 
 @media ( min-width: 600px ) {
@@ -98,12 +103,18 @@ main {
 	}
 
 	header {
-		padding: 0 2rem 2rem 2rem;
+		padding-top: 2rem;
 	}
 
 	main {
-		padding: 2rem;
+		padding: 2rem 2rem 4rem 2rem;
 	}
+}
+
+footer {
+	padding: 0 0 2rem 0;
+	margin-top: 4rem;
+	font-size: 1rem;
 }
 
 /**
@@ -144,11 +155,6 @@ main {
 	background: rgba( 0, 0, 0, 0.4 );
 }
 
-main p,
-main blockquote {
-	max-width: 45rem;
-}
-
 
 /*
  * Typograhpy
@@ -175,6 +181,8 @@ h6 {
 h1 {
 	font-size: 3.5rem;
 	line-height: 1.3;
+	word-break: break-all;
+	hyphens: auto;
 }
 
 * + h1 {
@@ -198,6 +206,10 @@ h2 {
 	margin-top: 1rem;
 }
 
+blockquote + p {
+	margin-top: 2rem;
+}
+
 @media ( min-width: 600px ) {
 	h1 {
 		font-size: 5rem;
@@ -209,7 +221,7 @@ h2 {
 /*
  * Link styles
  */
- a {
+a {
 	color: var( --action-color );
 	text-decoration: none;
 }
@@ -228,34 +240,110 @@ a:focus {
 
 
 /**
- * Social media list
+ * Menu list
  */
-.social-menu {
+.menu {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.social-menu--inline li {
+.menu--inline li {
 	display: inline-block;
+}
+
+.menu--inline li + li {
+	margin-left: 0.25rem;
+}
+
+@media ( min-width: 600px ) {
+	.menu--inline li + li {
+		margin-left: 0.5rem;
+	}
+}
+
+/**
+ * Main menu
+ */
+.main-menu {
+	font-size: 0.95rem;
+}
+
+@media ( min-width: 600px ) {
+	.main-menu {
+		font-size: 1.2rem;
+	}
+}
+
+.main-menu a {
+	color: var(--text-color);
+	padding: 0.5rem;
+	border-radius: 3px;
+}
+
+.main-menu a.active,
+.main-menu a:hover,
+.main-menu a:focus {
+	background: rgba( 0, 0, 0, 0.3 );
+}
+
+.main-menu .menu {
+	float: right;
+}
+
+.main-menu__logo img {
+	position: relative;
+	top: 1px;
+	height: 0.9em;
+	margin-right: 0.5rem;
 }
 
 
 /**
- * Icons
+ * Social menu
  */
-.icon {
-	width: 1.5rem;
-	height: 1.5rem;
-	overflow: hidden;
-	display: block;
-	color: var( --color-text );
+.social-menu {
+	list-style: none;
 }
 
-.icon svg {
-	fill: currentColor;
+.social-menu a {
+	color: var(--text-color);
 }
 
+.social-menu a:hover {
+	color: var(--action-color);
+}
+
+footer .social-menu {
+	float: left;
+}
+
+footer .social-menu + p {
+	margin: 0;
+	float: right;
+}
+
+
+/**
+ * Content header
+ */
+.content_header {
+	padding-top: 5rem;
+	margin-top: 2rem;
+	min-height: 3em;
+}
+
+.content_header--harmonograph {
+	position: relative;
+}
+
+.content_header--harmonograph #harmonograph {
+	position: absolute;
+	right: -1rem;
+	top: 1rem;
+	max-width: 20rem;
+	width: 50%;
+}
 
 /**
  * Skip link
@@ -285,47 +373,23 @@ a:focus {
 }
 
 
-/*
- * Harmonograph
- */
-.harmonograph {
-	position: absolute;
-	width: 70%;
-	max-width: var( --page-width );
-	height: var( --page-width );
-	left: 0;
-	right: 0;
-}
-
-.page--npm .harmonograph {
-	top: -15rem;
-	width: 100%
-}
-
-.page--harmonograph header {
-	margin-bottom: 16rem;
-}
-
-.harmonograph--right {
-	top: -10rem;
-	right: -18rem;
-	left: auto;
-}
-
-.page--harmonograph .content__inner > p > img {
-	margin-top: -8rem;
+/* Profile picture */
+.profile-pic {
+	display: block;
+	max-width: 30%;
+	width: 10rem;
+	margin-top: -5rem;
 	border-radius: 3px;
-	max-width: 12rem;
-	width: 30%;
 	box-shadow: 0 0 2rem 0.2rem rgba( 0, 0, 0, 0.2 );
 }
+
 
 /**
  * Blockquote
  */
 blockquote {
 	margin: 0;
-	padding-left: 2rem;
+	padding-left: 1.5rem;
 	position: relative;
 }
 
@@ -334,20 +398,39 @@ blockquote {
 }
 
 blockquote:before {
-	background: var( --action-color );
+	border-left: solid 0.25rem var( --action-color );
+	border-radius: 5px;
 	content: " ";
 	position: absolute;
-	left: 0;
 	top: 0;
-	right: 0;
-	width: 0.25rem;
-	height: 100%;
-	border-radius: 5px;
+	left: 0;
+	bottom: 0;
 }
 
 h1 + blockquote {
 	font-weight: normal;
-	font-size: 1.35rem;
+	font-size: 1.1rem;
+}
+
+@media( min-width: 600px ){
+	blockquote {
+		padding-left: 2rem;
+	}
+
+	h1 + blockquote {
+		font-size: 1.6rem;
+	}
+}
+
+/**
+ * Horizontal rule
+ */
+hr {
+	position: relative;
+	border: 0;
+	border-top: 2px solid var( --text-color );
+	border-radius: 5px;
+	margin: 2.5rem 0;
 }
 
 
@@ -357,4 +440,56 @@ h1 + blockquote {
 code {
 	font-family: var( --code-font );
 	font-size: 1rem;
+}
+
+
+/**
+ * Image
+ */
+img {
+	max-width: 100%;
+}
+
+
+/**
+ * Video embed
+ */
+.embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	border-radius: 1rem;
+}
+
+.embed-responsive iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border: 0;
+}
+
+
+/**
+ * NPM package header
+ */
+.npm_header {
+	padding: 2rem;
+}
+
+.npm_header__top {
+	padding: 0 20%;
+	margin-bottom: 2rem;
+}
+
+.npm_header__left {
+	float: left;
+}
+
+.npm_header__right {
+	float: right;
 }

@@ -1,20 +1,17 @@
 {% extends 'page.njk' %}
 
-{% block header_right %}
-	<code>npm install <a href="https://www.npmjs.com/package/{{ npm }}">{{ npm }}</a></code>
-{% endblock %}
-
-
-{% block harmonograph %}
-	{% if npm == 'harmonograph' %}
-		<canvas class="harmonograph" id="harmonograph" width="1760" height="1760"></canvas>
+{% block content_header %}
+<div class="npm_header clearfix">
+	{% if page.fileSlug == 'harmonograph' %}
+		<div class="npm_header__top">
+			<div class="harmonograph" id="harmonograph"></div>
+		</div>
 	{% endif %}
-{% endblock %}
-
-{% block main %}
-	{% if documentation %}
-		<a href={{ documentation }}>Read documentation</a>
-	{% endif %}
-
-	{{ content | safe }}
+	<div class="npm_header__left">
+		<code>npm install <a href="https://npmjs.com/package/{{npm}}">{{ npm }}</a></code>
+	</div>
+	<div class="npm_header__right">
+		<a href="https://github.com/alex-page/{{ npm }}#readme">Read documentation</a>
+	</div>
+</div>
 {% endblock %}

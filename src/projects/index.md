@@ -1,8 +1,10 @@
-# [Alex Page](http://alexpage.com.au)
-
-> I am a Lead User Experience Developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.
-
-## Projects
+---
+layout: page
+pagetitle: Projects
+tags: landingPages
+documentation: https://github.com/alex-page/harmonograph#readme
+---
+# Projects
 
 ### Australian Government Design System
 
@@ -40,7 +42,7 @@ _See the source code on [GitHub](https://github.com/govau/chameleon)._
 
 As a child I used to visit the National Science and Technology Centre and see the harmonograph they had on display. A Harmonograph is a swinging platform where a pen attached to a pendulum, draws intricate shapes and patterns on paper.
 
-Inspired I decided to make an npm package, [harmonograph](/harmonograph). The package draws a randomised harmonograph using JavaScript and SVG bezier curves. The project was a perfect blend of code and design. 
+Inspired I decided to make an npm package, [harmonograph](/projects/harmonograph). The package draws a randomised harmonograph using JavaScript and SVG bezier curves. The project was a perfect blend of code and design. 
 
 _See the source code on [GitHub](https://github.com/alex-page/harmonograph)._
 
@@ -50,28 +52,3 @@ _See the source code on [GitHub](https://github.com/alex-page/harmonograph)._
 Having to solve colour contrast for 1000+ websites I created functions to generate the nearest accessible colour in SASS and JavaScript. This allowed users to input their colours into a system and the output was guaranteed to meet colour contrast.
 
 _See the source code on [GitHub](https://github.com/alex-page/a11ycolor)._
-
-
-## Talks
-
-### Names and culture
-
-I gave a talk at Design System Meetup v4.0.0 about names and culture. I talked about how communication is hard and what we name things affects how well we communicate. 
-
-Simple interactions like getting a haircut or ordering an ice cream can increase anxiety due to communication. Poor communication can change outcomes, how things are perceived and how they are used.
-
-When building a design system we have to name a lot of things. Sometimes the names we give should be functional and understandable and other times there are opportunities to be creative and create a culture.
-
-_Watch the talk on [YouTube](https://www.youtube.com/watch?v=-xAKir02gto)._
-
-
-### Hard work to make it simple
-
-I launched the Australian Government Design System with Trevor Brennan at Australia's first ever Design System Meetup. 
-
-We talked about how we break down barriers between developers and designers by providing a common language for typography and spacing alignment. I also quickly explain our colour contrast system, built to help design meet AA contrast.
-
-All of this at a scale suitable for a nation.
-
-_Watch the talk on [YouTube](https://www.youtube.com/watch?v=ol9t-ERYqFM)._
-

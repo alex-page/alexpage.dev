@@ -33,33 +33,38 @@
 	{% set basejs %}{% include 'js/base.js' %}{% endset %}
 	<script>{{ basejs | jsmin | safe }}</script>
 </head>
-<body class="{{ layout | lower }}{% if npm == 'harmonograph' %} page--harmonograph{% endif %}">
+<body>
 	<div class="container">
 		<a class="skip-link sr-only" href="#content">Skip to content</a>
 		<!-- The default header block -->
 		<header class="header clearfix">
-			<div class="header__left">
-				<a class="header__home" href="/">
-					<img class="header__logo" alt="Alex Page logo" src="/assets/img/logo.svg" />
-				</a>
-			</div>
-			<div class="header__right">
-				{% block header_right %}
-					{% include 'social-menu.njk' %}
-				{% endblock %}
-			</div>
-			{% block header_content %}{% endblock %}
+			{% include 'main-menu.njk' %}
 		</header>
-		{% block harmonograph %}{% endblock %}
+
+		<!-- The main section header -->
+		{% block content_header %}
+		<div class="content_header content_header--harmonograph">
+			<div id="harmonograph"></div>
+		</div>
+		{% endblock %}
 
 		<!-- The main content area -->
 		<main class="content" id="content">
 			<div class="content__inner">
+				{% if page.fileSlug == '' %}
+					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
+				{% endif %}
 				{% block main %}
 				{{ content | safe }}
 				{% endblock %}
 			</div>
 		</main>
+
+		<!-- The footer -->
+		<footer>
+			{% include 'social-menu.njk' %}
+			<p>Thanks for visiting 🤜✨🤛</p>
+		</footer>
 	</div>
 	<div class="gradient-bg"></div>
 	{% set extracss %}{% include 'css/extra.css' %}{% endset %}

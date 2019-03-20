@@ -15,7 +15,6 @@
 		}
 	],
 	"scripts": {
-		"deploy": "bs",
 		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
 		"build": "eleventy",
 		"watch": "eleventy --serve"
@@ -37,7 +36,5 @@
 		"clean-css": "^4.2.1",
 		"uglify-js": "^3.4.9"
 	},
-	"devDependencies": {
-		"branchsite": "^4.0.3"
-	}
+	"devDependencies": {}
 }
