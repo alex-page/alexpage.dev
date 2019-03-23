@@ -36,9 +36,5 @@
 		"clean-css": "^4.2.1",
 		"uglify-js": "^3.4.9",
 		"workbox-build": "^4.1.1"
-	},
-	"devDependencies": {
-		"branchsite": "^4.0.3",
-		"push-dir": "^0.4.1"
 	}
 }
