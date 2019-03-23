@@ -18,7 +18,7 @@
 		"build:sw": "node scripts/sw-build",
 		"build": "eleventy && npm run build:sw",
 		"watch": "eleventy --serve",
-		"deploy": "gh-pages --dist site --user 'Alex Page <alex@alexpage.com.au>' --repo https://' + process.env.GITHUB_TOKEN + '@github.com/alex-page/alex-page.git --silent"
+		"deploy": "gh-pages --dist site --user 'Alex Page <alex@alexpage.com.au>' --repo https://' + process.env.GITHUB_TOKEN + '@github.com/alex-page/alex-page.git --dotfiles --silent"
 	},
 	"engines": {
 		"node": "10"
