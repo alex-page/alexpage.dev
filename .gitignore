@@ -7,3 +7,4 @@ node_modules
 # artifacts
 site/*
 !site/assets/
+!site/CNAME
