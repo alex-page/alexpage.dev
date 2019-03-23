@@ -1,0 +1,495 @@
+/*
+ * Global variables
+ */
+:root {
+	--bg-color:         #1C65F8;
+	--bg-color-shade:   #5C0ACA;
+	--text-color:       #EEEEEE;
+	--text-color--dark: #19155B;
+	--action-color:     #3DFCB3;
+	--focus-color:      #FFD900;
+	--title-color:      #FFFFFF;
+
+	--page-width: 55rem;
+
+	--base-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	--code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+	--base-font-size: 1.4rem;
+}
+
+
+/*
+ * Helper classes
+ */
+.clearfix:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+
+/*
+ * Body appearance
+ */
+body {
+	color: var( --text-color );
+
+	font-family: var( --base-font );
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+/* Stop the harmonograph from overflowing */
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+@media ( min-width: 600px ) {
+	body {
+		font-size: var( --base-font-size );
+	}
+}
+
+
+/**
+ * Gradient BG
+ */
+.gradient-bg {
+	background: var( --bg-color );
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+
+/*
+ * Layout
+ */
+body {
+	padding: 1rem 1rem 5rem 1rem;
+	margin: 0;
+}
+
+header {
+	padding-top: 1rem;
+}
+
+main {
+	padding: 1.5rem 1.5rem 3rem 1.5rem;
+}
+
+@media ( min-width: 600px ) {
+	body {
+		padding: 1rem 1.5rem 5rem 1.5rem;
+	}
+
+	header {
+		padding-top: 2rem;
+	}
+
+	main {
+		padding: 2rem 2rem 4rem 2rem;
+	}
+}
+
+footer {
+	padding: 0 0 2rem 0;
+	margin-top: 4rem;
+	font-size: 1rem;
+}
+
+/**
+ * Header
+ */
+header {
+	position: relative;
+	z-index: 1;
+}
+
+.header__left {
+	float: left;
+}
+
+.header__right {
+	float: right;
+}
+
+
+/**
+ * Content
+ */
+.container {
+	position: relative;
+	max-width: var( --page-width );
+	margin: 0 auto;
+}
+
+.content__inner {
+	position: relative;
+	z-index: 5;
+}
+
+main {
+	border-radius: 5px;
+
+	box-shadow: 0 0 5rem 0.5rem rgba( 0, 0, 0, 0.2 );
+	background: rgba( 0, 0, 0, 0.4 );
+}
+
+
+/*
+ * Typograhpy
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var( --title-color );
+}
+
+h1 {
+	font-size: 3.5rem;
+	line-height: 1.3;
+	word-break: break-all;
+	hyphens: auto;
+}
+
+* + h1 {
+	margin-top: 2rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+	line-height: 1.3;
+}
+
+* + h2 {
+	margin-top: 3.5rem;
+}
+
+* + h3 {
+	margin-top: 3rem;
+}
+
+* + p {
+	margin-top: 1rem;
+}
+
+blockquote + p {
+	margin-top: 2rem;
+}
+
+@media ( min-width: 600px ) {
+	h1 {
+		font-size: 5rem;
+		line-height: 1.3;
+	}
+}
+
+
+/*
+ * Link styles
+ */
+a {
+	color: var( --action-color );
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+	text-decoration-skip: ink;
+	color: var( --text-color );
+}
+
+*:focus {
+	outline: solid 2px var( --focus-color );
+	outline-offset: 2px;
+}
+
+
+/**
+ * Menu list
+ */
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu--inline li {
+	display: inline-block;
+}
+
+.menu--inline li + li {
+	margin-left: 0.25rem;
+}
+
+@media ( min-width: 600px ) {
+	.menu--inline li + li {
+		margin-left: 0.5rem;
+	}
+}
+
+/**
+ * Main menu
+ */
+.main-menu {
+	font-size: 0.95rem;
+}
+
+@media ( min-width: 600px ) {
+	.main-menu {
+		font-size: 1.2rem;
+	}
+}
+
+.main-menu a {
+	color: var(--text-color);
+	padding: 0.5rem;
+	border-radius: 3px;
+}
+
+.main-menu a.active,
+.main-menu a:hover,
+.main-menu a:focus {
+	background: rgba( 0, 0, 0, 0.3 );
+}
+
+.main-menu .menu {
+	float: right;
+}
+
+.main-menu__logo img {
+	position: relative;
+	top: 1px;
+	height: 0.9em;
+	margin-right: 0.5rem;
+}
+
+
+/**
+ * Social menu
+ */
+.social-menu {
+	list-style: none;
+}
+
+.social-menu a {
+	color: var(--text-color);
+}
+
+.social-menu a:hover {
+	color: var(--action-color);
+}
+
+footer .social-menu {
+	float: left;
+}
+
+footer .social-menu + p {
+	margin: 0;
+	float: right;
+}
+
+
+/**
+ * Content header
+ */
+.content_header {
+	margin-top: 3rem;
+	min-height: 2rem;
+	padding-bottom: 1rem;
+}
+
+.content_header--harmonograph {
+	position: relative;
+}
+
+.content_header--harmonograph #harmonograph {
+	position: absolute;
+	right: -1rem;
+	top: 0;
+	max-width: 15rem;
+	width: 50%;
+}
+
+/**
+ * NPM package header
+ */
+ .content_header--npm * + .content_header__right {
+	margin-top: 1rem;
+}
+
+@media( min-width: 600px ){
+	.content_header--npm .content_header__left {
+		float: left;
+	}
+
+	.content_header--npm .content_header__right {
+		float: right;
+	}
+
+	.content_header--npm * + .content_header__right {
+		margin: 0;
+	}
+}
+
+/**
+ * Skip link
+ */
+.skip-link {
+	padding: 0.5rem 1rem;
+	position: absolute;
+	z-index: 100;
+}
+
+.skip-link,
+.skip-link:focus {
+	background-color: var( --action-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:hover {
+	background-color: var( --text-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:focus {
+	width: auto;
+	height: auto;
+	clip: auto;
+	overflow: visible;
+}
+
+
+/* Profile picture */
+.profile-pic {
+	display: block;
+	max-width: 30%;
+	width: 10rem;
+	margin-top: -5rem;
+	border-radius: 3px;
+	box-shadow: 0 0 2rem 0.2rem rgba( 0, 0, 0, 0.2 );
+}
+
+
+/**
+ * Blockquote
+ */
+blockquote {
+	margin: 0;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+* + blockquote {
+	margin-top: 1.5rem;
+}
+
+blockquote:before {
+	border-left: solid 0.25rem var( --action-color );
+	border-radius: 5px;
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+h1 + blockquote {
+	font-weight: normal;
+	font-size: 1.1rem;
+}
+
+@media( min-width: 600px ){
+	blockquote {
+		padding-left: 2rem;
+	}
+
+	h1 + blockquote {
+		font-size: 1.6rem;
+	}
+}
+
+/**
+ * Horizontal rule
+ */
+hr {
+	position: relative;
+	border: 0;
+	border-top: 2px solid var( --text-color );
+	border-radius: 5px;
+	margin: 2.5rem 0;
+}
+
+
+/**
+ * Code
+ */
+code {
+	font-family: var( --code-font );
+	font-size: 1rem;
+}
+
+
+/**
+ * Image
+ */
+img {
+	max-width: 100%;
+}
+
+
+/**
+ * Video embed
+ */
+.embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	border-radius: 1rem;
+}
+
+.embed-responsive iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border: 0;
+}

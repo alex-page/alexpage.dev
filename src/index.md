@@ -1,4 +1,8 @@
-# [Alex Page](http://alexpage.com.au)
+---
+layout: page
+pagetitle: Home
+---
+# Alex Page
  
 > I am a Lead User Experience Developer at [Shopify](https://www.shopify.com).
 > 

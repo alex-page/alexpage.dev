@@ -15,24 +15,13 @@
 		}
 	],
 	"scripts": {
-		"docs": "cuttlebelle docs",
-		"build:autoprefix": "postcss src/assets/css/style.css -u autoprefixer -r --no-map",
-		"build:sass": "mkdir -p src/assets/css/ && sass --style compressed src/sass/style.scss src/assets/css/style.css",
-		"build:css": "npm run build:sass && npm run build:autoprefix",
-		"build:js-footer": "concat-cli -f src/js/footer/*.js -o src/assets/js/footer.min.js",
-		"build:uglify": "uglifyjs src/assets/js/footer.min.js --compress --output src/assets/js/footer.min.js",
-		"build:js": "mkdir -p src/assets/js/ && npm run build:js-footer && npm run build:uglify",
-		"build:sw": "rm -f site/sw.js && cp src/js/sw.js site/sw.js",
-		"build:assets": "npm run build:css && npm run build:autoprefix && npm run build:js",
-		"build": "npm run build:assets && ./node_modules/.bin/cuttlebelle && npm run build:sw",
-		"watch:sass": "onchange 'src/sass/**/*.scss' -- npm run build:css",
-		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
-		"watch:sw": "onchange 'src/js/sw.js' -- npm run build:sw",
-		"watch:site": "cuttlebelle -w -n",
-		"watch": "npm run build && npm run watch:sass | npm run watch:js | npm run watch:sw | npm run watch:site"
+		"build:sw": "node scripts/sw-build",
+		"build": "eleventy && npm run build:sw",
+		"watch": "eleventy --serve",
+		"deploy": "npm run build && push-dir --dir=site --branch=github-pages"
 	},
 	"engines": {
-		"node": "8.8.0"
+		"node": "10"
 	},
 	"repository": {
 		"type": "git",
@@ -43,78 +32,14 @@
 		"url": "https://github.com/alex-page/alex-page.github.io/issues"
 	},
 	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
-	"cuttlebelle": {
-		"folder": {
-			"site": "site/",
-			"code": "src/react",
-			"assets": "src/assets"
-		},
-		"site": {
-			"doctype": "<!DOCTYPE html><!--[if lt IE 8]><html class=\"no-js lt-ie8 lt-ie9\" lang=\"en\"><![endif]--><!--[if IE 8]><html class=\"no-js lt-ie9 ie8\" lang=\"en\"><![endif]--><!--[if IE 9 ]><html class=\"no-js ie9\" lang=\"en\"><![endif]--><!--[if !(IE)]><!--><html class=\"no-js\" lang=\"en\"><!--<![endif]-->",
-			"markdownRenderer": "src/markdown/renderer.js"
-		}
-	},
-	"pancake": {
-		"auto-save": true,
-		"plugins": [],
-		"ignore": [
-			"@gov.au/pancake-react"
-		],
-		"json": {
-			"enable": false,
-			"location": "pancake/",
-			"name": "pancake",
-			"content": {
-				"name": true,
-				"version": true,
-				"dependencies": true,
-				"path": true,
-				"settings": true
-			}
-		},
-		"css": {
-			"minified": false,
-			"modules": false,
-			"browsers": [
-				"last 2 versions",
-				"ie 8",
-				"ie 9",
-				"ie 10"
-			],
-			"location": "pancake/css/",
-			"name": false
-		},
-		"sass": {
-			"modules": false,
-			"location": "src/sass/",
-			"name": "_uikit.scss"
-		},
-		"react": {
-			"location": false
-		}
-	},
 	"dependencies": {
-		"@gov.au/body": "latest",
-		"@gov.au/core": "latest",
-		"@gov.au/grid-12": "latest",
-		"@gov.au/headings": "latest",
-		"@gov.au/responsive-media": "latest",
-		"autoprefixer": "^7.2.3",
-		"concat-cli": "^4.0.0",
-		"copy": "^0.3.1",
-		"cuttlebelle": "^1.0.0-alpha.56",
-		"harmonograph": "^0.1.0",
-		"postcss-cli": "^4.1.1",
-		"sass": "^1.6.2",
-		"uglify-js": "^3.3.4"
+		"@11ty/eleventy": "^0.7.1",
+		"clean-css": "^4.2.1",
+		"uglify-js": "^3.4.9",
+		"workbox-build": "^4.1.1"
 	},
 	"devDependencies": {
-		"onchange": "^3.3.0"
-	},
-	"browserslist": [
-		"last 2 versions",
-		"ie 8",
-		"ie 9",
-		"ie 10"
-	]
+		"branchsite": "^4.0.3",
+		"push-dir": "^0.4.1"
+	}
 }
