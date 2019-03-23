@@ -14,9 +14,15 @@ action "Install dependencies" {
   needs = ["Master branch only"]
 }
 
+action "Build site" {
+  uses = "actions/npm@master"
+  args = "run build"
+  needs = ["Install dependencies"]
+}
+
 action "Deploy" {
   uses = "actions/npm@master"
   args = "run deploy"
-  needs = ["Install dependencies"]
+  needs = ["Build site"]
   secrets = ["GITHUB_TOKEN"]
 }
