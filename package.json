@@ -18,7 +18,7 @@
 		"build:sw": "node scripts/sw-build",
 		"build": "eleventy && npm run build:sw",
 		"watch": "eleventy --serve",
-		"deploy": "gh-pages -d site"
+		"deploy": "git config --global user.email 'alex@alexpage.com.au' && git config --global user.name 'Alex Page' && gh-pages -d site"
 	},
 	"engines": {
 		"node": "10"
