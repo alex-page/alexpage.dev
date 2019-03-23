@@ -17,8 +17,7 @@
 	"scripts": {
 		"build:sw": "node scripts/sw-build",
 		"build": "eleventy && npm run build:sw",
-		"watch": "eleventy --serve",
-		"deploy": "npm run build && push-dir --dir=site --branch=github-pages"
+		"watch": "eleventy --serve"
 	},
 	"engines": {
 		"node": "10"
