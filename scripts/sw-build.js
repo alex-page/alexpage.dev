@@ -3,8 +3,8 @@ const Path = require( 'path' );
 const Workbox = require( 'workbox-build' );
 
 Workbox.generateSW({
-	swDest: 'docs/service-worker.js',
-	globDirectory: 'docs',
+	swDest: 'site/service-worker.js',
+	globDirectory: 'site',
 	globPatterns: ['**/*.{html,png,jpg,svg,ico}'],
 	cacheId: 'alex-page'
 }).then(({count, size}) => {
