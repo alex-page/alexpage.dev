@@ -18,7 +18,7 @@
 		"build:sw": "node scripts/sw-build",
 		"build": "eleventy && npm run build:sw",
 		"watch": "eleventy --serve",
-		"deploy": "cd site && git add --all && git commit -m 'Deploy to gh-pages' && git push origin abc && cd .."
+		"deploy": "push-dir --dir=site --branch=abc"
 	},
 	"engines": {
 		"node": "10"
@@ -39,6 +39,7 @@
 		"workbox-build": "^4.1.1"
 	},
 	"devDependencies": {
-		"branchsite": "^4.0.3"
+		"branchsite": "^4.0.3",
+		"push-dir": "^0.4.1"
 	}
 }
