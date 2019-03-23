@@ -328,10 +328,9 @@ footer .social-menu + p {
  * Content header
  */
 .content_header {
-	padding-top: 5rem;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin-top: 3rem;
 	min-height: 2rem;
+	padding-bottom: 1rem;
 }
 
 .content_header--harmonograph {
@@ -341,9 +340,30 @@ footer .social-menu + p {
 .content_header--harmonograph #harmonograph {
 	position: absolute;
 	right: -1rem;
-	top: 1rem;
-	max-width: 20rem;
+	top: 0;
+	max-width: 15rem;
 	width: 50%;
+}
+
+/**
+ * NPM package header
+ */
+ .content_header--npm * + .content_header__right {
+	margin-top: 1rem;
+}
+
+@media( min-width: 600px ){
+	.content_header--npm .content_header__left {
+		float: left;
+	}
+
+	.content_header--npm .content_header__right {
+		float: right;
+	}
+
+	.content_header--npm * + .content_header__right {
+		margin: 0;
+	}
 }
 
 /**
@@ -472,35 +492,4 @@ img {
 	height: 100%;
 	width: 100%;
 	border: 0;
-}
-
-
-/**
- * NPM package header
- */
-.npm_header__top {
-	padding: 0 20%;
-	margin-bottom: 2rem;
-}
-
-* + .npm_header__right {
-	margin-top: 1rem;
-}
-
-@media( min-width: 600px ){
-	.npm_header__top {
-		margin-bottom: 2rem;
-	}
-
-	.npm_header__left {
-		float: left;
-	}
-
-	.npm_header__right {
-		float: right;
-	}
-
-	* + .npm_header__right {
-		margin: 0;
-	}
 }

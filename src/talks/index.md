@@ -8,7 +8,7 @@ documentation: https://github.com/alex-page/harmonograph#readme
 
 ### Names and culture
 
-![Alex talking at the Design System Meetup](https://youtube.com/watch?v=-xAKir02gto)
+![Alex talking at the Design System Meetup v4.0.0](https://youtube.com/watch?v=-xAKir02gto)
 
 I talked at Design System Meetup v4.0.0 about names and culture. I talked about how communication is hard and what we name things affects how well we communicate. 
 
@@ -18,7 +18,7 @@ When building a design system we have to name a lot of things. Sometimes the nam
 
 ### Hard work to make it simple
 
-![Alex and Trevor talking at the Design System Meetup](https://youtube.com/watch?v=ol9t-ERYqFM)
+![Alex and Trevor talking at the Design System Meetup v1.0.0](https://youtube.com/watch?v=ol9t-ERYqFM)
 
 I launched the Australian Government Design System with Trevor Brennan at Australia's first ever Design System Meetup. 
 

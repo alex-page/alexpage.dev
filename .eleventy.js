@@ -9,21 +9,24 @@ const defaultImageRenderer = MarkdownIt.renderer.rules.image;
 // Change the renderer for images that are links to youtube videos
 // https://github.com/markdown-it/markdown-it/blob/master/docs/architecture.md#renderer
 MarkdownIt.renderer.rules.image = function (tokens, idx, options, env, self) {
-	const token  = tokens[idx];
-	const aIndex = token.attrIndex( 'src' );
-	const link   = token.attrs[aIndex][1];
+	const token    = tokens[idx];
+	const srcIndex = token.attrIndex( 'src' );
+	const src      = token.attrs[srcIndex][1];
 
-	// If the link is to a youtube video
-	if ( link.includes( 'youtube.com/watch?' ) ) {
+	// If the src is to a youtube video
+	if ( src.includes( 'youtube.com/watch?' ) ) {
 
-		// Get the video ID from the link
-		let videoId = link.split( 'v=' )[1];
+		// Get the alt text
+		const alt = token.content;
+
+		// Get the video ID from the src
+		let videoId = src.split( 'v=' )[1];
 		if( videoId.indexOf( '&' ) != -1 ) {
 			videoId = videoId.substring(0, ampersandPosition);
 		}
 
 		// Return an embedded video
-		return `<div class="embed-responsive"><iframe src="https://www.youtube.com/embed/${ videoId }" frameborder="0" allowfullscreen></iframe></div>`;
+		return `<div class="embed-responsive"><iframe title="${ alt }" src="https://www.youtube.com/embed/${ videoId }" frameborder="0" allowfullscreen></iframe></div>`;
 	}
 
 	// Return the default

@@ -1,16 +1,11 @@
 {% extends 'page.njk' %}
 
 {% block content_header %}
-<div class="content_header clearfix">
-	{% if page.fileSlug == 'harmonograph' %}
-		<div class="npm_header__top">
-			<div class="harmonograph" id="harmonograph"></div>
-		</div>
-	{% endif %}
-	<div class="npm_header__left">
+<div class="content_header content_header--npm clearfix">
+	<div class="content_header__left">
 		<code>npm install <a href="https://npmjs.com/package/{{npm}}">{{ npm }}</a></code>
 	</div>
-	<div class="npm_header__right">
+	<div class="content_header__right">
 		<a href="https://github.com/alex-page/{{ npm }}#readme">Read documentation</a>
 	</div>
 </div>
