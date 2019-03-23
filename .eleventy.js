@@ -73,7 +73,7 @@ module.exports = ( eleventyConfig ) => {
 		dir: {
 			input: 'src',
 			includes: '_includes',
-			output: 'site'
+			output: 'docs'
 		},
 		templateFormats : ['njk', 'md'],
 		htmlTemplateEngine : false,
