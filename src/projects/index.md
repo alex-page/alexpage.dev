@@ -14,7 +14,7 @@ It was received as a [world class example](https://twitter.com/i/moments/9701194
 
 We created and supported our federated community on [Discourse](http://community.digital.gov.au), [GitHub](https://github.com/govau/design-system-components) and Slack that drove the future direction of the design system.
 
-We continuously maintained, created and enhanced the 25+ components. The components met Web Content Accessibility Guidelines level AA 2.1 and best practice HTML, React, JavaScript, jQuery, CSS and SASS.
+We continuously maintained, created and enhanced the 25+ components. The components met Web Content Accessibility Guidelines (WCAG) level AA 2.1 and best practice HTML, React, JavaScript, jQuery, CSS and SASS.
 
 _See the source code on [GitHub](https://github.com/govau/design-system-components)._
 

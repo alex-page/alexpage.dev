@@ -40,6 +40,6 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^2.0.1",
-		"git-last-commit": "^0.3.0"
+		"last-commit-log": "^2.1.0"
 	}
 }

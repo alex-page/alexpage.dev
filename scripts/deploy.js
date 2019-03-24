@@ -1,9 +1,11 @@
-const GetLastCommit = require( './get-last-commit' );
+// Dependencies
 const GitHubPages = require( "gh-pages" );
+const GitLastCommit = new( require( "last-commit-log" ) )();
 
 
+// Deploy the site
 (async() => {
-	const commitMessage = ( await GetLastCommit() ).subject;
+	const commitMessage = (  await GitLastCommit.getLastCommit() ).subject;
 	const siteDirectory = "site";
 	const deployBranch = "gh-pages";
 
@@ -27,5 +29,4 @@ const GitHubPages = require( "gh-pages" );
 			console.log( `✅ Successfully deployed to GitHub pages: ${ siteDirectory } directory pushed to ${ deployBranch } branch` );
 		}
 	);
-})()
-
+})();
