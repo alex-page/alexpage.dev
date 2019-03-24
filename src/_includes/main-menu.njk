@@ -5,7 +5,7 @@
 	<ul class="menu menu--inline">
 		{%- for landingPage in collections.landingPages -%}
 			<li>
-				<a href={{landingPage.url}} {% if landingPage.url in page.url %}class="active"{% endif %}>{{ landingPage.data.pagetitle }}</a>
+				<a href="{{landingPage.url}}" {% if landingPage.url in page.url %}class="active"{% endif %}>{{ landingPage.data.pagetitle }}</a>
 			</li>
 		{%- endfor -%}
 	</ul>
