@@ -12,6 +12,9 @@ GitHubPages.publish(
 		dotfiles: true,
 	},
 	( error ) => {
-		console.error( `GitHub pages deploy failed: ${ error }` );
+		if( error ) {
+			throw new Error( `GitHub pages deploy failed: ${ error }` );
+		}
+		console.log( 'GitHub pages successfully deployed' );
 	}
 );
