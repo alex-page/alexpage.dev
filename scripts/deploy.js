@@ -17,10 +17,8 @@ GitHubPages.publish(
 	},
 	( error ) => {
 		if( error ) {
-			throw new Error( `❌ GitHub pages deployment failed: ${ siteDirectory } directory to ${ deployBranch } branch\n${ error }` );
+			throw new Error( `❌ Failed to deploy to GitHub pages: ${ siteDirectory } directory failed to push to ${ deployBranch } branch\n${ error }` );
 		}
-		console.log( `✅ GitHub pages deployment successfull: ${ siteDirectory } directory to ${ deployBranch } branch` );
+		console.log( `✅ Successfully deployed to GitHub pages: ${ siteDirectory } directory pushed to ${ deployBranch } branch` );
 	}
 );
-
-// https://twitter.com/aalexpaage/status/1109619279027015680
