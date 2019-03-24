@@ -1,23 +1,12 @@
+const GetLastCommit = require( './get-last-commit' );
 const GitHubPages = require( "gh-pages" );
-const GitLastCommit = require( "git-last-commit" );
-
-const siteDirectory = "site";
-const deployBranch = "gh-pages";
-
-const GetLastCommit = () => {
-	return new Promise((resolve, reject) => {
-		GitLastCommit.getLastCommit(function( error, commit ) {
-			if( error ) {
-				reject( error );
-			}
-
-			resolve( commit );
-		})
-	})
-}
 
 
 (async() => {
+	const commitMessage = ( await GetLastCommit() ).subject;
+	const siteDirectory = "site";
+	const deployBranch = "gh-pages";
+
 	GitHubPages.publish(
 		siteDirectory,
 		{
@@ -29,7 +18,7 @@ const GetLastCommit = () => {
 			},
 			silent: true,
 			dotfiles: true,
-			message: await GetLastCommit().body,
+			message: commitMessage,
 		},
 		( error ) => {
 			if( error ) {
