@@ -35,8 +35,11 @@
 	"dependencies": {
 		"@11ty/eleventy": "^0.7.1",
 		"clean-css": "^4.2.1",
-		"gh-pages": "^2.0.1",
 		"uglify-js": "^3.4.9",
 		"workbox-build": "^4.1.1"
+	},
+	"devDependencies": {
+		"gh-pages": "^2.0.1",
+		"git-last-commit": "^0.3.0"
 	}
 }
