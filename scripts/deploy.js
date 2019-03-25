@@ -13,7 +13,7 @@ const GitLastCommit = new( require( "last-commit-log" ) )();
 		siteDirectory,
 		{
 			branch: deployBranch,
-			repo: `https://${ process.env.GITHUB_PAT }@github.com/alex-page/alex-page.git`,
+			repo: `https://${ process.env.PERSONAL_ACCESS_TOKEN }@github.com/alex-page/alex-page.git`,
 			user: {
 				name: "Alex Page",
 				email: "alex@alexpage.com.au",
