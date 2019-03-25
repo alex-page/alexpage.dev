@@ -6,4 +6,4 @@ documentation: https://github.com/alex-page/harmonograph#readme
 ---
 # Blog
 
-...coming soon ⌨️
+...coming soon ⚡️
