@@ -24,5 +24,5 @@ action "Deploy" {
   uses = "actions/npm@master"
   args = "run deploy"
   needs = ["Build site"]
-  secrets = ["GITHUB_PAT"]
+  secrets = ["PERSONAL_ACCESS_TOKEN"]
 }
