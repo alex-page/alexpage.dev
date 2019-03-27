@@ -5,7 +5,7 @@ const GitLastCommit = new( require( "last-commit-log" ) )();
 
 // Deploy the site
 (async() => {
-	const commitMessage = (  await GitLastCommit.getLastCommit() ).subject;
+	const commitMessage = ( await GitLastCommit.getLastCommit() ).subject;
 	const siteDirectory = "site";
 	const deployBranch = "gh-pages";
 

@@ -1,6 +1,7 @@
 const MarkdownIt = require("markdown-it")();
 const MinifyCss  = require( 'clean-css' );
 const MinifyJS   = require( 'uglify-js' );
+const Fs         = require( 'fs' );
 
 
 // Copy the default image renderer
@@ -62,7 +63,18 @@ module.exports = ( eleventyConfig ) => {
 
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
-		open: 'local'
+		open: 'local',
+		callbacks: {
+			ready: function(err, bs) {
+				const content_404 = Fs.readFileSync( 'site/404.html' );
+
+				bs.addMiddleware("*", (req, res) => {
+					// Provides the 404 content without redirect.
+					res.write(content_404);
+					res.end();
+				});
+			}
+		}
 	});
 
 	// Apply the custom renderer
@@ -77,6 +89,6 @@ module.exports = ( eleventyConfig ) => {
 		},
 		templateFormats : ['njk', 'md'],
 		htmlTemplateEngine : false,
-		markdownTemplateEngine: false,
+		markdownTemplateEngine: 'njk',
 	};
 };
