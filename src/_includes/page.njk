@@ -24,7 +24,7 @@
 	<meta property="og:title" content="Alex Page">
 	<meta property="og:site_name" content="Alex Page">
 	<meta property="og:description" content="Modern technology and thoughtful design - Alex Page">
-	<meta name="Description" content="I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.">
+	<meta name="Description" content="{% if summary %}{{ summary }}{% else %}I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.{% endif %}">
 	<meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 	<meta property="og:url" content="http://alexpage.com.au">
 	<title>{{ pagetitle }} - Alex Page</title>
@@ -43,22 +43,28 @@
 
 		<!-- The main section header -->
 		{% block content_header %}
-		<div class="content_header content_header--harmonograph">
-			<div id="harmonograph"></div>
-		</div>
+		<div class="harmonograph"><div id="harmonograph"></div></div>
 		{% endblock %}
 
 		<!-- The main content area -->
 		<main class="content" id="content">
 			<div class="content__inner">
+				<!-- Home page -->
 				{% if page.fileSlug == '' %}
 					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
+					<h1>Alex Page</h1>
+				{% else %}
+					<h1>{{pagetitle}}</h1>
+				{% endif %}
+				{% if summary %}
+					<blockquote>{{ summary }}</blockquote>
 				{% endif %}
 				{% block main %}
-				{{ content | safe }}
+					{{ content | safe }}
 				{% endblock %}
 			</div>
 		</main>
+		{% block listing %}{% endblock %}
 
 		<!-- The footer -->
 		<footer>

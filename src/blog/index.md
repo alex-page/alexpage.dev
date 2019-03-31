@@ -1,9 +1,7 @@
 ---
 layout: page
 pagetitle: Blog
-tags: landingPages
+tags: mainMenuItems
 documentation: https://github.com/alex-page/harmonograph#readme
 ---
-# Blog
-
-...coming soon ⚡️
+...coming soon ⚡

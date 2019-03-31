@@ -1,0 +1,14 @@
+{% extends 'page.njk' %}
+
+{% block listing %}
+	<ul class="content-list content-list--{{listing}}">
+	{%- for item in collections[ listing ] | reverse -%}
+		<li>
+			<a class="card" href="{{ item.url }}">
+				<h2>{{ item.data.pagetitle }}</h2>
+				<p>{{ item.data.summary | safe }}</p>
+			</a>
+		</li>
+	{%- endfor -%}
+	</ul>
+{% endblock %}

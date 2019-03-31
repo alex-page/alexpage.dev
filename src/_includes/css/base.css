@@ -97,6 +97,10 @@ main {
 	padding: 1.5rem 1.5rem 3rem 1.5rem;
 }
 
+.embed-responsive + main {
+	margin-top: 2rem;
+}
+
 @media ( min-width: 600px ) {
 	body {
 		padding: 1rem 1.5rem 5rem 1.5rem;
@@ -243,14 +247,47 @@ a:focus {
 
 
 /**
- * Menu list
+ * List reset
  */
-.menu {
+.menu,
+.content-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
+/**
+ * Content list
+ */
+.content-list {
+	display: grid;
+	grid-column-gap: 1.5rem;
+	grid-template-columns: 1fr;
+}
+
+
+.content-list h2 {
+	font-size: 1.4rem;
+}
+
+.content-list li {
+	display: grid;
+}
+
+@media ( min-width: 600px ) {
+	.content-list {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.content-list h2 {
+		font-size: 1.8rem;
+	}
+}
+
+
+/**
+ * Menu inline
+ */
 .menu--inline li {
 	display: inline-block;
 }
@@ -259,17 +296,18 @@ a:focus {
 	margin-left: 0.25rem;
 }
 
-@media ( min-width: 600px ) {
-	.menu--inline li + li {
-		margin-left: 0.5rem;
-	}
+
+.menu--inline li + li {
+	margin-left: 0.5rem;
 }
+
 
 /**
  * Main menu
  */
 .main-menu {
 	font-size: 0.95rem;
+	margin-bottom: 7rem;
 }
 
 @media ( min-width: 600px ) {
@@ -330,44 +368,18 @@ footer .social-menu + p {
 /**
  * Content header
  */
-.content_header {
-	margin-top: 3rem;
-	min-height: 2rem;
-	padding-bottom: 1rem;
-}
-
-.content_header--harmonograph {
+.harmonograph {
 	position: relative;
 }
 
-.content_header--harmonograph #harmonograph {
+.harmonograph #harmonograph {
 	position: absolute;
 	right: -1rem;
-	top: 0;
+	top: -5rem;
 	max-width: 15rem;
 	width: 50%;
 }
 
-/**
- * NPM package header
- */
- .content_header--npm * + .content_header__right {
-	margin-top: 1rem;
-}
-
-@media( min-width: 600px ){
-	.content_header--npm .content_header__left {
-		float: left;
-	}
-
-	.content_header--npm .content_header__right {
-		float: right;
-	}
-
-	.content_header--npm * + .content_header__right {
-		margin: 0;
-	}
-}
 
 /**
  * Skip link
@@ -485,7 +497,7 @@ img {
 	padding: 0;
 	padding-bottom: 56.25%;
 	overflow: hidden;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 }
 
 .embed-responsive iframe {
@@ -496,3 +508,46 @@ img {
 	width: 100%;
 	border: 0;
 }
+
+/**
+ * Card
+ */
+.card {
+	margin-top: 1.5rem;
+	padding: 1.5rem;
+	display: block;
+	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
+	background: rgba( 0, 0, 0, 0.4 );
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-radius: 0.5rem;
+	color: #fff;
+	position: relative;
+}
+
+.card:after {
+	content: " ";
+	display: block;
+	background: var(--action-color);
+	width: 5rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0;
+	right: 2rem;
+}
+
+.card:hover {
+	text-decoration: none;
+}
+
+.card:hover h2 {
+	text-decoration: underline;
+}
+
+@media ( min-width: 600px ) {
+	.card {
+		margin-top: 1.5rem;
+		padding: 2rem;
+	}
+}
+
