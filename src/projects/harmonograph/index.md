@@ -1,7 +1,7 @@
 ---
 layout: page--project
 pagetitle: Harmonograph
-tags: project
+tags: projects
 date: 2018-03-24
 summary: Draw beautiful randomised lissajous curves in the browser.
 ---

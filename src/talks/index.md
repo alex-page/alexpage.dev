@@ -1,6 +1,6 @@
 ---
 layout: page--listing
-listing: talk
+listing: talks
 pagetitle: Talks
 tags: mainMenuItems
 documentation: https://github.com/alex-page/harmonograph#readme

@@ -1,7 +1,7 @@
 ---
 layout: page--talk
 pagetitle: Names and culture
-tags: talk
+tags: talks
 date: 2018-09-11
 summary: Communication is hard and what we name things affects how well we communicate.
 video:

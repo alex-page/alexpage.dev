@@ -93,7 +93,8 @@ header {
 	padding-top: 1rem;
 }
 
-main {
+.content__inner,
+.card {
 	padding: 1.5rem 1.5rem 3rem 1.5rem;
 }
 
@@ -110,7 +111,8 @@ main {
 		padding-top: 2rem;
 	}
 
-	main {
+	.content__inner,
+	.card {
 		padding: 2rem 2rem 4rem 2rem;
 	}
 }
@@ -148,11 +150,6 @@ header {
 }
 
 .content__inner {
-	position: relative;
-	z-index: 5;
-}
-
-main {
 	border-radius: 5px;
 
 	box-shadow: 0 0 5rem 0.5rem rgba( 0, 0, 0, 0.2 );
@@ -514,7 +511,6 @@ img {
  */
 .card {
 	margin-top: 1.5rem;
-	padding: 1.5rem;
 	display: block;
 	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
 	background: rgba( 0, 0, 0, 0.4 );
@@ -547,7 +543,5 @@ img {
 @media ( min-width: 600px ) {
 	.card {
 		margin-top: 1.5rem;
-		padding: 2rem;
 	}
 }
-

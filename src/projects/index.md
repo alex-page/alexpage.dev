@@ -1,6 +1,6 @@
 ---
 layout: page--listing
-listing: project
+listing: projects
 pagetitle: Projects
 tags: mainMenuItems
 documentation: https://github.com/alex-page/harmonograph#readme

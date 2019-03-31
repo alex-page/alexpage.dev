@@ -54,6 +54,15 @@
 					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
 					<h1>Alex Page</h1>
 				{% else %}
+					{# {% if page.url | parentslug %}
+						<ul class="menu menu--inline">
+							<li>
+								<a href="/{{ page.url | parentslug }}">
+									{{ page.url | parentslug | capitalize }}
+								</a>
+							</li>
+						</ul>
+					{% endif %} #}
 					<h1>{{pagetitle}}</h1>
 				{% endif %}
 				{% if summary %}
@@ -62,9 +71,16 @@
 				{% block main %}
 					{{ content | safe }}
 				{% endblock %}
+				{% if page.url | parentslug %}
+				<p>
+					<a class="direction-link direction-link--left" href="/{{ page.url | parentslug }}">
+						View more {{ 'posts' if page.url | parentslug === 'blog' else page.url | parentslug }}
+					</a>
+				</p>
+				{% endif %}
 			</div>
+			{% block listing %}{% endblock %}
 		</main>
-		{% block listing %}{% endblock %}
 
 		<!-- The footer -->
 		<footer>

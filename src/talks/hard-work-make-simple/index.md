@@ -1,7 +1,7 @@
 ---
 layout: page--talk
 pagetitle: Hard work to make it simple
-tags: talk
+tags: talks
 date: 2018-02-28
 summary: Launching the Australian Government Design System with Trevor Brennan at Australia's first ever Design System Meetup.
 video:

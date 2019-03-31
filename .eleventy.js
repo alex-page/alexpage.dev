@@ -28,6 +28,18 @@ module.exports = ( eleventyConfig ) => {
 		return minified.code;
 	});
 
+	/**
+	 * Get parent page slug
+	 */
+	eleventyConfig.addFilter( "parentslug", ( value ) => {
+		const urlSplit = value.split( '/' );
+		if( urlSplit.length <= 3 ){
+			return;
+		}
+
+		return `${ urlSplit[ 1 ]}`;
+	});
+
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
 		open: 'local',
