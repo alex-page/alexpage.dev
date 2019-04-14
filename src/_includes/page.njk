@@ -50,21 +50,14 @@
 		<main class="content" id="content">
 			<div class="content__inner">
 				<!-- Home page -->
-				{% if page.fileSlug == '' %}
+				{% block page_title %}
+					{% if page.fileSlug == '' %}
 					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
 					<h1>Alex Page</h1>
-				{% else %}
-					{# {% if page.url | parentslug %}
-						<ul class="menu menu--inline">
-							<li>
-								<a href="/{{ page.url | parentslug }}">
-									{{ page.url | parentslug | capitalize }}
-								</a>
-							</li>
-						</ul>
-					{% endif %} #}
-					<h1>{{pagetitle}}</h1>
-				{% endif %}
+					{% else %}
+					<h1>{{ pagetitle }}</h1>
+					{% endif %}
+				{% endblock %}
 				{% if summary %}
 					<blockquote>{{ summary }}</blockquote>
 				{% endif %}

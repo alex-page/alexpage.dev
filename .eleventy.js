@@ -1,5 +1,6 @@
 const MinifyCss  = require( 'clean-css' );
 const MinifyJS   = require( 'uglify-js' );
+const Got        = require( 'got' );
 const Fs         = require( 'fs' );
 
 module.exports = ( eleventyConfig ) => {
@@ -40,17 +41,50 @@ module.exports = ( eleventyConfig ) => {
 		return `${ urlSplit[ 1 ]}`;
 	});
 
+	/**
+	 * Get the npm package downloads
+	 */
+	eleventyConfig.addNunjucksAsyncFilter( "packageDownloads", async( packageName, callback ) => {
+		try {
+			const url = `https://api.npmjs.org/downloads/point/last-week/${ packageName }`;
+			const { body } = await Got( url );
+			const downloads = JSON.parse( body ).downloads;
+			callback( null, downloads );
+		}
+		catch( error ){
+			callback( error );
+		}
+	});
+
+	/**
+	 * Get the GitHub stars
+	 */
+	eleventyConfig.addNunjucksAsyncFilter( "githubStars", async( repoName, callback ) => {
+		try {
+			const url = `https://api.github.com/repos/${ repoName }`;
+			const { body } = await Got( url );
+			const totalStars = JSON.parse( body ).stargazers_count;
+			callback( null, totalStars );
+		}
+		catch( error ){
+			callback( error );
+		}
+	});
+
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
 		open: 'local',
 		callbacks: {
-			ready: function(err, bs) {
-				const content_404 = Fs.readFileSync( 'site/404.html' );
+			ready: function( error, browserSync ) {
+				if( error ){
+					throw new Error( error );
+				}
 
-				bs.addMiddleware("*", (req, res) => {
-					// Provides the 404 content without redirect.
-					res.write(content_404);
-					res.end();
+				// Provides the 404 content without redirect.
+				const content_404 = Fs.readFileSync( 'site/404.html' );
+				browserSync.addMiddleware("*", ( request, response ) => {
+					response.write(content_404);
+					response.end();
 				});
 			}
 		}
@@ -64,7 +98,7 @@ module.exports = ( eleventyConfig ) => {
 			output: 'site'
 		},
 		templateFormats : ['njk', 'md'],
-		htmlTemplateEngine : false,
+		htmlTemplateEngine : 'njk',
 		markdownTemplateEngine: 'njk',
 	};
 };

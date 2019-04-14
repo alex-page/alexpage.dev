@@ -1,12 +1,9 @@
 ---
 layout: page
-pagetitle: Blog
+pagetitle:  GitHub actions for npm
 tags: blog
+summary: Version control, deploy and host your website with GitHub
 ---
-# GitHub actions for npm
-
-> Version control, deploy and host your website
-
 Since the release of [GitHub actions](https://github.com/features/actions), I have been exploring ways I could reduce my usage of third party software. I was starting to lose track of the amount of programs I gave OAuth access to my GitHub account.
 
 ## npm packages
