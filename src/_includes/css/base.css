@@ -51,6 +51,9 @@ body {
 	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.5;
+
+	padding: 1rem 1rem 5rem 1rem;
+	margin: 0;
 }
 
 /* Stop the harmonograph from overflowing */
@@ -63,6 +66,7 @@ body {
 @media ( min-width: 600px ) {
 	body {
 		font-size: var( --base-font-size );
+		padding: 1rem 1.5rem 5rem 1.5rem;
 	}
 }
 
@@ -81,42 +85,9 @@ body {
 }
 
 
-/*
- * Layout
+/**
+ * Footer
  */
-body {
-	padding: 1rem 1rem 5rem 1rem;
-	margin: 0;
-}
-
-header {
-	padding-top: 1rem;
-}
-
-.content__inner,
-.card {
-	padding: 1.5rem 1.5rem 3rem 1.5rem;
-}
-
-.embed-responsive + main {
-	margin-top: 2rem;
-}
-
-@media ( min-width: 600px ) {
-	body {
-		padding: 1rem 1.5rem 5rem 1.5rem;
-	}
-
-	header {
-		padding-top: 2rem;
-	}
-
-	.content__inner,
-	.card {
-		padding: 2rem 2rem 4rem 2rem;
-	}
-}
-
 footer {
 	padding: 0 0 2rem 0;
 	margin-top: 4rem;
@@ -127,8 +98,15 @@ footer {
  * Header
  */
 header {
+	padding-top: 1rem;
 	position: relative;
 	z-index: 1;
+}
+
+@media ( min-width: 600px ){
+	header {
+		padding-top: 2rem;
+	}
 }
 
 .header__left {
@@ -147,13 +125,6 @@ header {
 	position: relative;
 	max-width: var( --page-width );
 	margin: 0 auto;
-}
-
-.content__inner {
-	border-radius: 5px;
-
-	box-shadow: 0 0 5rem 0.5rem rgba( 0, 0, 0, 0.2 );
-	background: rgba( 0, 0, 0, 0.4 );
 }
 
 
@@ -238,8 +209,8 @@ a:focus {
 }
 
 *:focus {
-	outline: solid 2px var( --focus-color );
-	outline-offset: 2px;
+	outline: solid 3px var( --focus-color );
+	outline-offset: 4px;
 }
 
 
@@ -506,11 +477,16 @@ img {
 	border: 0;
 }
 
+.embed-responsive + main {
+	margin-top: 2rem;
+}
+
 /**
  * Card
  */
 .card {
 	margin-top: 1.5rem;
+	padding: 1.5rem 1.5rem 3rem 1.5rem;
 	display: block;
 	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
 	background: rgba( 0, 0, 0, 0.4 );
@@ -519,6 +495,7 @@ img {
 	border-radius: 0.5rem;
 	color: #fff;
 	position: relative;
+	transition: transform 0.1s ease-in-out;
 }
 
 .card:after {
@@ -532,8 +509,9 @@ img {
 	right: 2rem;
 }
 
-.card:hover {
+a.card:hover {
 	text-decoration: none;
+	transform: scale( 1.02 );
 }
 
 .card:hover h2 {
@@ -543,5 +521,6 @@ img {
 @media ( min-width: 600px ) {
 	.card {
 		margin-top: 1.5rem;
+		padding: 2rem 2rem 4rem 2rem;
 	}
 }
