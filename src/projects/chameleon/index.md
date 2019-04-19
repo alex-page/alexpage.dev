@@ -5,6 +5,7 @@ tags: projects
 date: 2018-09-21
 summary: Customise and share colour palettes of the Australian Government Design System.
 github: govau/chameleon
+emoji: 🦎
 ---
 The user interface of Chameleon allows users to choose colours and palettes. They can then view their selection with different types of vision impairment. As the user changes the colours the template renders again in real time.
 

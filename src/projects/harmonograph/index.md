@@ -6,6 +6,7 @@ date: 2018-03-24
 summary: Draw beautiful randomised lissajous curves in the browser.
 github: alex-page/harmonograph
 npm: harmonograph
+emoji: 🖌
 ---
 A Harmonograph is a swinging platform where a pen attached to a pendulum, draws intricate shapes and patterns on paper.
 

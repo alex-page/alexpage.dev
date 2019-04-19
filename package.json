@@ -16,8 +16,8 @@
 	],
 	"scripts": {
 		"build:sw": "node scripts/sw-build",
-		"build": "eleventy && npm run build:sw",
-		"watch": "eleventy --serve",
+		"build": "node fetch-data && eleventy && npm run build:sw",
+		"watch": "node fetch-data && eleventy --serve",
 		"deploy": "node scripts/deploy"
 	},
 	"engines": {
@@ -35,6 +35,7 @@
 	"dependencies": {
 		"@11ty/eleventy": "^0.8.2",
 		"clean-css": "^4.2.1",
+		"globby": "^9.2.0",
 		"got": "^9.6.0",
 		"uglify-js": "^3.4.9",
 		"workbox-build": "^4.1.1"

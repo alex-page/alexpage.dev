@@ -1,7 +1,7 @@
 {% extends 'page.njk' %}
 
 {% block listing %}
-	<ul class="content-list content-list--{{listing}}">
+	<ul class="list card-list">
 	{%- for item in collections[ listing ] | reverse -%}
 		<li>
 			<a class="card" href="{{ item.url }}">

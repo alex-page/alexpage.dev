@@ -2,9 +2,7 @@
 
 {% block page_title %}
 	<ul class="menu menu--inline">
-		<li>
-			{{ github | githubStars }} stars
-		</li>
+		<li>{{ data.stars[ github ] }} stars</li>
 		<li>
 			<a href="https://github.com/{{ github }}" target="_blank">GitHub</a>
 		</li>
@@ -12,7 +10,7 @@
 		<li>
 			<a href="https://npmjs.org/package/{{npm}}"><code>npm i {{npm}}</code></a>
 		</li>
-		<li>{{ npm | packageDownloads }} downloads this week</li>
+		<li>{{ data.downloads[ npm ] }} downloads this week</li>
 		{% endif %}
 	</ul>
 	<h1>{{ pagetitle }}</h1>
