@@ -51,12 +51,7 @@
 			<div class="card">
 				<!-- Home page -->
 				{% block page_title %}
-					{% if page.fileSlug == '' %}
-					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
-					<h1>Alex Page</h1>
-					{% else %}
-					<h1>{{ pagetitle }}</h1>
-					{% endif %}
+				<h1>{{ pagetitle }}</h1>
 				{% endblock %}
 				{% if summary %}
 					<blockquote>{{ summary }}</blockquote>
@@ -64,15 +59,38 @@
 				{% block main %}
 					{{ content | safe }}
 				{% endblock %}
-				{% if page.url | parentslug %}
-				<p>
-					<a class="direction-link direction-link--left" href="/{{ page.url | parentslug }}">
-						View more {{ 'posts' if page.url | parentslug === 'blog' else page.url | parentslug }}
-					</a>
-				</p>
-				{% endif %}
 			</div>
-			{% block listing %}{% endblock %}
+			{% block aftermain %}{% endblock %}
+			{% block listing %}
+				<ul class="list card-list">
+				{%- for item in collections.featured | reverse -%}
+					<li>
+						<a class="card" href="{{ item.url }}">
+							<ul class="clearfix list list--inline list--small">
+								<li>Featured {{ item.data.tags | tagSection }}</li>
+								{%if 'projects' in item.data.tags %}
+								<li>
+									<img class="icon icon--small" src="/assets/icons/star.svg" alt="star">
+									<span>{{ data.stars[ item.data.github ] | prettyNumber }}</span>
+									<span class="sr-only"> stars</span>
+								</li>
+								{% if item.data.npm %}
+								<li>
+									<img class="icon icon--small" src="/assets/icons/download.svg" alt="star">
+									<span>{{ data.downloads[ item.data.npm ] | prettyNumber }}</span>
+									<span class="sr-only"> downloads last year</span>
+								</li>
+								{% endif %}
+								{% endif %}
+							</ul>
+
+							<h2>{{ item.data.pagetitle }}</h2>
+							<p>{{ item.data.summary }}</p>
+						</a>
+					</li>
+				{%- endfor -%}
+				</ul>
+			{% endblock %}
 		</main>
 
 		<!-- The footer -->

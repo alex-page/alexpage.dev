@@ -6,3 +6,9 @@
 	<iframe src="https://youtube.com/embed/{{ video.id }}" title="{{ video.alt }}" frameborder="0" allowfullscreen></iframe>
 </div>
 {% endblock %}
+
+{% block aftermain %}
+<div class="card">
+	<a class="back-to-page" href="/{{ tags | tagTitle }}">← View more {{ tags | tagTitle }}</a>
+</div>
+{% endblock %}

@@ -1,8 +1,8 @@
-<div class="main-menu">
+<div class="main-menu clearfix">
 	<a class="main-menu__logo{% if page.url == "/" %} active{% endif %}" href="/">
 		<img alt="logo" src="/assets/img/logo.svg" />Alex Page
 	</a>
-	<ul class="menu menu--inline">
+	<ul class="list list--inline clearfix">
 		{%- for menuItem in collections.mainMenuItems -%}
 			<li>
 				<a href="{{menuItem.url}}" {% if menuItem.url in page.url %}class="active"{% endif %}>{{ menuItem.data.pagetitle }}</a>

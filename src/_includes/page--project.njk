@@ -1,17 +1,34 @@
 {% extends 'page.njk' %}
 
 {% block page_title %}
-	<ul class="menu menu--inline">
-		<li>{{ data.stars[ github ] }} stars</li>
-		<li>
-			<a href="https://github.com/{{ github }}" target="_blank">GitHub</a>
-		</li>
-		{% if npm %}
-		<li>
-			<a href="https://npmjs.org/package/{{npm}}"><code>npm i {{npm}}</code></a>
-		</li>
-		<li>{{ data.downloads[ npm ] }} downloads this week</li>
-		{% endif %}
-	</ul>
-	<h1>{{ pagetitle }}</h1>
+<ul class="clearfix list list--small list--inline">
+	<li>
+		<img class="icon icon--small" src="/assets/icons/star.svg" alt="star">
+		{{ data.stars[ github ] | prettyNumber }}
+		<span class="sr-only"> stars</span>
+	</li>
+	{% if npm %}
+	<li>
+		<img class="icon icon--small" src="/assets/icons/download.svg" alt="download">
+		{{ data.downloads[ npm ] | prettyNumber }}
+		<span class="sr-only"> downloads last year</span>
+	</li>
+	<li>
+		<code>npm i {{ npm }}</code>
+	</li>
+	{% endif %}
+	<li>
+		<a href="https://github.com/{{ github }}" target="_blank">
+			<img class="icon icon--small" src="/assets/icons/github.svg" alt="github">
+			{{ github }}
+		</a>
+	</li>
+</ul>
+<h1>{{ pagetitle }}</h1>
+{% endblock %}
+
+{% block aftermain %}
+<div class="card">
+	<a class="back-to-page" href="/{{ tags | tagTitle }}">← See more {{ tags | tagTitle }}</a>
+</div>
 {% endblock %}

@@ -1,10 +1,11 @@
 ---
 layout: page--project
 pagetitle: Australian Government Design System
-tags: projects
+tags: [ 'projects', 'featured' ]
 date: 2017-10-08
 summary: The Australian Government Design System created to align 1000+ websites over 200+ organisations.
 github: govau/design-system-components
+npm: "@gov.au/core"
 emoji: 🛠
 ---
 As the Lead User Experience Engineer I worked in a team to launch the [Australian Government Design System](https://designsystem.gov.au) to align 1000+ websites over 200+ organisations.

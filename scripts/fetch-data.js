@@ -11,7 +11,7 @@ const SETTINGS = {
 	dataFile: 'src/_data/data.json',
 	projects: 'src/projects/*/index.md',
 	githubApi: 'https://api.github.com/repos/',
-	npmApi: 'https://api.npmjs.org/downloads/point/last-week/',
+	npmApi: 'https://api.npmjs.org/downloads/point/last-year/',
 }
 
 
@@ -22,6 +22,7 @@ const FetchAll = async( url, ids ) => {
 				return new Promise( async( resolve, reject ) => {
 					try {
 						const { body } = await Got( `${ url }${ id }`, { json: true });
+						console.log( `✅ Got data from: ${ url }${ id }` );
 						resolve( body );
 					}
 					catch( error ) {

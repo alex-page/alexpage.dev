@@ -14,7 +14,82 @@ iframe::selection {
 	background-color: rgba( 61, 252, 179, 0.75 );
 }
 
+
+/**
+ * Skip link
+ */
+ .skip-link {
+	padding: 0.5rem 1rem;
+	position: absolute;
+	z-index: 100;
+}
+
+.skip-link,
+.skip-link:focus {
+	background-color: var( --action-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:hover {
+	background-color: var( --text-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:focus {
+	width: auto;
+	height: auto;
+	clip: auto;
+	overflow: visible;
+}
+
 /* Gradient background */
 .gradient-bg {
 	background: linear-gradient( to top right, var( --bg-color-shade ), var( --bg-color ) );
 }
+
+/* Card */
+.card {
+	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
+	border-radius: 0.5rem;
+}
+
+a.card {
+	transition: transform 0.1s ease-in-out;
+}
+
+a.card:hover {
+	text-decoration: none;
+	transform: scale( 1.02 );
+}
+
+a.card:hover h2 {
+	text-decoration: underline;
+}
+
+
+.card-list .card:after {
+	content: " ";
+	display: block;
+	background: var(--action-color);
+	width: 5rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0;
+	right: 2rem;
+}
+
+
+/**
+ * Icon
+ */
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: text-bottom;
+}
+
+.icon--small {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+

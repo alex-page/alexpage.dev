@@ -1,6 +1,10 @@
-const MinifyCss  = require( 'clean-css' );
-const MinifyJS   = require( 'uglify-js' );
-const Fs         = require( 'fs' );
+// Dependencies
+const PrettyNumber = require( 'number-abbreviate' );
+const MinifyCss        = require( 'clean-css' );
+const MinifyJS         = require( 'uglify-js' );
+
+// Local dependencies
+const Fs               = require( 'fs' );
 
 module.exports = ( eleventyConfig ) => {
 	/**
@@ -29,15 +33,27 @@ module.exports = ( eleventyConfig ) => {
 	});
 
 	/**
-	 * Get parent page slug
+	 * Get the parent page section
 	 */
-	eleventyConfig.addFilter( "parentslug", ( value ) => {
-		const urlSplit = value.split( '/' );
-		if( urlSplit.length <= 3 ){
-			return;
-		}
+	eleventyConfig.addFilter( "tagSection", ( tags ) => {
+		let title = tags.filter( tag => tag !== 'featured' )
+			.map( tag => tag[ tag.length - 1 ] === 's' ? tag.slice(0, -1) : tag )
+			.join( ' ' );
+		return title;
+	});
 
-		return `${ urlSplit[ 1 ]}`;
+	/**
+	 * Get the current listing group
+	 */
+	eleventyConfig.addFilter( "tagTitle", ( tags ) => {
+		return tags.filter( tag => tag !== 'featured' ).join( ' ' );
+	});
+
+	/**
+	 * Return number as k
+	 */
+	eleventyConfig.addFilter( "prettyNumber", ( number ) => {
+		return PrettyNumber( number );
 	});
 
 	// Adjust default browserSync config
