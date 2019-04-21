@@ -412,6 +412,15 @@ code {
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.25rem;
 	font-weight: 100;
+
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+
+	tab-size: 2;
+
+	hyphens: none;
 }
 
 .content pre {

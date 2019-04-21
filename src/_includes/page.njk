@@ -62,7 +62,7 @@
 					</div>
 				{% endblock %}
 			</div>
-			{% block aftermain %}{% endblock %}
+			{% block after_main %}{% endblock %}
 			{% block listing %}
 				<ul class="list card-list">
 				{%- for item in collections.featured | reverse -%}
@@ -106,5 +106,6 @@
 	<style>{{ extracss | cssmin | safe }}</style>
 	{% set extrajs %}{% include 'js/extra.js' %}{% endset %}
 	<script>{{ extrajs | jsmin | safe }}</script>
+	{%block page_end %}{% endblock %}
 </body>
 </html>

@@ -1,5 +1,5 @@
 // Dependencies
-const PrettyNumber = require( 'number-abbreviate' );
+const PrettyNumber     = require( 'number-abbreviate' );
 const MinifyCss        = require( 'clean-css' );
 const MinifyJS         = require( 'uglify-js' );
 

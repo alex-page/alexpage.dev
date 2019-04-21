@@ -48,7 +48,7 @@ Once you have the file created we need to add a workflow. To create workflow we 
 
 A push event is ran when a push to a repository branch is made. Branch pushes and repository tag pushes also trigger webhook push events.
 
-```sh filename:main.workflow
+```bash
 workflow "Build, test and publish on master" {
   resolves = ["Test"]
   on = "push"
@@ -66,7 +66,7 @@ Now that we have a workflow created we can create our actions. Actions are [dock
 - The docker container: **[actions/npm@master](https://github.com/actions/npm)**
 - The arguments to pass to the container: **install**
 
-```sh filename:main.workflow
+```bash
 workflow "Build, test and publish on master" {
   resolves = ["Test"]
   on = "push"
@@ -93,11 +93,10 @@ We now have a new workflow that runs for every push into the repository. It will
 
 ## Publishing when pushed to master
 
-Lets add some more actions for install, test and filtering for the master branch. We will use the [actions/bin/filter@master](https://github.com/actions/bin/tree/master/filter) to make sure we are in the master branch before running the publish action. The publish action will need a secret `NPM_AUTH_TOKEN` to publish to the NPM registry, you can get an [OAUTH token here](https://docs.npmjs.com/creating-and-viewing-authentication-tokens).
+Lets add some more actions for install, test and filtering for the master branch. We will use the [actions/bin/filter@master](https://github.com/actions/bin/tree/master/filter) to make sure we are in the master branch before running the publish action. The publish action will need a secret `NPM_AUTH_TOKEN` to publish to the NPM registry, you can [create an npm token here](https://docs.npmjs.com/creating-and-viewing-authentication-tokens).
 
-Lets update our workflow to include filtering and publishing:
-
-```sh
+Lets update our workflow to include filtering and publishing.
+```bash
 workflow "Build, test and publish on master" {
   resolves = ["Publish"]
   on = "push"
