@@ -10,7 +10,7 @@ Previously I was the Lead User Experience Engineer on the [Australian Government
 
 # Get started
 
-To install locally run make sure you have `nodejs` and `npm` installed. Then run:
+To install locally run make sure you have `nodejs` and `npm` installed locally. Then run:
 ```
 npm install
 ```
