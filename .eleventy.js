@@ -83,7 +83,7 @@ module.exports = ( eleventyConfig ) => {
 			output: 'site'
 		},
 		templateFormats : ['njk', 'md'],
-		htmlTemplateEngine : false,
-		markdownTemplateEngine: false,
+		htmlTemplateEngine : 'njk',
+		markdownTemplateEngine: 'njk',
 	};
 };

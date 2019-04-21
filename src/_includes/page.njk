@@ -57,7 +57,9 @@
 					<blockquote>{{ summary }}</blockquote>
 				{% endif %}
 				{% block main %}
-					{{ content | safe }}
+					<div class="content-area">
+						{{ content | safe }}
+					</div>
 				{% endblock %}
 			</div>
 			{% block aftermain %}{% endblock %}

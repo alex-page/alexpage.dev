@@ -46,6 +46,18 @@ img {
 	max-width: 100%;
 }
 
+.content-area {
+	margin-top: 2rem;
+}
+
+.content-area img {
+	border-radius: 0.25rem;
+	width: 40rem;
+	margin: 2rem auto;
+	display: block;
+	box-shadow: 0 0 2rem 0.2rem rgba( 0, 0, 0, 0.2 );
+}
+
 /* Stop the harmonograph from overflowing */
 html {
 	max-width: 100%;
@@ -462,9 +474,7 @@ pre code {
 	position: relative;
 }
 
-.card * + h2 {
-	margin-top: 1rem;
-}
+
 
 main > .card > .list--inline > li {
 	float: none;
@@ -514,6 +524,10 @@ a.card {
 
 .card-list h2 {
 	font-size: 1.4rem;
+}
+
+.card-list * + h2 {
+	margin-top: 1rem;
 }
 
 .card-list > li {
