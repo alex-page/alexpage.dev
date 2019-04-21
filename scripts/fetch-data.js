@@ -8,7 +8,8 @@ const Fs = require( 'fs' ).promises;
 
 // Settings
 const SETTINGS = {
-	dataFile: 'src/_data/data.json',
+	dataDir: 'src/_data/',
+	dataFile: 'data.json',
 	projects: 'src/projects/*/index.md',
 	githubApi: 'https://api.github.com/repos/',
 	npmApi: 'https://api.npmjs.org/downloads/point/last-year/',
@@ -71,6 +72,14 @@ const FindIds = async( idglob ) => {
 	try {
 		const { githubRepos, npmPackages } = await FindIds( SETTINGS.projects );
 
+		// Create the directory for the repos if it doesn't exist
+		try {
+			await Fs.stat( SETTINGS.dataDir );
+		}
+		catch( error ){
+			await Fs.mkdir( SETTINGS.dataDir );
+		}
+
 		const stars = {};
 		const downloads = {};
 		( await FetchAll( SETTINGS.npmApi, npmPackages ) )
@@ -81,8 +90,8 @@ const FindIds = async( idglob ) => {
 
 		const result = JSON.stringify({ stars, downloads }, null, 2 );
 
-		await Fs.writeFile( SETTINGS.dataFile, result );
-		console.log( `🤖 Generated ${ SETTINGS.dataFile }` );
+		await Fs.writeFile( `${ SETTINGS.dataDir }${ SETTINGS.dataFile }`, result );
+		console.log( `🤖 Generated ${ SETTINGS.dataDir }${ SETTINGS.dataFile }` );
 	}
 	catch( error ){
 		console.error( error );
