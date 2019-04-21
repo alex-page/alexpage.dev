@@ -35,6 +35,7 @@
 	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
 	"dependencies": {
 		"@11ty/eleventy": "^0.8.2",
+		"@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
 		"clean-css": "^4.2.1",
 		"globby": "^9.2.0",
 		"got": "^9.6.0",

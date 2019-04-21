@@ -2,6 +2,7 @@
 const PrettyNumber     = require( 'number-abbreviate' );
 const MinifyCss        = require( 'clean-css' );
 const MinifyJS         = require( 'uglify-js' );
+const inclusiveLang    = require( '@11ty/eleventy-plugin-inclusive-language' );
 
 // Local dependencies
 const Fs               = require( 'fs' );
@@ -74,6 +75,9 @@ module.exports = ( eleventyConfig ) => {
 			}
 		}
 	});
+
+	// Add inclusive language plugin
+	eleventyConfig.addPlugin( inclusiveLang );
 
 	// The configuration object ( optional )
 	return {
