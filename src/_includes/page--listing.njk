@@ -1,0 +1,32 @@
+{% extends 'page.njk' %}
+
+{% block listing %}
+	<ul class="list card-list">
+	{%- for item in collections[ listing ] | reverse -%}
+		<li>
+			<a class="card" href="{{ item.url }}">
+				<ul class="clearfix list list--inline list--small">
+					{%if 'projects' in item.data.tags %}
+					<li>
+						<img class="icon icon--small" src="/assets/icons/star.svg" alt="star">
+						{{ data.stars[ item.data.github ] | prettyNumber }}
+						<span class="sr-only"> stars</span>
+					</li>
+					{% if item.data.npm %}
+					<li>
+						<img class="icon icon--small" src="/assets/icons/download.svg" alt="star">
+						{{ data.downloads[ item.data.npm ] | prettyNumber }}
+						<span class="sr-only"> downloads last year</span>
+					</li>
+					{% endif %}
+					{% endif %}
+				</ul>
+
+				<h2>{{ item.data.pagetitle }}</h2>
+				<p>{{ item.data.summary }}</p>
+			</a>
+		</li>
+	{%- endfor -%}
+	</ul>
+{% endblock %}
+

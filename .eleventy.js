@@ -1,41 +1,13 @@
-const MarkdownIt = require("markdown-it")();
-const MinifyCss  = require( 'clean-css' );
-const MinifyJS   = require( 'uglify-js' );
-const Fs         = require( 'fs' );
+// Dependencies
+const PrettyNumber     = require( 'number-abbreviate' );
+const MinifyCss        = require( 'clean-css' );
+const MinifyJS         = require( 'uglify-js' );
+const inclusiveLang    = require( '@11ty/eleventy-plugin-inclusive-language' );
 
-
-// Copy the default image renderer
-const defaultImageRenderer = MarkdownIt.renderer.rules.image;
-
-// Change the renderer for images that are links to youtube videos
-// https://github.com/markdown-it/markdown-it/blob/master/docs/architecture.md#renderer
-MarkdownIt.renderer.rules.image = function (tokens, idx, options, env, self) {
-	const token    = tokens[idx];
-	const srcIndex = token.attrIndex( 'src' );
-	const src      = token.attrs[srcIndex][1];
-
-	// If the src is to a youtube video
-	if ( src.includes( 'youtube.com/watch?' ) ) {
-
-		// Get the alt text
-		const alt = token.content;
-
-		// Get the video ID from the src
-		let videoId = src.split( 'v=' )[1];
-		if( videoId.indexOf( '&' ) != -1 ) {
-			videoId = videoId.substring(0, ampersandPosition);
-		}
-
-		// Return an embedded video
-		return `<div class="embed-responsive"><iframe title="${ alt }" src="https://www.youtube.com/embed/${ videoId }" frameborder="0" allowfullscreen></iframe></div>`;
-	}
-
-	// Return the default
-	return defaultImageRenderer(tokens, idx, options, env, self);
-};
+// Local dependencies
+const Fs               = require( 'fs' );
 
 module.exports = ( eleventyConfig ) => {
-
 	/**
 	 * cssmin - Minify CSS filter
 	 */
@@ -61,24 +33,51 @@ module.exports = ( eleventyConfig ) => {
 		return minified.code;
 	});
 
+	/**
+	 * Get the parent page section
+	 */
+	eleventyConfig.addFilter( "tagSection", ( tags ) => {
+		let title = tags.filter( tag => tag !== 'featured' )
+			.map( tag => tag[ tag.length - 1 ] === 's' ? tag.slice(0, -1) : tag )
+			.join( ' ' );
+		return title;
+	});
+
+	/**
+	 * Get the current listing group
+	 */
+	eleventyConfig.addFilter( "tagTitle", ( tags ) => {
+		return tags.filter( tag => tag !== 'featured' ).join( ' ' );
+	});
+
+	/**
+	 * Return number as k
+	 */
+	eleventyConfig.addFilter( "prettyNumber", ( number ) => {
+		return PrettyNumber( number );
+	});
+
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
 		open: 'local',
 		callbacks: {
-			ready: function(err, bs) {
-				const content_404 = Fs.readFileSync( 'site/404.html' );
+			ready: function( error, browserSync ) {
+				if( error ){
+					throw new Error( error );
+				}
 
-				bs.addMiddleware("*", (req, res) => {
-					// Provides the 404 content without redirect.
-					res.write(content_404);
-					res.end();
+				// Provides the 404 content without redirect.
+				const content_404 = Fs.readFileSync( 'site/404.html' );
+				browserSync.addMiddleware("*", ( request, response ) => {
+					response.write(content_404);
+					response.end();
 				});
 			}
 		}
 	});
 
-	// Apply the custom renderer
-	eleventyConfig.setLibrary( 'md', MarkdownIt );
+	// Add inclusive language plugin
+	eleventyConfig.addPlugin( inclusiveLang );
 
 	// The configuration object ( optional )
 	return {
@@ -88,7 +87,7 @@ module.exports = ( eleventyConfig ) => {
 			output: 'site'
 		},
 		templateFormats : ['njk', 'md'],
-		htmlTemplateEngine : false,
+		htmlTemplateEngine : 'njk',
 		markdownTemplateEngine: 'njk',
 	};
 };

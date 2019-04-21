@@ -24,7 +24,7 @@
 	<meta property="og:title" content="Alex Page">
 	<meta property="og:site_name" content="Alex Page">
 	<meta property="og:description" content="Modern technology and thoughtful design - Alex Page">
-	<meta name="Description" content="I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.">
+	<meta name="Description" content="{% if summary %}{{ summary }}{% else %}I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.{% endif %}">
 	<meta property="og:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
 	<meta property="og:url" content="http://alexpage.com.au">
 	<title>{{ pagetitle }} - Alex Page</title>
@@ -43,21 +43,56 @@
 
 		<!-- The main section header -->
 		{% block content_header %}
-		<div class="content_header content_header--harmonograph">
-			<div id="harmonograph"></div>
-		</div>
+		<div class="harmonograph"><div id="harmonograph"></div></div>
 		{% endblock %}
 
 		<!-- The main content area -->
 		<main class="content" id="content">
-			<div class="content__inner">
-				{% if page.fileSlug == '' %}
-					<img class="profile-pic" src="/assets/img/alex-page.jpg" alt="Picture of Alex Page">
+			<div class="card">
+				<!-- Home page -->
+				{% block page_title %}
+				<h1>{{ pagetitle }}</h1>
+				{% endblock %}
+				{% if summary %}
+					<blockquote>{{ summary }}</blockquote>
 				{% endif %}
 				{% block main %}
-				{{ content | safe }}
+					<div class="content-area">
+						{{ content | safe }}
+					</div>
 				{% endblock %}
 			</div>
+			{% block after_main %}{% endblock %}
+			{% block listing %}
+				<ul class="list card-list">
+				{%- for item in collections.featured | reverse -%}
+					<li>
+						<a class="card" href="{{ item.url }}">
+							<ul class="clearfix list list--inline list--small">
+								<li>Featured {{ item.data.tags | tagSection }}</li>
+								{%if 'projects' in item.data.tags %}
+								<li>
+									<img class="icon icon--small" src="/assets/icons/star.svg" alt="star">
+									<span>{{ data.stars[ item.data.github ] | prettyNumber }}</span>
+									<span class="sr-only"> stars</span>
+								</li>
+								{% if item.data.npm %}
+								<li>
+									<img class="icon icon--small" src="/assets/icons/download.svg" alt="star">
+									<span>{{ data.downloads[ item.data.npm ] | prettyNumber }}</span>
+									<span class="sr-only"> downloads last year</span>
+								</li>
+								{% endif %}
+								{% endif %}
+							</ul>
+
+							<h2>{{ item.data.pagetitle }}</h2>
+							<p>{{ item.data.summary }}</p>
+						</a>
+					</li>
+				{%- endfor -%}
+				</ul>
+			{% endblock %}
 		</main>
 
 		<!-- The footer -->
@@ -71,5 +106,6 @@
 	<style>{{ extracss | cssmin | safe }}</style>
 	{% set extrajs %}{% include 'js/extra.js' %}{% endset %}
 	<script>{{ extrajs | jsmin | safe }}</script>
+	{%block page_end %}{% endblock %}
 </body>
 </html>

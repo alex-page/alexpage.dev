@@ -15,9 +15,10 @@
 		}
 	],
 	"scripts": {
+		"build:data": "node scripts/fetch-data",
 		"build:sw": "node scripts/sw-build",
-		"build": "eleventy && npm run build:sw",
-		"watch": "eleventy --serve",
+		"build": "npm run build:data && eleventy && npm run build:sw",
+		"watch": "npm run build:data && eleventy --serve",
 		"deploy": "node scripts/deploy"
 	},
 	"engines": {
@@ -33,8 +34,12 @@
 	},
 	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
 	"dependencies": {
-		"@11ty/eleventy": "^0.7.1",
+		"@11ty/eleventy": "^0.8.2",
+		"@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
 		"clean-css": "^4.2.1",
+		"globby": "^9.2.0",
+		"got": "^9.6.0",
+		"number-abbreviate": "^2.0.0",
 		"uglify-js": "^3.4.9",
 		"workbox-build": "^4.1.1"
 	},

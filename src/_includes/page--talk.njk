@@ -1,0 +1,14 @@
+{% extends 'page.njk' %}
+
+{% block content_header %}
+<div class="harmonograph"><div id="harmonograph"></div></div>
+<div class="embed-responsive">
+	<iframe src="https://youtube.com/embed/{{ video.id }}" title="{{ video.alt }}" frameborder="0" allowfullscreen></iframe>
+</div>
+{% endblock %}
+
+{% block after_main %}
+<div class="card">
+	<a class="back-to-page" href="/{{ tags | tagTitle }}">← View more {{ tags | tagTitle }}</a>
+</div>
+{% endblock %}

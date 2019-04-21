@@ -1,0 +1,12 @@
+{% extends 'page.njk' %}
+
+{% block after_main %}
+<div class="card">
+	<a class="back-to-page" href="/{{ tags | tagTitle }}">← Back to all blogs</a>
+</div>
+{% endblock %}
+
+{% block page_end %}
+{% set prismjs %}{% include 'js/prism.js' %}{% endset %}
+<script>{{ prismjs | jsmin | safe }}</script>
+{% endblock %}

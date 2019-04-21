@@ -14,7 +14,155 @@ iframe::selection {
 	background-color: rgba( 61, 252, 179, 0.75 );
 }
 
+
+/**
+ * Skip link
+ */
+ .skip-link {
+	padding: 0.5rem 1rem;
+	position: absolute;
+	z-index: 100;
+}
+
+.skip-link,
+.skip-link:focus {
+	background-color: var( --action-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:hover {
+	background-color: var( --text-color );
+	color: var( --text-color--dark );
+}
+
+.skip-link:focus {
+	width: auto;
+	height: auto;
+	clip: auto;
+	overflow: visible;
+}
+
 /* Gradient background */
 .gradient-bg {
 	background: linear-gradient( to top right, var( --bg-color-shade ), var( --bg-color ) );
+}
+
+/* Card */
+.card {
+	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
+	border-radius: 0.5rem;
+}
+
+a.card {
+	transition: transform 0.1s ease-in-out;
+}
+
+a.card:hover {
+	text-decoration: none;
+	transform: scale( 1.02 );
+}
+
+a.card:hover h2 {
+	text-decoration: underline;
+}
+
+
+.card-list .card:after {
+	content: " ";
+	display: block;
+	background: var(--action-color);
+	width: 5rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0;
+	right: 2rem;
+}
+
+
+/**
+ * Icon
+ */
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: text-bottom;
+}
+
+.icon--small {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #d4d0ab;
+}
+
+.token.punctuation {
+	color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #ffa07a;
+}
+
+.token.boolean,
+.token.number {
+	color: #00e0e0;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #abe338;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #00e0e0;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #ffd700;
+}
+
+.token.keyword {
+	color: #00e0e0;
+}
+
+.token.regex,
+.token.important {
+	color: #ffd700;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
 }

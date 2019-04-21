@@ -1,9 +1,8 @@
 ---
-layout: page
+layout: page--listing
 pagetitle: Blog
-tags: landingPages
+tags: mainMenuItems
+listing: blog
 documentation: https://github.com/alex-page/harmonograph#readme
 ---
-# Blog
-
-...coming soon ⚡️
+Blog posts in a chronological order ...more coming soon ⚡
