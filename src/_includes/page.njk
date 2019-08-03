@@ -41,9 +41,15 @@
 			{% include 'main-menu.njk' %}
 		</header>
 
-		<!-- The main section header -->
+		<!-- The harmonograph -->
 		{% block content_header %}
-		<div class="harmonograph"><div id="harmonograph"></div></div>
+		<div class="content-header">
+			{% if emoji %}
+			<div class="content-header_right">{{emoji}}</div>
+			{% else %}
+			<div id="harmonograph" class="content-header_right"></div>
+			{% endif %}
+		</div>
 		{% endblock %}
 
 		<!-- The main content area -->

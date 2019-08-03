@@ -326,17 +326,19 @@ a:hover {
 /**
  * Content header
  */
-.harmonograph {
+.content-header {
 	position: relative;
 	z-index: 10;
 }
 
-.harmonograph #harmonograph {
+.content-header .content-header_right {
 	position: absolute;
 	right: -1rem;
 	top: -5rem;
 	max-width: 15rem;
 	width: 50%;
+	text-align: center;
+	font-size: 7rem;
 }
 
 
