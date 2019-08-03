@@ -62,6 +62,10 @@ a.card:hover {
 	transform: scale( 1.02 );
 }
 
+a.card:active {
+	transform: none;
+}
+
 a.card:hover h2 {
 	text-decoration: underline;
 }

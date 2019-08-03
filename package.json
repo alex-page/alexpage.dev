@@ -15,6 +15,8 @@
 		}
 	],
 	"scripts": {
+		"test": "npm run test:content",
+		"test:content": "write-good **/*.md --tooWordy --cliches",
 		"build:data": "node scripts/fetch-data",
 		"build:sw": "node scripts/sw-build",
 		"build": "npm run build:data && eleventy && npm run build:sw",
@@ -45,6 +47,7 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^2.0.1",
-		"last-commit-log": "^2.1.0"
+		"last-commit-log": "^2.1.0",
+		"write-good": "^1.0.1"
 	}
 }

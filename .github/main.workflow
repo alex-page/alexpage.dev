@@ -14,6 +14,12 @@ action "Install dependencies" {
   needs = ["Master branch only"]
 }
 
+action "Test" {
+  uses = "actions/npm@master"
+  args = "run test"
+  needs = ["Install dependencies"]
+}
+
 action "Build site" {
   uses = "actions/npm@master"
   args = "run build"
@@ -23,6 +29,6 @@ action "Build site" {
 action "Deploy" {
   uses = "actions/npm@master"
   args = "run deploy"
-  needs = ["Build site"]
+  needs = ["Build site", "Test"]
   secrets = ["GH_PAT"]
 }
