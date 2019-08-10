@@ -6,7 +6,7 @@ on:
     - master
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -16,9 +16,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 10.x
-    - name: npm install, build, and test
+    - name: npm install, test content, build and deploy
       run: |
         npm install
-        npm test
-        npm build
-        npm deploy
+        npm run test
+        npm run build
+        npm run deploy
