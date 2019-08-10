@@ -1,4 +1,4 @@
-name: Deploy site
+name: Deploy site on master
 
 on:
   push:
