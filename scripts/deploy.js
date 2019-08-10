@@ -19,7 +19,6 @@ GitLastCommit.getLastCommit()
 					name: "Alex Page",
 					email: "alex@alexpage.com.au",
 				},
-				silent: true,
 				dotfiles: true,
 				message: commitMessage,
 			},
