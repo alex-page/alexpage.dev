@@ -5,9 +5,9 @@
 node_modules
 
 # artifacts
-site/*
-!site/assets/
-!site/CNAME
+_site/*
+!_site/assets/
+!_site/CNAME
 
 # generated data file
 src/_data/data.json
