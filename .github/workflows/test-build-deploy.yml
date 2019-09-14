@@ -16,9 +16,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 10.x
-    - name: npm install, test content, build and deploy
+    - name: npm install, test content and build
       run: |
         npm install
         npm run test
         npm run build
-        npm run deploy
+    - name: Deploy site to gh-pages branch
+        uses: alex-page/blazing-fast-gh-pages-deploy@v0.0.0-alpha.1
+        with:
+          repo-token: ${{ secrets.GH_PAT }}
+          commit-name: 'Alex Page'
+          commit-email: 'alex@alexpage.com.au'
