@@ -22,7 +22,7 @@ jobs:
         npm run test
         npm run build
     - name: Deploy site to gh-pages branch
-      uses: alex-page/blazing-fast-gh-pages-deploy@v0.0.0-alpha.2
+      uses: alex-page/blazing-fast-gh-pages-deploy@master
       with:
         repo-token: ${{ secrets.GH_PAT }}
         commit-name: 'Alex Page'
