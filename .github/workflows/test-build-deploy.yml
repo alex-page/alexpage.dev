@@ -25,5 +25,3 @@ jobs:
       uses: alex-page/blazing-fast-gh-pages-deploy@master
       with:
         repo-token: ${{ secrets.GH_PAT }}
-        commit-name: 'Alex Page'
-        commit-email: 'alex@alexpage.com.au'
