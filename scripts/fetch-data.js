@@ -72,6 +72,7 @@ const getFrontMatter = async (directory, frontMatterKey) => {
 
 		// Write the result to a file
 		const result = JSON.stringify({stars, downloads}, null, 2);
+		console.log(result);
 		fs.writeFileSync(`${SETTINGS.dataDir}${SETTINGS.dataFile}`, result);
 		console.log(`🤖 Generated ${SETTINGS.dataDir}${SETTINGS.dataFile}`);
 	} catch (error) {
