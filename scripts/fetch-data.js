@@ -1,10 +1,10 @@
 // NPM packages
-const Matter = require('gray-matter');
-const Got = require( 'got' );
-const Globby = require( 'globby' );
+const got = require('got');
+const matter = require('gray-matter');
+const globby = require('globby');
 
 // Local dependencies
-const Fs = require( 'fs' ).promises;
+const fs = require('fs');
 
 // Settings
 const SETTINGS = {
@@ -12,89 +12,70 @@ const SETTINGS = {
 	dataFile: 'data.json',
 	projects: 'src/projects/*/index.md',
 	githubApi: 'https://api.github.com/repos/',
-	npmApi: 'https://api.npmjs.org/downloads/point/last-year/',
-}
+	npmApi: 'https://api.npmjs.org/downloads/point/last-year/'
+};
 
-
-const FetchAll = async( url, ids ) => {
-	try {
-		const resolvedData = await Promise.all(
-			ids.map( async( id ) => {
-				return new Promise( async( resolve, reject ) => {
-					try {
-						const { body } = await Got( `${ url }${ id }`, { json: true });
-						console.log( `✅ Got data from: ${ url }${ id }` );
-						resolve( body );
-					}
-					catch( error ) {
-						reject( error );
-					}
-				})
+/**
+ * Gets the data from a url and returns the key
+ *
+ * @param {string} apiUrl - The URL to fetch data from
+ * @param {string} urlSuffixes -  The suffix for the URL
+ * @param {string} bodyKey - The key in the body to return
+ */
+const fetchKey = async (apiUrl, urlSuffixes, bodyKey) => {
+	const responses = await Promise.all(
+		urlSuffixes.map(urlSuffix =>
+			got(apiUrl + urlSuffix, {
+				responseType: 'json',
+				resolveBodyOnly: true
 			})
-		);
-
-		return resolvedData;
-	}
-	catch( error ){
-		throw new Error( error );
-	}
-}
-
-
-const FindIds = async( idglob ) => {
-	const files = await Globby([ idglob ]);
-
-	const ids = await Promise.all(
-		files.map( async( file ) => {
-			try {
-				const fileContents = await Fs.readFile( file, 'utf-8' );
-				const { data } = Matter( fileContents );
-				return {
-					npm: data.npm,
-					github: data.github,
-				};
-			}
-			catch( error ){
-				throw new Error( error );
-			}
-		})
+		)
 	);
 
-	return {
-		githubRepos: ids.filter( id => id.github ).map( id => id.github ),
-		npmPackages: ids.filter( id => id.npm ).map( id => id.npm ),
-	}
-}
+	return responses.map(response => response[bodyKey]);
+};
 
+/**
+ * Read the markdown file and return the value of the key
+ *
+ * @param {string} directory -  The directory of the files
+ * @param {string} frontMatterKey - The key to return the value
+ */
+const getFrontMatter = async (directory, frontMatterKey) => {
+	const projectFiles = await globby([directory]);
 
-( async() => {
-	console.log( '🎾 Fetching data' );
+	return projectFiles
+		.map(file => fs.readFileSync(file))
+		.map(content => {
+			const {data} = matter(content);
+			return data[frontMatterKey];
+		})
+		.filter(key => key);
+};
+
+// Fetch GitHub stars and NPM Downloads for the data.json file
+(async () => {
+	console.log('🎾 Fetching data');
 	try {
-		const { githubRepos, npmPackages } = await FindIds( SETTINGS.projects );
+		// Read the project markdown files and get the front matter
+		const githubRepos = await getFrontMatter(SETTINGS.projects, 'github');
+		const npmPackages = await getFrontMatter(SETTINGS.projects, 'npm');
 
 		// Create the directory for the repos if it doesn't exist
-		try {
-			await Fs.stat( SETTINGS.dataDir );
-		}
-		catch( error ){
-			await Fs.mkdir( SETTINGS.dataDir );
+		if (!fs.existsSync(SETTINGS.dataDir)) {
+			fs.mkdirSync(SETTINGS.dataDir);
 		}
 
-		const stars = {};
-		const downloads = {};
-		( await FetchAll( SETTINGS.npmApi, npmPackages ) )
-			.forEach( package => downloads[ package.package ] = package.downloads );
+		// Fetch Github and NPM to get data
+		const stars = await fetchKey(SETTINGS.githubApi, githubRepos, 'stargazers_count');
+		const downloads = await fetchKey(SETTINGS.npmApi, npmPackages, 'downloads');
 
-		( await FetchAll( SETTINGS.githubApi, githubRepos ) )
-			.forEach( repo => stars[ repo.full_name ] = repo.stargazers_count );
-
-		const result = JSON.stringify({ stars, downloads }, null, 2 );
-
-		await Fs.writeFile( `${ SETTINGS.dataDir }${ SETTINGS.dataFile }`, result );
-		console.log( `🤖 Generated ${ SETTINGS.dataDir }${ SETTINGS.dataFile }` );
-	}
-	catch( error ){
-		console.error( error );
+		// Write the result to a file
+		const result = JSON.stringify({stars, downloads}, null, 2);
+		fs.writeFileSync(`${SETTINGS.dataDir}${SETTINGS.dataFile}`, result);
+		console.log(`🤖 Generated ${SETTINGS.dataDir}${SETTINGS.dataFile}`);
+	} catch (error) {
+		console.error(error);
 	}
 })();
 

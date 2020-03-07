@@ -4,7 +4,7 @@ pagetitle: Harmonograph
 tags: projects
 date: 2018-03-24
 summary: Draw beautiful randomised lissajous curves in the browser.
-github: alex-page/harmonograph
+github: alex-page/harmonograph-svg
 npm: harmonograph
 emoji: 🖌
 ---

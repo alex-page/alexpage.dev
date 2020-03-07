@@ -24,7 +24,7 @@ npm run watch
 
 # Deployment
 
-Deployment is through GitHub actions and automatically builds and deploys the site to GitHub pages.
+GitHub actions automatically builds and deploys the site to GitHub pages.
 
 
 # Contributing
