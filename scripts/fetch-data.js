@@ -16,23 +16,21 @@ const SETTINGS = {
 };
 
 /**
- * Gets the data from a url and returns the key
+ * Gets the value of a key from a url
  *
- * @param {string} apiUrl - The URL to fetch data from
- * @param {string} urlSuffixes -  The suffix for the URL
+ * @param {string} url - The URL to fetch data from
+ * @param {string} urlSuffix -  The suffix for the URL
  * @param {string} bodyKey - The key in the body to return
  */
-const fetchKey = async (apiUrl, urlSuffixes, bodyKey) => {
-	const responses = await Promise.all(
-		urlSuffixes.map(urlSuffix =>
-			got(apiUrl + urlSuffix, {
-				responseType: 'json',
-				resolveBodyOnly: true
-			})
-		)
-	);
+const fetchKeyValue = async (url, urlSuffix, bodyKey) => {
+	const response = await got(url + urlSuffix, {
+		responseType: 'json',
+		resolveBodyOnly: true
+	});
 
-	return responses.map(response => response[bodyKey]);
+	return {
+		[urlSuffix]: response[bodyKey]
+	};
 };
 
 /**
@@ -67,13 +65,17 @@ const getFrontMatter = async (directory, frontMatterKey) => {
 		}
 
 		// Fetch Github and NPM to get data
-		const stars = await fetchKey(SETTINGS.githubApi, githubRepos, 'stargazers_count');
-		const downloads = await fetchKey(SETTINGS.npmApi, npmPackages, 'downloads');
+		const stars = await Promise.all(
+			githubRepos.map(repo => fetchKeyValue(SETTINGS.githubApi, repo, 'stargazers_count'))
+		);
+		const downloads = await Promise.all(
+			npmPackages.map(npmPackage => fetchKeyValue(SETTINGS.npmApi, npmPackage, 'downloads'))
+		);
 
 		// Write the result to a file
 		const result = JSON.stringify({stars, downloads}, null, 2);
-		console.log(result);
 		fs.writeFileSync(`${SETTINGS.dataDir}${SETTINGS.dataFile}`, result);
+
 		console.log(`🤖 Generated ${SETTINGS.dataDir}${SETTINGS.dataFile}`);
 	} catch (error) {
 		console.error(error);
