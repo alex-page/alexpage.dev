@@ -2,7 +2,7 @@
 const PrettyNumber     = require( 'number-abbreviate' );
 const MinifyCss        = require( 'clean-css' );
 const MinifyJS         = require( 'uglify-js' );
-const inclusiveLang    = require( '@11ty/eleventy-plugin-inclusive-language' );
+const syntaxHighlight  = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Local dependencies
 const Fs               = require( 'fs' );
@@ -57,6 +57,17 @@ module.exports = ( eleventyConfig ) => {
 		return PrettyNumber( number );
 	});
 
+	/**
+	 * Add syntax highlighting on the server side
+	 */
+	eleventyConfig.addPlugin(syntaxHighlight);
+
+	/**
+	 * Copy everything in the assets directory to the built site
+	 */
+	eleventyConfig.addPassthroughCopy({"src/_assets": "assets"});
+	eleventyConfig.addPassthroughCopy("src/CNAME");
+
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
 		open: 'local',
@@ -67,7 +78,7 @@ module.exports = ( eleventyConfig ) => {
 				}
 
 				// Provides the 404 content without redirect.
-				const content_404 = Fs.readFileSync( 'site/404.html' );
+				const content_404 = Fs.readFileSync( '_site/404.html' );
 				browserSync.addMiddleware("*", ( request, response ) => {
 					response.write(content_404);
 					response.end();
@@ -75,9 +86,6 @@ module.exports = ( eleventyConfig ) => {
 			}
 		}
 	});
-
-	// Add inclusive language plugin
-	eleventyConfig.addPlugin( inclusiveLang );
 
 	// The configuration object ( optional )
 	return {
