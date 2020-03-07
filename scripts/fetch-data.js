@@ -65,12 +65,16 @@ const getFrontMatter = async (directory, frontMatterKey) => {
 		}
 
 		// Fetch Github and NPM to get data
-		const stars = await Promise.all(
+		const fetchedStars = await Promise.all(
 			githubRepos.map(repo => fetchKeyValue(SETTINGS.githubApi, repo, 'stargazers_count'))
 		);
-		const downloads = await Promise.all(
+		const fetchedDownloads = await Promise.all(
 			npmPackages.map(npmPackage => fetchKeyValue(SETTINGS.npmApi, npmPackage, 'downloads'))
 		);
+
+		// Flatten the array of objects
+		const stars = Object.assign({}, ...fetchedStars);
+		const downloads = Object.assign({}, ...fetchedDownloads);
 
 		// Write the result to a file
 		const result = JSON.stringify({stars, downloads}, null, 2);
