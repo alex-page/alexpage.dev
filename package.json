@@ -29,13 +29,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/alex-page/alex-page.github.io"
+		"url": "git+https://github.com/alex-page/alexpage.com.au"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/alex-page/alex-page.github.io/issues"
+		"url": "https://github.com/alex-page/alexpage.com.au/issues"
 	},
-	"homepage": "https://github.com/alex-page/alex-page.github.io#readme",
+	"homepage": "https://github.com/alex-page/alexpage.com.au#readme",
 	"dependencies": {
 		"@11ty/eleventy": "^0.10.0",
 		"clean-css": "^4.2.3",
