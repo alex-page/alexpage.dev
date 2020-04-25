@@ -1,4 +1,4 @@
-const Cache = require("@11ty/eleventy-cache-assets");
+const cache = require('@11ty/eleventy-cache-assets');
 const globby = require('globby');
 const matter = require('gray-matter');
 const fs = require('fs');
@@ -6,7 +6,6 @@ const fs = require('fs');
 const pages = 'src/projects/*/index.md';
 const githubApi = 'https://api.github.com/repos/';
 const npmApi = 'https://api.npmjs.org/downloads/point/last-year/';
-
 
 /**
  * Read the markdown file and return the value of the key
@@ -26,34 +25,33 @@ const getFrontMatter = async (directory, frontMatterKey) => {
 		.filter(key => key);
 };
 
-
-module.exports = async function() {
+module.exports = async () => {
 	const githubRepos = await getFrontMatter(pages, 'github');
 	const npmPackages = await getFrontMatter(pages, 'npm');
 
 	// Fetch Github and NPM to get data
 	const repoData = await Promise.all(
 		githubRepos.map(repo =>
-			Cache(`${githubApi}${repo}`, {type: 'json'})
+			cache(`${githubApi}${repo}`, {type: 'json'})
 		)
 	);
 
 	const packageData = await Promise.all(
 		npmPackages.map(npmPackage =>
-			Cache(`${npmApi}${npmPackage}`, {type: 'json'})
+			cache(`${npmApi}${npmPackage}`, {type: 'json'})
 		)
 	);
 
-	const repoStars = repoData.map(({full_name, stargazers_count}) => ({
-		[full_name]: stargazers_count
+	const repoStars = repoData.map(githubRepo => ({
+		[githubRepo.full_name]: githubRepo.stargazers_count
 	}));
 
-	const packageDownloads = packageData.map(({package, downloads}) => ({
-		[package]: downloads
+	const packageDownloads = packageData.map(npmPackage => ({
+		[npmPackage.package]: npmPackage.downloads
 	}));
 
-  return {
+	return {
 		stars: repoStars,
 		downloads: packageDownloads
-  };
+	};
 };
