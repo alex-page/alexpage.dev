@@ -79,13 +79,13 @@
 								{%if 'projects' in item.data.tags %}
 								<li>
 									<svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--focus-color)" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-									<span>{{ data.stars[ item.data.github ] | prettyNumber }}</span>
+									<span>{{ projects.stars[ item.data.github ] | prettyNumber }}</span>
 									<span class="sr-only"> stars</span>
 								</li>
 								{% if item.data.npm %}
 								<li>
 									<svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="var(--focus-color)" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-									<span>{{ data.downloads[ item.data.npm ] | prettyNumber }}</span>
+									<span>{{ projects.downloads[ item.data.npm ] | prettyNumber }}</span>
 									<span class="sr-only"> downloads last year</span>
 								</li>
 								{% endif %}

@@ -18,10 +18,9 @@
 		"test": "npm run test:content && npm run test:scripts",
 		"test:content": "write-good *.md",
 		"test:scripts": "xo scritps/",
-		"build:data": "node scripts/fetch-data",
 		"build:sw": "node scripts/sw-build",
-		"build": "npm run build:data && eleventy && npm run build:sw",
-		"watch": "npm run build:data && eleventy --serve",
+		"build": "eleventy && npm run build:sw",
+		"watch": "eleventy --serve",
 		"deploy": "node scripts/deploy"
 	},
 	"engines": {
@@ -37,17 +36,17 @@
 	},
 	"homepage": "https://github.com/alex-page/alexpage.com.au#readme",
 	"dependencies": {
-		"@11ty/eleventy": "^0.10.0",
+		"@11ty/eleventy": "0.11.0-beta.3",
+		"@11ty/eleventy-cache-assets": "^2.0.2",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"clean-css": "^4.2.3",
 		"globby": "^11.0.0",
-		"got": "^10.6.0",
 		"gray-matter": "^4.0.2",
 		"number-abbreviate": "^2.0.0",
 		"uglify-js": "^3.8.0",
 		"workbox-build": "^5.0.0"
 	},
 	"devDependencies": {
-		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"write-good": "^1.0.2",
 		"xo": "^0.27.2"
 	}
