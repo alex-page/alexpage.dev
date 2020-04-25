@@ -70,17 +70,12 @@ module.exports = ( eleventyConfig ) => {
 
 	// Adjust default browserSync config
 	eleventyConfig.setBrowserSyncConfig({
-		open: 'local',
 		callbacks: {
 			ready: function( error, browserSync ) {
-				if( error ){
-					throw new Error( error );
-				}
-
-				// Provides the 404 content without redirect.
-				const content_404 = Fs.readFileSync( '_site/404.html' );
-				browserSync.addMiddleware("*", ( request, response ) => {
+				browserSync.addMiddleware("*", (request, response) => {
+					const content_404 = fs.readFileSync('_site/404.html');
 					response.write(content_404);
+					response.writeHead(404);
 					response.end();
 				});
 			}
