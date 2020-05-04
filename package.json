@@ -17,9 +17,8 @@
 	"scripts": {
 		"test": "npm run test:content && npm run test:scripts",
 		"test:content": "write-good *.md",
-		"test:scripts": "xo scritps/",
-		"build:sw": "node scripts/sw-build",
-		"build": "eleventy && npm run build:sw",
+		"test:scripts": "xo src/_data",
+		"build": "eleventy",
 		"watch": "eleventy --serve",
 		"deploy": "node scripts/deploy"
 	},
@@ -39,12 +38,11 @@
 		"@11ty/eleventy": "0.11.0-beta.3",
 		"@11ty/eleventy-cache-assets": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+		"@harmonograph/svg": "^0.1.1",
 		"clean-css": "^4.2.3",
 		"globby": "^11.0.0",
 		"gray-matter": "^4.0.2",
-		"number-abbreviate": "^2.0.0",
-		"uglify-js": "^3.8.0",
-		"workbox-build": "^5.0.0"
+		"number-abbreviate": "^2.0.0"
 	},
 	"devDependencies": {
 		"write-good": "^1.0.2",

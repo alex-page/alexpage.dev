@@ -1,7 +1,6 @@
 // Dependencies
 const PrettyNumber     = require( 'number-abbreviate' );
 const MinifyCss        = require( 'clean-css' );
-const MinifyJS         = require( 'uglify-js' );
 const syntaxHighlight  = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Local dependencies
@@ -14,23 +13,6 @@ module.exports = ( eleventyConfig ) => {
 	eleventyConfig.addFilter( 'cssmin', ( code ) => {
 		const minified = new MinifyCss({}).minify( code ).styles;
 		return minified;
-	});
-
-	/**
-	 * jsmin - Minify JS filter
-	 */
-	eleventyConfig.addFilter( 'jsmin', ( code ) => {
-		const minified = MinifyJS.minify( code, {
-			mangle: true,
-			compress: true,
-		});
-
-		if( minified.error ) {
-			console.log( 'UglifyJS error: ', minified.error );
-			return code;
-		}
-
-		return minified.code;
 	});
 
 	/**
