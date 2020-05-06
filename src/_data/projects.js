@@ -42,13 +42,17 @@ module.exports = async () => {
 		)
 	);
 
-	const repoStars = repoData.map(githubRepo => ({
-		[githubRepo.full_name]: githubRepo.stargazers_count
-	}));
+	const repoStars = {};
+	repoData.forEach(githubRepo => {
+		repoStars[githubRepo.full_name] = githubRepo.stargazers_count;
+	});
 
-	const packageDownloads = packageData.map(npmPackage => ({
-		[npmPackage.package]: npmPackage.downloads
-	}));
+	const packageDownloads = {};
+	packageData.forEach(npmPackage => {
+		packageDownloads[npmPackage.package] = npmPackage.downloads;
+	});
+
+	console.log(repoStars, packageDownloads);
 
 	return {
 		stars: repoStars,

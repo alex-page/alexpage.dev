@@ -4,7 +4,7 @@ const MinifyCss        = require( 'clean-css' );
 const syntaxHighlight  = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Local dependencies
-const Fs               = require( 'fs' );
+const fs = require( 'fs' );
 
 module.exports = ( eleventyConfig ) => {
 	/**
