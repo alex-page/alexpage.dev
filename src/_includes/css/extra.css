@@ -42,11 +42,6 @@ iframe::selection {
 	overflow: visible;
 }
 
-/* Gradient background */
-.gradient-bg {
-	background: linear-gradient( to top right, var( --bg-color-shade ), var( --bg-color ) );
-}
-
 /* Card */
 .card {
 	box-shadow: 0 0 2rem 0.5rem rgba( 0, 0, 0, 0.2 );
