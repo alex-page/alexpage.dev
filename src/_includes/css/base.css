@@ -95,6 +95,7 @@ body {
  * Gradient BG
  */
 .gradient-bg {
+	background-image: linear-gradient( to top right, var( --bg-color-shade ), var( --bg-color ) );
 	background-color: var( --bg-color );
 	position: fixed;
 	top: 0;
