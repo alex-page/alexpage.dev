@@ -129,4 +129,4 @@ action "Publish" {
 
 And thats it! You now have a simple workflow to publish your npm packages.
 
-If you liked this post or have feedback [please let me know](https://twitter.com/aalexpaage). I am thinking of writing some more posts on publishing static sites and a beginners guide to creating an action.
+If you liked this post or have feedback [please let me know](https://twitter.com/alexpage_). I am thinking of writing some more posts on publishing static sites and a beginners guide to creating an action.
