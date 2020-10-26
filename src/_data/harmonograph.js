@@ -69,16 +69,14 @@ const pendulums = pendulumArray[randomPendulum]
 		amplitude: 200,
 		frequency: values[0],
 		phase: values[1],
-		damping: values[2]
+		damping: values[2],
 	}));
 
 const harmonographSVG = generateHarmonographSVG({
-	strokeColor: '#3DFCB3',
+	strokeColor: 'var(--text-color--light)',
 	pendulums,
-	strokeWidth: 2,
-	animatePath: {
-		duration: '45s'
-	}
+	strokeWidth: 0.5,
+	animatePath: false
 });
 
 module.exports = () => ({

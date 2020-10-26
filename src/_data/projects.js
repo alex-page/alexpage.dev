@@ -52,8 +52,6 @@ module.exports = async () => {
 		packageDownloads[npmPackage.package] = npmPackage.downloads;
 	});
 
-	console.log(repoStars, packageDownloads);
-
 	return {
 		stars: repoStars,
 		downloads: packageDownloads

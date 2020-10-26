@@ -1,0 +1,11 @@
+.content-area {
+	margin-top: 2rem;
+}
+
+.content-area img {
+	border-radius: 0.25rem;
+	width: 40rem;
+	margin: 2rem auto;
+	display: block;
+	box-shadow: 0 0 2rem 0.2rem rgba( 0, 0, 0, 0.2 );
+}

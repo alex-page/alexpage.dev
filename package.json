@@ -35,7 +35,7 @@
 	},
 	"homepage": "https://github.com/alex-page/alexpage.com.au#readme",
 	"dependencies": {
-		"@11ty/eleventy": "0.11.0-beta.3",
+		"@11ty/eleventy": "0.11.0",
 		"@11ty/eleventy-cache-assets": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"@harmonograph/svg": "^0.2.0",

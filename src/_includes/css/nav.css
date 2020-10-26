@@ -1,0 +1,28 @@
+nav {
+	font-size: 0.95rem;
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+	nav {
+		font-size: 1.2rem;
+	}
+}
+
+nav a {
+	color: var(--color-text);
+	padding: 0.5rem;
+	border-radius: 3px;
+}
+
+nav a.active,
+nav a:hover,
+nav a:focus {
+	background: var(--color-bg-subdued);
+}
+
+.logo svg {
+	margin-right: 0.25rem;
+}

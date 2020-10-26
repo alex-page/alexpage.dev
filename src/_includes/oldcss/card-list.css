@@ -1,0 +1,47 @@
+
+/**
+ * Card list
+ */
+ .card-list {
+	display: grid;
+	grid-column-gap: 1.5rem;
+	grid-template-columns: 1fr;
+}
+
+.card-list h2 {
+	font-size: 1.4rem;
+}
+
+.card-list * + h2 {
+	margin-top: 1rem;
+}
+
+.card-list > li {
+	display: grid;
+}
+
+@media ( min-width: 600px ) {
+	.card-list {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.card-list h2 {
+		font-size: 1.8rem;
+	}
+}
+
+.card-list .card:after {
+	content: " ";
+	display: block;
+	background: var(--action-color);
+	width: 5rem;
+	height: 0.25rem;
+	position: absolute;
+	top: 0;
+	right: 2rem;
+}
+
+* + .back-to-page {
+	display: inline-block;
+	margin-top: 2rem;
+}
