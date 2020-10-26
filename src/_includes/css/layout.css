@@ -1,4 +1,8 @@
 .container {
-	max-width: var(--page-width);
+	max-width: var(--width-page);
 	margin: 0 auto;
+}
+
+main {
+	margin-top: 3rem;
 }

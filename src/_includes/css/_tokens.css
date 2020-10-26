@@ -1,16 +1,17 @@
 :root {
-	--color-bg:           #111;
-	--color-surface:      #16191c; /* #2e343b */
+	--color-bg:           #0f0f0f;
+	--color-bg-selection: rgba(255, 217, 0, 0.99);
+	/* Why RGBA 0.99? https://stackoverflow.com/a/7224621 */
 	--color-text:         #fff;
 	--color-text-subdued: #ccc;
-	--color-text-dark:    #19155B;
-	--color-interactive:  #b473f7;
+	--color-text-dark:    #111;
+	--color-interactive:  #2d9afb;
 	--color-focus:        #FFD900;
 
-	--page-width: 55rem;
+	--width-page: 55rem;
 
-	--fontfamily: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-	--fontfamily-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	--font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	--font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	--fontsize-base: 1rem;
 	--fontsize-smallscreen: 1.4rem;
 }

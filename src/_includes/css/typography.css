@@ -62,7 +62,7 @@ blockquote {
 }
 
 blockquote:before {
-	border-left: solid 0.25rem var(--color-interactive);
+	border-left: solid 0.25rem var(--color-focus);
 	border-radius: 5px;
 	content: " ";
 	position: absolute;
@@ -71,7 +71,7 @@ blockquote:before {
 	bottom: 0;
 }
 
-h1 + blockquote {
+header + blockquote {
 	font-weight: normal;
 	font-size: 1.1rem;
 }
@@ -81,7 +81,7 @@ h1 + blockquote {
 		padding-left: 2rem;
 	}
 
-	h1 + blockquote {
+	header + blockquote {
 		font-size: 1.6rem;
 	}
 }

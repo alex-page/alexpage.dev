@@ -4,8 +4,9 @@ html {
 
 	font-size: 16px;
 	color: var( --color-text );
+	background-color: var(--color-bg);
 
-	font-family: var(--fontfamily);
+	font-family: var(--font);
 	font-weight: 300;
 	line-height: 1.5;
 }
@@ -14,7 +15,6 @@ html {
 body {
 	margin: 0;
 	padding-bottom: 5rem;
-	background-color: #111;
 }
 
 @media ( min-width: 600px ) {
@@ -26,21 +26,10 @@ body {
 
 ::selection {
 	color: var( --color-text-dark );
-	background-color: rgba(61, 252, 179, 0.99);
-	/* Why RGBA 0.99? https://stackoverflow.com/a/7224621 */
+	background-color: var(--color-bg-selection);
 }
 
 *:focus {
 	outline: solid 3px var(--color-focus);
 	outline-offset: 4px;
 }
-
-/* .gradient {
-	position: fixed;
-	top: 0;
-	right: 0%;
-	bottom: 0;
-	left: 0;
-	background-color: var(--bg-color);
-	z-index: -1;
-} */

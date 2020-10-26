@@ -6,12 +6,11 @@
 	<style>{% cssBundle %}</style>
 </head>
 <body>
+	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
-		<a class="skip-link sr-only" href="#content">Skip to content</a>
-		{% include 'components/nav.njk' %}
 		{% include 'components/header.njk' %}
+		<blockquote>{{summary}}</blockquote>
+		<main id="#content">{{ content | safe }}</main>
 	</div>
-	<div class="harmonograph">{{harmonograph.svg | safe}}</div>
-	<div class="gradient"></div>
 </body>
 </html>

@@ -6,7 +6,7 @@
 @import './global.css';
 @import './layout.css';
 
-@import './nav.css';
-@import './list.css';
 @import './header.css';
-/* @import './card.css'; */
+@import './skip-link.css';
+/* @import './nav.css'; */
+/* @import './list.css'; */
