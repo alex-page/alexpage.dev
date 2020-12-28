@@ -1,14 +1,15 @@
 :root {
-	--color-bg:           #0f0f0f;
-	--color-bg-selection: rgba(255, 217, 0, 0.99);
+	--color-bg:           #fff;
+	--color-bg-selection: rgba(255, 217, 0, 0.7);
 	/* Why RGBA 0.99? https://stackoverflow.com/a/7224621 */
-	--color-text:         #fff;
-	--color-text-subdued: #ccc;
-	--color-text-dark:    #111;
-	--color-interactive:  #2d9afb;
+	--color-text:         #070809;
+	--color-text-subdued: #4f5255;
+	--color-border:       #ccc;
+	--color-interactive:  #0476DC;
 	--color-focus:        #FFD900;
 
-	--width-page: 55rem;
+
+	--width-page: 50rem;
 
 	--font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	--font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;

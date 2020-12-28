@@ -1,13 +1,13 @@
 .skip-link {
 	padding: 0.5rem 1rem;
 	z-index: 100;
-	color: var(--color-text-dark);
-	background-color: var(--color-text);
+	border-radius: 3px;
+	background-color: var(--color-interactive);
 }
 
 .skip-link,
 .skip-link:hover {
-	color: var(--color-text-dark);
+	color: var(--color-bg);
 }
 
 .skip-link:focus {

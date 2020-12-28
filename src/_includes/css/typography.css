@@ -24,6 +24,10 @@ h2 {
 	margin-top: 1rem;
 }
 
+.text--small {
+	font-size: 1rem;
+}
+
 blockquote + p {
 	margin-top: 2rem;
 }
@@ -42,6 +46,7 @@ blockquote + p {
 
 a {
 	color: var(--color-interactive);
+	font-weight: normal;
 	text-decoration: none;
 }
 
@@ -61,18 +66,30 @@ blockquote {
 	margin-top: 1.5rem;
 }
 
-blockquote:before {
-	border-left: solid 0.25rem var(--color-focus);
-	border-radius: 5px;
+blockquote:before,
+blockquote:after {
+	border-left-style: solid;
+	border-left-width: 0.75rem;
+	border-radius: 0.5rem;
 	content: " ";
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
+	mix-blend-mode: darken;
 }
 
-header + blockquote {
-	font-weight: normal;
+blockquote:before {
+	border-color: fuchsia;
+	transform: translateY(-0.25rem);
+}
+
+blockquote:after {
+	border-color: aqua;
+	transform: rotate(5deg);
+}
+
+h1 + blockquote {
 	font-size: 1.1rem;
 }
 
@@ -81,7 +98,7 @@ header + blockquote {
 		padding-left: 2rem;
 	}
 
-	header + blockquote {
+	h1 + blockquote {
 		font-size: 1.6rem;
 	}
 }
@@ -89,13 +106,14 @@ header + blockquote {
 hr {
 	position: relative;
 	border: 0;
-	border-top: 2px solid var(--text-color);
-	border-radius: 5px;
+	border-top: 1px solid var(--color-border);
 	margin: 2.5rem 0;
 }
 
-img::selection,
-video::selection,
-iframe::selection {
-	background-color: rgba( 61, 252, 179, 0.75 );
+.text--subdued {
+	color: var(--color-text-subdued);
+}
+
+.text--center {
+	text-align: center;
 }

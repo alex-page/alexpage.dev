@@ -1,0 +1,16 @@
+{
+	"items": [
+		{
+			"url": "https://twitter.com/alexpage_",
+			"text": "Twitter"
+		},
+		{
+			"url": "https://github.com/alex-page",
+			"text": "GitHub"
+		},
+		{
+			"url": "mailto:alex@alexpage.com.au",
+			"text": "Mail"
+		}
+	]
+}

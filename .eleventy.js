@@ -9,23 +9,7 @@ const fs = require('fs');
 module.exports = ( eleventyConfig ) => {
 	eleventyConfig.addNunjucksShortcode('cssBundle', () => {
 		return new MinifyCss({}).minify(['src/_includes/css/_base.css']).styles;
-	})
-
-	/**
-	 * Get the parent page section
-	 */
-	eleventyConfig.addFilter('tagSection', ( tags ) => {
-		let title = tags.filter( tag => tag !=='featured')
-			.map( tag => tag[ tag.length - 1 ] ==='s' ? tag.slice(0, -1) : tag )
-			.join(' ');
-		return title;
 	});
-
-	eleventyConfig.addFilter('tagTitle', ( tags ) => {
-		return tags.filter( tag => tag !=='featured').join(' ');
-	});
-
-	eleventyConfig.addFilter('prettyNumber', ( number ) => PrettyNumber( number ));
 
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPassthroughCopy({'src/_assets':'assets'});
@@ -34,6 +18,9 @@ module.exports = ( eleventyConfig ) => {
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready: function(error, browserSync) {
+				if(error){
+					throw new Error(error);
+				}
 
 				browserSync.addMiddleware('*', (request, response) => {
 					const content_404 = fs.readFileSync('_site/404.html');
@@ -49,9 +36,6 @@ module.exports = ( eleventyConfig ) => {
 		dir: {
 			input:'src',
 			includes:'_includes'
-		},
-		templateFormats : ['njk','md'],
-		htmlTemplateEngine :'njk',
-		markdownTemplateEngine:'njk',
+		}
 	};
 };

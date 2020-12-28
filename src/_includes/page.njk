@@ -1,16 +1,20 @@
+---
+titleSuffix: Alex Page
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% include 'meta.njk' %}
-	<title>{{htmltitle if htmltitle else pagetitle}} - Alex Page</title>
+	{% include 'components/meta.njk' %}
+	<title>{% if title %}{{title}} - {% endif %}{{titleSuffix}}</title>
 	<style>{% cssBundle %}</style>
 </head>
 <body>
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
-		{% include 'components/header.njk' %}
-		<blockquote>{{summary}}</blockquote>
-		<main id="#content">{{ content | safe }}</main>
+		<main class="content" id="content">
+			{{content | safe}}
+		</main>
+		{% include 'components/footer.njk' %}
 	</div>
 </body>
 </html>

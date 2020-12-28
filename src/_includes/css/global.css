@@ -14,22 +14,31 @@ html {
 
 body {
 	margin: 0;
-	padding-bottom: 5rem;
+	padding: 3rem 1.5rem 5rem 1.5rem;
 }
 
 @media ( min-width: 600px ) {
 	body {
 		font-size: var(--fontsize-smallscreen);
-		padding: 3rem 1.5rem 5rem 1.5rem;
 	}
 }
 
 ::selection {
-	color: var( --color-text-dark );
+	background-color: var(--color-bg-selection);
+}
+
+
+img::selection,
+video::selection,
+iframe::selection {
 	background-color: var(--color-bg-selection);
 }
 
 *:focus {
 	outline: solid 3px var(--color-focus);
 	outline-offset: 4px;
+}
+
+*:focus:active {
+	outline: none;
 }
