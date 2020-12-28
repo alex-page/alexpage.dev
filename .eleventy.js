@@ -1,15 +1,15 @@
-// Dependencies
-const PrettyNumber     = require('number-abbreviate');
 const MinifyCss        = require('clean-css');
+const yaml             = require("js-yaml");
 const syntaxHighlight  = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-// Local dependencies
 const fs = require('fs');
 
 module.exports = ( eleventyConfig ) => {
 	eleventyConfig.addNunjucksShortcode('cssBundle', () => {
 		return new MinifyCss({}).minify(['src/_includes/css/_base.css']).styles;
 	});
+
+	eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPassthroughCopy({'src/_assets':'assets'});
