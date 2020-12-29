@@ -1,7 +1,7 @@
 code {
-	font-family: var( --fontfamily-code );
+	font-family: var( --font-code );
 	font-size: 1rem;
-	background: rgba( 0, 0, 0, 0.2 );
+	background: var(--color-bg-subdued);
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.25rem;
 	font-weight: 100;
@@ -19,9 +19,10 @@ code {
 .content pre {
 	margin: 2rem -1.5rem;
 	overflow-x: auto;
-	background: rgba( 0, 0, 0, 0.2 );
+	background: var(--color-bg-subdued);
 	padding: 1rem  1.5rem;
 	line-height: 1;
+	border-radius: 0.5rem;
 }
 
 pre code {
@@ -44,60 +45,60 @@ pre code {
  * @author ericwbailey
  */
 .token.comment,
+.token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #d4d0ab;
+	color: #7D8B99;
 }
 
 .token.punctuation {
-	color: #fefefe;
+	color: #5F6364;
 }
 
 .token.property,
 .token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #ffa07a;
-}
-
-.token.boolean,
-.token.number {
-	color: #00e0e0;
+	color: #c92c2c;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string,
 .token.char,
+.token.function,
 .token.builtin,
 .token.inserted {
-	color: #abe338;
+	color: #2f9c0a;
 }
 
 .token.operator,
 .token.entity,
 .token.url,
-.language-css .token.string,
-.style .token.string,
 .token.variable {
-	color: #00e0e0;
+	color: #a67f59;
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function {
-	color: #ffd700;
-}
-
-.token.keyword {
-	color: #00e0e0;
+.token.keyword,
+.token.class-name {
+	color: #1990b8;
 }
 
 .token.regex,
 .token.important {
-	color: #ffd700;
+	color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
 }
 
 .token.important,

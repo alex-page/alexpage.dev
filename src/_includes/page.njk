@@ -11,6 +11,9 @@ titleSuffix: Alex Page
 <body>
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
+		{%if page.url !== '/' %}
+			<a class="text--small" href="/">← Back home</a>
+		{% endif %}
 		<main class="content" id="content">
 			{{content | safe}}
 		</main>

@@ -34,8 +34,8 @@ module.exports = ( eleventyConfig ) => {
 
 	return {
 		dir: {
-			input:'src',
-			includes:'_includes'
+			input: 'src',
+			includes: '_includes'
 		}
 	};
 };

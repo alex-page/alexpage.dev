@@ -1,4 +1,5 @@
-ul:not(.list) > li {
+ul:not(.list) li,
+ol:not(.list) li {
 	margin-top: 1rem;
 }
 
