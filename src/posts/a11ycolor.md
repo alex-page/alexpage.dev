@@ -1,14 +1,16 @@
 ---
 layout: page
 title: A11yColor
-tags: [projects, featured]
+summary: Generate the nearest accessible color in SASS and JavaScript.
+tags: [featured]
 date: 2017-10-18
-npm: a11ycolor
-github: alex-page/a11ycolor
+ids:
+  npm: a11ycolor
+  github: alex-page/a11ycolor
 ---
 # {{title}}
 
-> Generate the nearest accessible color in SASS and JavaScript.
+> {{summary}}
 
 Having to solve colour contrast for 1000+ websites I created functions to generate the nearest accessible colour in [SASS](https://github.com/alex-page/sass-a11ycolor) and [JavaScript](https://github.com/alex-page/a11ycolor). This allowed users to input their colours into a system and the output was guaranteed to meet colour contrast.
 

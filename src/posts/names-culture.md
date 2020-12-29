@@ -1,17 +1,16 @@
 ---
 layout: page
 title: Names and culture
-tags: [talks, featured]
+summary: Communication is hard and what we name things affects how well we communicate.
+tags: [featured]
 date: 2018-09-11
-duration: 22:18m
-video:
-  id: -xAKir02gto
-  alt: Alex talking at the Design System Meetup v4.0.0
+ids:
+  youtube: -xAKir02gto
 ---
 
 # {{title}}
 
-> Communication is hard and what we name things affects how well we communicate.
+> {{summary}}
 
 I was invited to talk at [Design System Meetup v4.0.0](https://designsystemmeetup.com/v4.0.0/) about names and culture.
 

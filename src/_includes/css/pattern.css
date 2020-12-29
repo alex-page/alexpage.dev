@@ -1,0 +1,26 @@
+.pattern {
+	position: relative;
+	display: inline-block;
+	font-size: 1.4rem;
+}
+
+.pattern:before,
+.pattern:after {
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	word-wrap: break-word;
+	text-align: right;
+}
+
+.pattern:before {
+	color: fuchsia;
+	content: "▓▓▓░░░░░░░▓▓▓░░░▓▓▓░░░░░";
+	width: 5rem;
+}
+
+.pattern:after {
+	color: aqua;
+	content: "░░░░▓▓▓▓▓░░░░░░░░░░░░";
+	width: 4rem;
+}

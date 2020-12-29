@@ -39,6 +39,8 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"@harmonograph/svg": "^0.2.0",
 		"clean-css": "^4.2.3",
+		"globby": "^11.0.1",
+		"gray-matter": "^4.0.2",
 		"js-yaml": "^3.14.1"
 	},
 	"devDependencies": {

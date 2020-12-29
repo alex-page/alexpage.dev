@@ -1,14 +1,15 @@
 ---
 layout: page
 title: Furnace
-tags: [projects]
+summary: Get started with the Australian Government Design System by selecting components and downloading a zip file.
 date: 2017-10-15
-github: govau/furnace
+ids:
+  github: govau/furnace
 ---
 
 # {{title}}
 
-> Get started with the Australian Government Design System by selecting components and downloading a zip file.
+> {{summary}}
 
 I built [Furnace](https://designsystem.gov.au/download), a tool that removes the barrier to entry for users unfamiliar to _npm_ by allowing them to easily download a zip file of the design system. 
 

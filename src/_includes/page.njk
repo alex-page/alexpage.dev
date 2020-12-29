@@ -1,6 +1,7 @@
 ---
 titleSuffix: Alex Page
 ---
+{% set isHome = (page.url === '/') %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,24 @@ titleSuffix: Alex Page
 <body>
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
-		{%if page.url !== '/' %}
+		{%if isHome %}
+			<div class="pattern">
+				<img src="https://github.com/alex-page.png" alt="Picture of Alex Page" width="200px" height="200px">
+			</div>
+		{% else %}
 			<a class="text--small" href="/">← Back home</a>
 		{% endif %}
 		<main class="content" id="content">
 			{{content | safe}}
+			{%if isHome %}
+			<ul>
+				<li>plz</li>
+				<li>plz</li>
+				<li>plz</li>
+				<li>plz</li>
+				<li>plz</li>
+			</ul>
+			{% endif %}
 		</main>
 		{% include 'components/footer.njk' %}
 	</div>

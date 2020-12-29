@@ -1,14 +1,15 @@
 ---
 layout: page
 title: Why we have user experience developers at Shopify
-tags: [blog, featured]
+summary: Web designer, front end developer, web developer, user interface engineer, design technologist…
+tags: [featured]
 date: 2019-21-04
 ---
 ![A pixelated picture of a lady looking at a tablet and running a store](/assets/ux-developers/main.png)
 
 # {{title}}
 
-> Web designer, front end developer, web developer, user interface engineer, design technologist…
+> {{summary}}
 
 In 2015 I lived at my parents' house in [Canberra, Australia](https://www.google.com/maps/place/Canberra+ACT,+Australia/). Only having 50kb/s internet speed available meant uploading a photo would crash the connection for everyone else.
 

@@ -14,7 +14,3 @@ footer {
 footer ul + .logo {
 	margin-top: 1.5rem;
 }
-
-.circle {
-	border-radius: 50%;
-}

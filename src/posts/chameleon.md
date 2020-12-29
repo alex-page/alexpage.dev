@@ -1,13 +1,14 @@
 ---
 layout: page
 title: Chameleon
-tags: [projects]
+summary: Customise and share colour palettes of the Australian Government Design System.
 date: 2018-09-21
-github: govau/chameleon
+ids:
+  github: govau/chameleon
 ---
 # {{title}}
 
-> Customise and share colour palettes of the Australian Government Design System.
+> {{summary}}
 
 I helped build Chameleon, a tool for quickly prototyping different accessible colour palettes for the Australian Government Design System.
 
