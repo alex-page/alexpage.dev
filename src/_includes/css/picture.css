@@ -16,6 +16,7 @@
 	font-size: 1.4rem;
 	color: var(--color-decorative-1);
 	width: 5rem;
+	font-family: arial, sans-serif;
 }
 
 .pattern:last-of-type {
