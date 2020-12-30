@@ -23,7 +23,7 @@ const fetchData = async file => {
 	const post = {
 		content,
 		...data,
-		...data.permalink !== false && {url: file.replace('.md', '').replace('src', '')},
+		...data.permalink !== false && {url: file.replace('index.md', '').replace('src', '')},
 		...data.github && {stars: await fetchStars(data.github)},
 		...data.npm && {downloads: await fetchDownloads(data.npm)}
 	};
@@ -32,7 +32,7 @@ const fetchData = async file => {
 };
 
 module.exports = async () => {
-	const projectFiles = await globby(['src/posts/*.md', 'src/blog/*.md']);
+	const projectFiles = await globby(['src/posts/*.md', 'src/blog/**/*.md']);
 	const data = projectFiles.map(file => fetchData(file));
 	const posts = await Promise.all(data);
 
