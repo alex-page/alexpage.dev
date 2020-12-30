@@ -1,103 +1,28 @@
+{% set isHome = (page.url === '/') %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-	<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-	<meta name="robots" content="index, follow">
-	<meta name="author" content="Alex Page">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Alex Page">
-	<meta name="twitter:description" content="Modern technology and thoughtful design - Alex Page">
-	<meta name="twitter:name" content="Alex Page">
-	<meta name="twitter:image" content="http://alexpage.com.au/assets/favicons/alex-page.jpg">
-	<meta name="Description" content="{% if summary %}{{ summary }}{% else %}I am a developer specialising in design systems, JavaScript, open-source and accessibility. I love solving problems at scale with systemisation, automation, modern technology and thoughtful design.{% endif %}">
-	<title>{{ pagetitle }} - Alex Page</title>
-	{% set basecss %}{% include 'css/base.css' %}{% endset %}
-	<style>{{ basecss | cssmin | safe }}</style>
+	{% include 'components/meta.njk' %}
+	<title>{{ 'Home' if isHome else title }} - Alex Page</title>
+	<style>{% cssBundle %}</style>
 </head>
 <body>
+	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
-		<a class="skip-link sr-only" href="#content">Skip to content</a>
-		<!-- The default header block -->
-		<header class="header clearfix">
-			{% include 'main-menu.njk' %}
-		</header>
-
-		<!-- The harmonograph -->
-		{% block content_header %}
-		<div class="content-header">
-			{% if emoji %}
-			<div class="content-header_right">{{emoji}}</div>
-			{% else %}
-			<div id="harmonograph" class="content-header_right">
-				{{harmonograph.svg | safe}}
+		{% if not isHome %}
+			<div class="layout--header">
+				<a class="text--small" href="/">← Back home</a>
+				{% if date %}{% include 'components/date.njk' %}{% endif %}
 			</div>
-			{% endif %}
-		</div>
-		{% endblock %}
-
-		<!-- The main content area -->
+		{% endif %}
+		{% if img %}{% include 'components/picture.njk' %}{% endif %}
 		<main class="content" id="content">
-			<div class="card">
-				<!-- Home page -->
-				{% block page_title %}
-				<h1>{{ pagetitle }}</h1>
-				{% endblock %}
-				{% if summary %}
-					<blockquote>{{ summary }}</blockquote>
-				{% endif %}
-				{% block main %}
-					<div class="content-area">
-						{{ content | safe }}
-					</div>
-				{% endblock %}
-			</div>
-			{% block after_main %}{% endblock %}
-			{% block listing %}
-				<ul class="list card-list">
-				{%- for item in collections.featured | reverse -%}
-					<li>
-						<a class="card" href="{{ item.url }}">
-							<ul class="clearfix list list--inline list--small">
-								<li>Featured {{ item.data.tags | tagSection }}</li>
-								{%if 'projects' in item.data.tags %}
-								<li>
-									<svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="var(--focus-color)" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-									<span>{{ projects.stars[ item.data.github ] | prettyNumber }}</span>
-									<span class="sr-only"> stars</span>
-								</li>
-								{% if item.data.npm %}
-								<li>
-									<svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="var(--focus-color)" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-									<span>{{ projects.downloads[ item.data.npm ] | prettyNumber }}</span>
-									<span class="sr-only"> downloads last year</span>
-								</li>
-								{% endif %}
-								{% endif %}
-							</ul>
-
-							<h2>{{ item.data.pagetitle }}</h2>
-							<p>{{ item.data.summary }}</p>
-						</a>
-					</li>
-				{%- endfor -%}
-				</ul>
-			{% endblock %}
+			<h1>{{title}}</h1>
+			<blockquote>{{summary}}</blockquote>
+			{{content | safe}}
+			{% if isHome %}{% include 'components/posts.njk' %}{% endif %}
 		</main>
-
-		<!-- The footer -->
-		<footer>
-			{% include 'social-menu.njk' %}
-			<p>Thanks for visiting 🤜✨🤛</p>
-		</footer>
+		{% include 'components/footer.njk' %}
 	</div>
-	<div class="gradient-bg"></div>
-	{% set extracss %}{% include 'css/extra.css' %}{% endset %}
-	<style>{{ extracss | cssmin | safe }}</style>
-	{%block page_end %}{% endblock %}
 </body>
 </html>

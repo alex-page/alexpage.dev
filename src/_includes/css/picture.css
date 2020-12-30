@@ -1,0 +1,24 @@
+* + .picture {
+	margin-top: 2rem;
+}
+
+.picture--container {
+	position: relative;
+	display: inline-block;
+}
+
+.pattern {
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	word-wrap: break-word;
+	text-align: right;
+	font-size: 1.4rem;
+	color: var(--color-decorative-1);
+	width: 5rem;
+}
+
+.pattern:last-of-type {
+	color: var(--color-decorative-2);
+	width: 4rem;
+}

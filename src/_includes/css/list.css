@@ -1,0 +1,21 @@
+ul:not(.list) li,
+ol:not(.list) li {
+	margin-top: 1rem;
+}
+
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.list--inline {
+	flex-direction: row;
+}
+
+.list--inline > li {
+	margin-right: 1rem;
+}

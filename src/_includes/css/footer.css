@@ -1,0 +1,9 @@
+.footer {
+	border-top: 1px solid var(--color-border);
+	padding-top: 2rem;
+}
+
+.footer .list {
+	display: inline-flex;
+	align-items: center;
+}

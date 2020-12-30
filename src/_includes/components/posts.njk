@@ -1,0 +1,25 @@
+{% macro post(post) %}
+<li>
+	<h2 class="h3">{{post.title}}</h2>
+	{{post.summary}}
+	<ul class="list list--inline text--small">
+		{%if post.url %}<li><a href="{{post.url}}">Read post</a></li>{% endif %}
+		{%if post.site %}<li><a href="{{post.site}}">Website</a></li>{% endif %}
+		{%if post.youtube %}<li><a href="https://youtube.com/watch?v={{post.youtube}}">Watch talk</a></li>{% endif %}
+		{%if post.github %}<li><a href="https://github.com/{{post.github}}">Repository</a></li>{% endif %}
+		{%if post.npm %}<li><a href="https://npmjs.com/package/{{post.npm}}">Package</a></li>{% endif %}
+		{%if post.stars %}<li>{{ post.stars | prettyNumber }} stars</li>{% endif %}
+		{%if post.downloads %}<li>{{ post.downloads | prettyNumber }} downloads</li>{% endif %}
+	</ul>
+</li>
+{% endmacro %}
+
+<ul class="posts list">
+	{% for item in posts | selectattr('featured') | sort(attribute='date', reverse='true') %}
+		{{post(item)}}
+	{% endfor %}
+
+	{% for item in posts | rejectattr('featured') | sort(attribute='date', reverse='true') %}
+	{{post(item)}}
+	{% endfor %}
+</ul>

@@ -1,0 +1,34 @@
+:root {
+	--color-bg:           #fff;
+	--color-bg-subdued:   #eee;
+	--color-bg-selection: rgba(255, 221, 0, 0.7);
+	/* Why RGBA 0.99? https://stackoverflow.com/a/7224621 */
+	--color-text:         #112;
+	--color-text-subdued: #555;
+	--color-border:       #ccc;
+	--color-interactive:  #07C;
+	--color-focus:        #FD0;
+	--color-decorative-1: #F0F;
+	--color-decorative-2: #0FF;
+
+	--decorative-blend: darken;
+
+	--width-page: 48rem;
+
+	--font: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	--font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	--fontsize-base: 1rem;
+	--fontsize-smallscreen: 1.4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text:         #fff;
+		--color-bg:           #001;
+		--color-interactive:  #0CF;
+		--color-border:       #223;
+		--color-text-subdued: #aaa;
+
+		--decorative-blend: lighten;
+	}
+}
