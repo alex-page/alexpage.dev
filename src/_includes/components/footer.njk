@@ -7,6 +7,9 @@
 		{% endfor %}
 	</ul>
 	<p>
-		<a href="/" class="logo">{% include 'components/logo.njk' %}</a>
+		<a href="/" class="logo">
+			<span class="sr-only">Home</span>
+			{% include 'components/logo.njk' %}
+		</a>
 	</p>
 </footer>

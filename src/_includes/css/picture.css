@@ -1,26 +1,24 @@
-.picture > span {
+* + .picture {
+	margin-top: 2rem;
+}
+
+.picture--container {
 	position: relative;
 	display: inline-block;
 }
 
-.picture > span:before,
-.picture > span:after {
+.pattern {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
 	word-wrap: break-word;
 	text-align: right;
 	font-size: 1.4rem;
-}
-
-.picture > span:before {
-	color: fuchsia;
-	content: "▓▓▓░░░░░░░▓▓▓░░░▓▓▓░░░░░";
+	color: var(--color-decorative-1);
 	width: 5rem;
 }
 
-.picture > span:after {
-	color: aqua;
-	content: "░░░░▓▓▓▓▓░░░░░░░░░░░░";
+.pattern:last-of-type {
+	color: var(--color-decorative-2);
 	width: 4rem;
 }

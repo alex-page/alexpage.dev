@@ -4,7 +4,13 @@
 }
 
 main {
-	margin-top: 3rem;
+	margin-top: 1rem;
+}
+
+@media ( min-width: 600px ) {
+	main {
+		margin-top: 2rem;
+	}
 }
 
 footer {
@@ -13,4 +19,10 @@ footer {
 
 footer ul + .logo {
 	margin-top: 1.5rem;
+}
+
+.layout--header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

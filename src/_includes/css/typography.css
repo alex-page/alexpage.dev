@@ -12,6 +12,11 @@ h2 {
 	line-height: 1.3;
 }
 
+h3,
+.h3 {
+	font-size: 1.65rem;
+}
+
 * + h2 {
 	margin-top: 3.5rem;
 }
@@ -29,7 +34,7 @@ h2 {
 }
 
 blockquote + p {
-	margin-top: 3rem;
+	margin-top: 2rem;
 }
 
 @media ( min-width: 600px ) {
@@ -69,23 +74,23 @@ blockquote {
 blockquote:before,
 blockquote:after {
 	border-left-style: solid;
-	border-left-width: 0.75rem;
+	border-left-width: 0.5rem;
 	border-radius: 0.5rem;
 	content: " ";
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	mix-blend-mode: darken;
+	mix-blend-mode: var(--decorative-blend);
 }
 
 blockquote:before {
-	border-color: fuchsia;
+	border-color: var(--color-decorative-1);
 	transform: translateY(-0.25rem);
 }
 
 blockquote:after {
-	border-color: aqua;
+	border-color: var(--color-decorative-2);
 	transform: rotate(5deg);
 }
 
@@ -96,6 +101,11 @@ h1 + blockquote {
 @media( min-width: 600px ){
 	blockquote {
 		padding-left: 2.5rem;
+	}
+
+	blockquote:before,
+	blockquote:after {
+		border-left-width: 0.75rem;
 	}
 
 	h1 + blockquote {

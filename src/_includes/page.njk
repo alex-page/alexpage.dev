@@ -10,11 +10,13 @@
 	<a class="skip-link sr-only" href="#content">Skip to content</a>
 	<div class="container">
 		{% if not isHome %}
-			<a class="text--small" href="/">← Back home</a>
+			<div class="layout--header">
+				<a class="text--small" href="/">← Back home</a>
+				{% if date %}{% include 'components/date.njk' %}{% endif %}
+			</div>
 		{% endif %}
 		{% if img %}{% include 'components/picture.njk' %}{% endif %}
 		<main class="content" id="content">
-			{% if date %}{% include 'components/date.njk' %}{% endif %}
 			<h1>{{title}}</h1>
 			<blockquote>{{summary}}</blockquote>
 			{{content | safe}}
