@@ -1,4 +1,4 @@
-# ⚡️ [Alex Page](http://alexpage.com.au)
+# [alexpage.com.au](http://alexpage.com.au)
 
 > I lead multidisciplinary teams, build communities and create systems with modern technology and thoughtful design. I am obsessed with user experience and write code that connects people to pixels.
 
