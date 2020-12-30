@@ -15,7 +15,7 @@
 		}
 	],
 	"scripts": {
-		"test": "npm run test:content && npm run test:scripts",
+		"test": "npm run test:scripts",
 		"test:scripts": "xo src/_data",
 		"build": "eleventy",
 		"dev": "eleventy --serve"
