@@ -3,46 +3,38 @@ const globby = require('globby');
 const matter = require('gray-matter');
 const fs = require('fs');
 
-/**
- * Read the markdown file and return the value of the key
- *
- * @param {string} directory -  The directory of the files
- * @param {string} frontMatterKey - The key to return the value
- */
-const getFrontMatter = async (directory, frontMatterKey) => {
-	const projectFiles = await globby([directory]);
+const githubApi = 'https://api.github.com/repos/';
+const npmApi = 'https://api.npmjs.org/downloads/point/last-year/';
 
-	return projectFiles
-		.map(file => {
-			const fileContents = fs.readFileSync(file);
-			const {data} = matter(fileContents);
-			return {
-				url: file.replace('src', '').replace('.md', ''),
-				...data
-			};
-		});
+const fetchStars = async repo => {
+	const data = await cache(`${githubApi}${repo}`, {type: 'json'});
+	return data.stargazers_count;
+};
+
+const fetchDownloads = async npmPackage => {
+	const data = await cache(`${npmApi}${npmPackage}`, {type: 'json'});
+	return data.downloads;
+};
+
+const fetchData = async file => {
+	const fileContents = fs.readFileSync(file);
+	const {data, content} = matter(fileContents);
+
+	const post = {
+		content,
+		...data,
+		...data.permalink !== false && {url: file.replace('.md', '').replace('src', '')},
+		...data.github && {stars: await fetchStars(data.github)},
+		...data.npm && {downloads: await fetchDownloads(data.npm)}
+	};
+
+	return post;
 };
 
 module.exports = async () => {
-	const posts = await getFrontMatter('src/posts/*.md');
+	const projectFiles = await globby(['src/posts/*.md', 'src/blog/*.md']);
+	const data = projectFiles.map(file => fetchData(file));
+	const posts = await Promise.all(data);
 
-	posts.forEach(post => {
-		const isGitHubRepo = post.github;
-		const isNpmPackage = post.npm;
-		const isTalk = post.tags.includes('talks');
-
-		console.log(isGitHubRepo, isNpmPackage, isTalk);
-	});
-
-	// const repoStars = {};
-	// repoData.forEach(githubRepo => {
-	// 	repoStars[githubRepo.full_name] = githubRepo.stargazers_count;
-	// });
-
-	// const packageDownloads = {};
-	// packageData.forEach(npmPackage => {
-	// 	packageDownloads[npmPackage.package] = npmPackage.downloads;
-	// });
-
-	return {};
+	return posts;
 };

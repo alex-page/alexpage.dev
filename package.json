@@ -16,7 +16,6 @@
 	],
 	"scripts": {
 		"test": "npm run test:content && npm run test:scripts",
-		"test:content": "write-good *.md",
 		"test:scripts": "xo src/_data",
 		"build": "eleventy",
 		"dev": "eleventy --serve"
@@ -36,15 +35,16 @@
 	"dependencies": {
 		"@11ty/eleventy": "0.11.1",
 		"@11ty/eleventy-cache-assets": "^2.0.2",
+		"@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
 		"@harmonograph/svg": "^0.2.0",
 		"clean-css": "^4.2.3",
 		"globby": "^11.0.1",
 		"gray-matter": "^4.0.2",
-		"js-yaml": "^3.14.1"
+		"js-yaml": "^3.14.1",
+		"number-abbreviate": "^2.0.0"
 	},
 	"devDependencies": {
-		"write-good": "^1.0.2",
 		"xo": "^0.27.2"
 	}
 }

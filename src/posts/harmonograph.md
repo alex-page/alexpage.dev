@@ -1,16 +1,12 @@
 ---
 layout: page
+permalink: false
 title: Harmonograph
 summary: Draw beautiful randomised lissajous curves in the browser.
 date: 2018-03-24
-ids:
-  github: alex-page/harmonograph.art
-  npm: harmonograph/svg
+github: alex-page/harmonograph.art
+npm: \@harmonograph/svg
 ---
-# {{title}}
-
-> {{summary}}
-
 A Harmonograph is a swinging platform where a pen attached to a pendulum, draws intricate shapes and patterns on paper.
 
 As a child I used to visit the National Science and Technology Centre and see the harmonograph they had on display. A Harmonograph is a swinging platform where a pen attached to a pendulum, draws intricate shapes and patterns on paper.

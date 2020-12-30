@@ -2,15 +2,12 @@
 layout: page
 title: Why we have user experience developers at Shopify
 summary: Web designer, front end developer, web developer, user interface engineer, design technologist…
-tags: [featured]
+featured: true
 date: 2019-21-04
+img:
+  src: main.png
+  alt: A pixelated picture of a lady looking at a tablet and running a store
 ---
-![A pixelated picture of a lady looking at a tablet and running a store](/assets/ux-developers/main.png)
-
-# {{title}}
-
-> {{summary}}
-
 In 2015 I lived at my parents' house in [Canberra, Australia](https://www.google.com/maps/place/Canberra+ACT,+Australia/). Only having 50kb/s internet speed available meant uploading a photo would crash the connection for everyone else.
 
 For people living in rural Australia, and many places around the world, this is a common scenario. While working for the Australian Government, I heard stories of farmers having to walk up a hill to throw their phone into the air. Each throw downloaded more of the user interface. They would throw their phone until they were able to finish their task. This was easier than driving five hours to the closest town.
@@ -28,7 +25,7 @@ When engineering teams build from the prototypes and high-fidelity designs, they
 
 The UX and engineering teams are not a part of each other's process. These teams struggle to speak the same language, and handover slows each team's understanding, making it harder to challenge the other.
 
-![A pixelated picture of a lady looking at a tablet and running a store](/assets/ux-developers/handover.png)
+![A green ball moving from user, ux team, engineering team and back to user that represents quality diminishing.](handover.png)
 
 UX developers bridge this gap.
 
@@ -44,7 +41,7 @@ The first reference I saw to the role UX developer was in a post by [@leisa](htt
 
 UX developers are a part of the whole UX continuum from the pixel to the person. They bring engineering knowledge and context to the UX team so designers can make well-informed design decisions. They also bring empathy for the user and deep problem-space understanding to the engineering team so developers can make well-informed engineering decisions. This creates a strong connection between people and pixels.
 
-![A pixelated picture of a lady looking at a tablet and running a store](/assets/ux-developers/bridge-gap.png)
+![A green ball that represents quality stays a consistent size through handover with UX Developers working with  the teams.](bridge-gap.png)
 
 UX developers work with stakeholders, designers, fellow engineers, content strategists, and researchers. They collaborate throughout the ideation, exploration, and build phases of project work. They take part in research sessions and write production code.
 

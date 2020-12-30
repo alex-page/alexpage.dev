@@ -1,19 +1,24 @@
-const MinifyCss        = require('clean-css');
-const yaml             = require("js-yaml");
-const syntaxHighlight  = require('@11ty/eleventy-plugin-syntaxhighlight');
+const MinifyCss           = require('clean-css');
+const Yaml                = require('js-yaml');
+const SyntaxHighlight     = require('@11ty/eleventy-plugin-syntaxhighlight');
+const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
+const PrettyNumber        = require('number-abbreviate');
 
 const fs = require('fs');
 
-module.exports = ( eleventyConfig ) => {
-	eleventyConfig.addNunjucksShortcode('cssBundle', () => {
-		return new MinifyCss({}).minify(['src/_includes/css/_base.css']).styles;
-	});
+module.exports = eleventyConfig => {
+	eleventyConfig.addNunjucksShortcode('cssBundle', () => new MinifyCss({}).minify(['src/_includes/css/_base.css']).styles);
 
-	eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+	eleventyConfig.addPlugin(SyntaxHighlight);
+	eleventyConfig.addPlugin(inclusiveLangPlugin);
 
-	eleventyConfig.addPlugin(syntaxHighlight);
-	eleventyConfig.addPassthroughCopy({'src/_assets':'assets'});
+	eleventyConfig.addPassthroughCopy("src/images");
 	eleventyConfig.addPassthroughCopy('src/CNAME');
+	eleventyConfig.addPassthroughCopy("src/blog/**/*.png");
+	eleventyConfig.addPassthroughCopy("src/blog/**/*.jpg");
+
+	eleventyConfig.addFilter('prettyNumber', number => PrettyNumber(number));
+	eleventyConfig.addDataExtension('yaml', contents => Yaml.safeLoad(contents));
 
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {

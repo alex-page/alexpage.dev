@@ -1,12 +1,11 @@
 ---
 layout: page
 permalink: false
-title: Australian Government Design System
-summary: The Australian Government Design System was the foundation to align 1000+ websites over 200+ organisations.
-featured: true
-date: 2017-10-08
-github: govau/design-system-components
-npm: "@gov.au/core"
+title: Polaris
+summary: The foundation for building experiences at Shopify.
+date: 2020-01-01
+github: shopify/polaris-react
+npm: "@shopify/polaris"
 ---
 As the Lead User Experience Engineer I worked in a team to launch the [Australian Government Design System](https://designsystem.gov.au) to align 1000+ websites over 200+ organisations.
 
