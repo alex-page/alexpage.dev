@@ -5,8 +5,10 @@ summary: Web designer, front end developer, web developer, user interface engine
 featured: true
 date: 2019-21-04
 img:
-  src: main.png
+  src: main.jpg
   alt: A pixelated picture of a lady looking at a tablet and running a store
+  width: 768px
+  height: 450px
 ---
 In 2015 I lived at my parents' house in [Canberra, Australia](https://www.google.com/maps/place/Canberra+ACT,+Australia/). Only having 50kb/s internet speed available meant uploading a photo would crash the connection for everyone else.
 
@@ -25,7 +27,7 @@ When engineering teams build from the prototypes and high-fidelity designs, they
 
 The UX and engineering teams are not a part of each other's process. These teams struggle to speak the same language, and handover slows each team's understanding, making it harder to challenge the other.
 
-![A green ball moving from user, ux team, engineering team and back to user that represents quality diminishing.](handover.png)
+![A green ball moving from user, ux team, engineering team and back to user that represents quality diminishing.](handover.jpg)
 
 UX developers bridge this gap.
 
@@ -41,7 +43,7 @@ The first reference I saw to the role UX developer was in a post by [@leisa](htt
 
 UX developers are a part of the whole UX continuum from the pixel to the person. They bring engineering knowledge and context to the UX team so designers can make well-informed design decisions. They also bring empathy for the user and deep problem-space understanding to the engineering team so developers can make well-informed engineering decisions. This creates a strong connection between people and pixels.
 
-![A green ball that represents quality stays a consistent size through handover with UX Developers working with  the teams.](bridge-gap.png)
+![A green ball that represents quality stays a consistent size through handover with UX Developers working with  the teams.](bridge-gap.jpg)
 
 UX developers work with stakeholders, designers, fellow engineers, content strategists, and researchers. They collaborate throughout the ideation, exploration, and build phases of project work. They take part in research sessions and write production code.
 

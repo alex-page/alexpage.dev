@@ -41,6 +41,7 @@
 		"clean-css": "^4.2.3",
 		"globby": "^11.0.1",
 		"gray-matter": "^4.0.2",
+		"html-minifier": "^4.0.0",
 		"js-yaml": "^3.14.1",
 		"number-abbreviate": "^2.0.0"
 	},

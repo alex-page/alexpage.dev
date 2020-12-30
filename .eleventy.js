@@ -3,6 +3,7 @@ const Yaml                = require('js-yaml');
 const SyntaxHighlight     = require('@11ty/eleventy-plugin-syntaxhighlight');
 const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
 const PrettyNumber        = require('number-abbreviate');
+const htmlmin             = require("html-minifier");
 
 const fs = require('fs');
 
@@ -19,6 +20,21 @@ module.exports = eleventyConfig => {
 
 	eleventyConfig.addFilter('prettyNumber', number => PrettyNumber(number));
 	eleventyConfig.addDataExtension('yaml', contents => Yaml.safeLoad(contents));
+
+	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+		if( outputPath && outputPath.endsWith(".html") ) {
+			let minified = htmlmin.minify(content, {
+				minifyCSS: true,
+				minifyJS: true,
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+			return minified;
+		}
+
+		return content;
+	});
 
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
