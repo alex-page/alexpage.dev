@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hey, I'm Alex
-summary: I lead multidisciplinary teams, build communities and create systems with modern technology and thoughtful design. I am obsessed with the user experience and write code that connects people to pixels.
+summary: I lead multidisciplinary teams, build communities and create systems with modern technology and thoughtful design. I am obsessed with user experience and write code that connects people to pixels.
 img:
   src: images/alex-page.jpg
   alt: Picture of Alex Page
