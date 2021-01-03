@@ -1,5 +1,5 @@
 * + .picture {
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 }
 
 .picture--container {
@@ -13,13 +13,13 @@
 	right: -1rem;
 	word-wrap: break-word;
 	text-align: right;
-	font-size: 1.4rem;
+	font-size: 1rem;
 	color: var(--color-decorative-1);
-	width: 5rem;
+	width: 3.3rem;
 	font-family: arial, sans-serif;
 }
 
 .pattern:last-of-type {
 	color: var(--color-decorative-2);
-	width: 4rem;
+	width: 3.6rem;
 }

@@ -1,7 +1,7 @@
 {% macro post(post) %}
 <li>
 	<h2 class="h3">{{post.title}}</h2>
-	{{post.summary}}
+	<p>{{post.summary}}</p>
 	<ul class="list list--inline text--small">
 		{%if post.url %}<li><a href="{{post.url}}">Read post</a></li>{% endif %}
 		{%if post.site %}<li><a href="{{post.site}}">Website</a></li>{% endif %}

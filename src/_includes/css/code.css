@@ -1,6 +1,5 @@
 code {
 	font-family: var( --font-code );
-	font-size: 1rem;
 	background: var(--color-bg-subdued);
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.25rem;
@@ -29,15 +28,6 @@ pre code {
 	padding: 0;
 	background: transparent;
 }
-
-@media ( min-width: 600px ){
-	.content pre {
-		margin-left: -2rem;
-		margin-right: -2rem;
-		padding: 2rem;
-	}
-}
-
 
 /**
  * a11y-dark theme for JavaScript, CSS, and HTML

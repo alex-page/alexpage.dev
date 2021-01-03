@@ -2,7 +2,7 @@ html {
 	max-width: 100%;
 	overflow-x: hidden;
 
-	font-size: 16px;
+	font-size: 18px;
 	color: var( --color-text );
 	background-color: var(--color-bg);
 
@@ -11,16 +11,16 @@ html {
 	line-height: 1.5;
 }
 
+@media ( min-width: 600px ) {
+	html {
+		font-size: 22px;
+	}
+}
+
 
 body {
 	margin: 0;
-	padding: 3rem 1.5rem 5rem 1.5rem;
-}
-
-@media ( min-width: 600px ) {
-	body {
-		font-size: var(--fontsize-smallscreen);
-	}
+	padding: 2.5rem 1rem 3.5rem 1rem;
 }
 
 ::selection {
