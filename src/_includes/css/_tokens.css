@@ -26,6 +26,7 @@
 		--color-interactive:  #0CF;
 		--color-border:       #223;
 		--color-text-subdued: #aaa;
+		--color-bg-selection: rgba(119, 0, 255, 0.7);
 
 		--decorative-blend: lighten;
 	}
