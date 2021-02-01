@@ -13,21 +13,21 @@
 	right: -1rem;
 	word-wrap: break-word;
 	text-align: right;
-	font-size: 1rem;
+	font-size: 0.75rem;
 	color: var(--color-decorative-1);
-	width: 3.3rem;
+	width: 3rem;
 	font-family: arial, sans-serif;
 }
 
 .pattern:before {
-	content: "▓▓▓░░░░░░░▓▓▓░░░▓▓▓░░░░░";
+	content: "▓▓▓░░░░░░░▓▓▓░░░▓▓▓░";
 }
 
 .pattern:last-of-type {
 	color: var(--color-decorative-2);
-	width: 3.6rem;
+	width: 3.2rem;
 }
 
 .pattern:last-of-type:before {
-	content: "░░░░▓▓▓▓▓░░░░░░░░░░░░";
+	content: "░░░░▓▓▓▓▓░░░░░░░";
 }
