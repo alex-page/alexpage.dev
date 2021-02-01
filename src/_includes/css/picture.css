@@ -19,7 +19,15 @@
 	font-family: arial, sans-serif;
 }
 
+.pattern:before {
+	content: "▓▓▓░░░░░░░▓▓▓░░░▓▓▓░░░░░";
+}
+
 .pattern:last-of-type {
 	color: var(--color-decorative-2);
 	width: 3.6rem;
+}
+
+.pattern:last-of-type:before {
+	content: "░░░░▓▓▓▓▓░░░░░░░░░░░░";
 }

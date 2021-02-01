@@ -15,12 +15,14 @@
 				{% if date %}{% include 'components/date.njk' %}{% endif %}
 			</div>
 		{% endif %}
-		{% if img %}{% include 'components/picture.njk' %}{% endif %}
-		<main class="content" id="content">
-			<h1>{{title}}</h1>
-			<blockquote>{{summary}}</blockquote>
-			{{content | safe}}
-			{% if isHome %}{% include 'components/posts.njk' %}{% endif %}
+		<main>
+			{% if img %}{% include 'components/picture.njk' %}{% endif %}
+			<div class="content" id="content">
+				<h1>{{title}}</h1>
+				<blockquote>{{summary}}</blockquote>
+				{{content | safe}}
+				{% if isHome %}{% include 'components/posts.njk' %}{% endif %}
+			</div>
 		</main>
 		{% include 'components/footer.njk' %}
 	</div>
