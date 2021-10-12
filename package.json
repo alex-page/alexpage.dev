@@ -1,17 +1,17 @@
 {
-	"name": "alexpage.com.au",
+	"name": "alexpage.dev",
 	"version": "1.0.0",
 	"description": "Personal website of Alex Page.",
 	"author": {
 		"name": "Alex Page",
 		"email": "alex@alexpage.com.au",
-		"url": "http://alexpage.com.au/"
+		"url": "http://alexpage.dev/"
 	},
 	"contributors": [
 		{
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
-			"url": "http://alexpage.com.au"
+			"url": "http://alexpage.dev"
 		}
 	],
 	"scripts": {
@@ -25,13 +25,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/alex-page/alexpage.com.au"
+		"url": "git+https://github.com/alex-page/alexpage.dev"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/alex-page/alexpage.com.au/issues"
+		"url": "https://github.com/alex-page/alexpage.dev/issues"
 	},
-	"homepage": "https://github.com/alex-page/alexpage.com.au#readme",
+	"homepage": "https://github.com/alex-page/alexpage.dev#readme",
 	"dependencies": {
 		"@11ty/eleventy": "0.11.1",
 		"@11ty/eleventy-cache-assets": "^2.0.2",

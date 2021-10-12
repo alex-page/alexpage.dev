@@ -1,4 +1,4 @@
-# [alexpage.com.au](http://alexpage.com.au)
+# [alexpage.dev](http://alexpage.dev)
 
 > I lead multidisciplinary teams, build communities and create systems with modern technology and thoughtful design. I am obsessed with user experience and write code that connects people to pixels.
 
@@ -9,23 +9,22 @@ I am a front-end development manager at [Shopify](https://shopify.com) leading t
 # Get started
 
 To install locally run make sure you have `nodejs` and `npm` installed. Then run:
+
 ```
 npm install
 ```
 
-
 # Watch for changes
 
 You can build the site locally and watch for changes by running:
+
 ```
 npm run watch
 ```
 
-
 # Deployment
 
 GitHub actions automatically builds and deploys the site to GitHub pages.
-
 
 # Contributing
 
