@@ -1,6 +1,6 @@
 ---
 title: Managing design systems in the open
-date: 2021-15-09
+date: 2021-09-15
 link: https://www.youtube.com/watch?v=z-duiMhoWKE
 tags: homelist
 permalink: false

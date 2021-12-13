@@ -1,6 +1,6 @@
 ---
 title: Replacing Sass at Shopify
-date: 2021-19-08
+date: 2021-08-19
 link: https://changelog.com/jsparty/190
 tags: homelist
 permalink: false
