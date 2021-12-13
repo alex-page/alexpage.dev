@@ -1,4 +1,4 @@
-# [alexpage.dev](http://alexpage.dev)
+# [alexpage.dev](https://alexpage.dev)
 
 > I lead multidisciplinary teams, build communities and create systems with modern technology and thoughtful design. I am obsessed with user experience and write code that connects people to pixels.
 

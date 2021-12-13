@@ -1,51 +1,37 @@
 {
-	"name": "alexpage.dev",
-	"version": "1.0.0",
-	"description": "Personal website of Alex Page.",
-	"author": {
-		"name": "Alex Page",
-		"email": "alex@alexpage.com.au",
-		"url": "http://alexpage.dev/"
-	},
-	"contributors": [
-		{
-			"name": "Alex Page",
-			"email": "alex@alexpage.com.au",
-			"url": "http://alexpage.dev"
-		}
-	],
-	"scripts": {
-		"test": "npm run test:scripts",
-		"test:scripts": "xo src/_data",
-		"build": "eleventy",
-		"dev": "eleventy --serve"
-	},
-	"engines": {
-		"node": "10"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/alex-page/alexpage.dev"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/alex-page/alexpage.dev/issues"
-	},
-	"homepage": "https://github.com/alex-page/alexpage.dev#readme",
-	"dependencies": {
-		"@11ty/eleventy": "0.11.1",
-		"@11ty/eleventy-cache-assets": "^2.0.2",
-		"@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-		"@harmonograph/svg": "^0.2.0",
-		"clean-css": "^4.2.3",
-		"globby": "^11.0.1",
-		"gray-matter": "^4.0.2",
-		"html-minifier": "^4.0.0",
-		"js-yaml": "^3.14.1",
-		"number-abbreviate": "^2.0.0"
-	},
-	"devDependencies": {
-		"xo": "^0.27.2"
-	}
+  "name": "alexpage.dev",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Website https://alexpage.dev",
+  "author": {
+    "name": "Alex Page",
+    "email": "alex@alexpage.com.au",
+    "url": "https://alexpage.dev/"
+  },
+  "contributors": [
+    {
+      "name": "Alex Page",
+      "email": "alex@alexpage.com.au",
+      "url": "https://alexpage.dev"
+    }
+  ],
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-page/alexpage.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-page/alexpage.dev/issues"
+  },
+  "homepage": "https://github.com/alex-page/alexpage.dev#readme",
+  "dependencies": {
+    "@11ty/eleventy": "1.0.0-beta.8"
+  }
 }
