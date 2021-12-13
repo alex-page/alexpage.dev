@@ -5,17 +5,15 @@
 # Get started
 
 To install locally run make sure you have `nodejs` and `npm` installed. Then run:
-
 ```
 npm install
 ```
 
-# Watch for changes
+# Local development
 
 You can build the site locally and watch for changes by running:
-
 ```
-npm run watch
+npm run dev
 ```
 
 # Deployment
