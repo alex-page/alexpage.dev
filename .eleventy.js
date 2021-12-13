@@ -23,6 +23,7 @@ module.exports = (eleventyConfig) => {
 	});
 
   eleventyConfig.addPassthroughCopy("src/images");
+	eleventyConfig.addPassthroughCopy('src/CNAME');
 
   return {
     dir: { input: "src" },
