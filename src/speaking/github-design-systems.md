@@ -5,4 +5,4 @@ link: https://www.youtube.com/watch?v=z-duiMhoWKE
 tags: homelist
 permalink: false
 ---
-I joined Brian Douglas for GitHubs Open Source Fridays to talk open-source, community and design systems.
+I joined Brian Douglas for GitHubs Open Source Fridays. In this livestream we talk about GitHub discussions, Shopify and design systems.
