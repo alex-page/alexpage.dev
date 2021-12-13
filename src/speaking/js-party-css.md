@@ -5,4 +5,4 @@ link: https://changelog.com/jsparty/190
 tags: homelist
 permalink: false
 ---
-Sam Rose and I join Jerod & Divya to discuss their open research into finding and selecting a viable alternative for Sass at Shopify.
+Sam Rose and I join Jerod & Divya on the JS Party Podcast. We discuss our open research, finding and selecting a viable alternative for Sass at Shopify.
