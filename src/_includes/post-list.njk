@@ -1,0 +1,12 @@
+<h2>Selected work and writing</h2>
+
+<ul class="posts">
+	{%- for item in collections.homelist | sort(attribute='date', reverse='true') -%}
+	<li>
+		<a class="card card--link" href="{{item.data.link}}">
+			<h3>{{item.data.title}}</h3>
+			{{item.templateContent | safe}}
+		</a>
+	</li>
+	{% endfor %}
+</ul>
