@@ -32,6 +32,8 @@
   },
   "homepage": "https://github.com/alex-page/alexpage.dev#readme",
   "dependencies": {
-    "@11ty/eleventy": "1.0.0-beta.8"
+    "@11ty/eleventy": "1.0.0-beta.8",
+    "clean-css": "^5.2.2",
+    "html-minifier": "^4.0.0"
   }
 }
