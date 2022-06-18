@@ -1,0 +1,10 @@
+<ul class="posts">
+	{%- for item in collections.highlights | sort(attribute='date', reverse='true') -%}
+	<li>
+		<a class="card card--link" href="{{item.data.link}}">
+			<h3>{{item.data.title}}</h3>
+			{{ item.templateContent | safe }}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

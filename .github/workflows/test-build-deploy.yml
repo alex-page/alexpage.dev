@@ -1,25 +1,25 @@
 name: Deploy site on main
 
 on:
-  push:
-    branches:
-      - main
+	push:
+		branches:
+			- main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+	deploy:
+		runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@main
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-      - name: npm install, test content and build
-        run: |
-          npm install
-          npm run build
-      - name: Deploy site to gh-pages branch
-        uses: alex-page/blazing-fast-gh-pages-deploy@main
-        with:
-          repo-token: ${{ secrets.GH_PAT }}
+		steps:
+			- uses: actions/checkout@main
+			- name: Use Node.js 16.x
+				uses: actions/setup-node@v1
+				with:
+					node-version: 16.x
+			- name: npm install, test content and build
+				run: |
+					npm install
+					npm run build
+			- name: Deploy site to gh-pages branch
+				uses: alex-page/blazing-fast-gh-pages-deploy@main
+				with:
+					repo-token: ${{ secrets.GH_PAT }}

@@ -3,30 +3,27 @@
 	<head>
 		{% include 'meta.njk' %}
 		<title>Alex Page, Developer</title>
-		<style>
-			{% cssBundle %}
-		</style>
+		<style>{% cssBundle %}</style>
 	</head>
 	<body>
 		<a class="skip-link sr-only" href="#content">Skip to content</a>
-		<nav class="text-lg">
+		<div class="page">
 			<h1><a href="/">Alex Page, Developer</a></h1>
-			<!-- <ul>
-				<li><a href="#work">Work</a></li>
-				<li><a href="#talks">Talks</a></li>
-			</ul> -->
-		</nav>
-		<main id="content">
-			<content>
-				{{ content | safe }}
-			</content>
-			
-			{% include 'post-list.njk' %}
+			<main id="content">
+				<content>
+					{{ content | safe }}
+				</content>
+
+				{% if page.url == '/' %}
+					<h2>Highlights</h2>
+					{% include 'highlights.njk' %}
+				{% endif %}
+			</main>
 
 			<footer class="text-sm center">
-				<p>Learning in the open on <a href="https://twitter.com/alexpage_">Twitter</a> and <a href="https://github.com/alex-page">GitHub</a>. Throw me an <a href="mailto:alex@alexpage.com.au">Email</a>.</p>
+				<p>Learning in the open on <a href="https://twitter.com/alexpage_">Twitter</a> and <a href="https://github.com/alex-page">GitHub</a>. Send me an <a href="mailto:alex@alexpage.com.au">email</a>.</p>
 				<img width="24px" height="24px" src="/images/favicon.svg" alt="logo">
 			</footer>
-		</main>
+		</div>
 	</body>
 </html>
