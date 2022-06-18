@@ -1,8 +1,8 @@
 :root {
 	--black: #1e1e1e;
 	--black-light: #252525;
-	--white-dark: #eaeaea;
-	--white: #f6f6f6;
+	--white-dark: #f8f8f8;
+	--white: #fff;
 	--grey-dark: #4c4c4c;
 	--grey: #7a7a7a;
 	--grey-light: #9d9d9d;
@@ -36,7 +36,7 @@ html {
 	background: var(--bg);
 	color: var(--text);
 	font-family: var(--font);
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.75;
 	-webkit-font-smoothing: antialiased;
 }
@@ -74,7 +74,7 @@ p {
 
 main,
 * + p,
-* + .image-list {
+* + .header {
 	margin-top: 1.75rem;
 }
 
@@ -143,12 +143,14 @@ footer,
 }
 
 /* Page layout */
-nav,
-main {
+body {
 	max-width: 36rem;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 10rem auto 4rem;
 	padding: 0 0.5rem;
+}
+
+.page {
+	margin: 0 1rem;
 }
 
 main {
@@ -172,16 +174,8 @@ nav ul {
 	gap: 1rem;
 }
 
-content a {
-	color: var(--link);
-}
-
-content a:hover {
-	text-decoration: underline;
-}
-
 /* List of images */
-.image-list {
+.header {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: repeat(3, 1fr);
@@ -190,7 +184,7 @@ content a:hover {
 	line-height: 1.25;
 }
 
-.image-list li > *:first-child {
+.header li > *:first-child {
 	border-radius: 1rem;
 	margin-bottom: 0.5rem;
 }
@@ -242,7 +236,7 @@ content a:hover {
 }
 
 @media (min-width: 600px) {
-	.image-list {
+	.header {
 		gap: 2rem;
 		font-size: 0.825rem;
 	}
@@ -251,4 +245,3 @@ content a:hover {
 		padding: 2rem;
 	}
 }
-

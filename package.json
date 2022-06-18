@@ -1,39 +1,39 @@
 {
-  "name": "alexpage.dev",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Website https://alexpage.dev",
-  "author": {
-    "name": "Alex Page",
-    "email": "alex@alexpage.com.au",
-    "url": "https://alexpage.dev/"
-  },
-  "contributors": [
-    {
-      "name": "Alex Page",
-      "email": "alex@alexpage.com.au",
-      "url": "https://alexpage.dev"
-    }
-  ],
-  "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve"
-  },
-  "engines": {
-    "node": "16"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alex-page/alexpage.dev"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alex-page/alexpage.dev/issues"
-  },
-  "homepage": "https://github.com/alex-page/alexpage.dev#readme",
-  "dependencies": {
-    "@11ty/eleventy": "1.0.0-beta.8",
-    "clean-css": "^5.2.2",
-    "html-minifier": "^4.0.0"
-  }
+	"name": "alexpage.dev",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Website https://alexpage.dev",
+	"author": {
+		"name": "Alex Page",
+		"email": "alex@alexpage.com.au",
+		"url": "https://alexpage.dev/"
+	},
+	"contributors": [
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://alexpage.dev"
+		}
+	],
+	"scripts": {
+		"build": "eleventy",
+		"dev": "eleventy --serve"
+	},
+	"engines": {
+		"node": "16"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alex-page/alexpage.dev"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alex-page/alexpage.dev/issues"
+	},
+	"homepage": "https://github.com/alex-page/alexpage.dev#readme",
+	"dependencies": {
+		"@11ty/eleventy": "1.0.1",
+		"clean-css": "^5.3.0",
+		"html-minifier": "^4.0.0"
+	}
 }

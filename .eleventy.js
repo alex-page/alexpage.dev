@@ -2,12 +2,12 @@ const cleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addNunjucksShortcode(
-    "cssBundle",
-    () => new cleanCSS({}).minify(["src/_includes/style.css"]).styles
-  );
+	eleventyConfig.addNunjucksShortcode(
+		"cssBundle",
+		() => new cleanCSS({}).minify(["src/_includes/style.css"]).styles
+	);
 
-  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+	eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
 		if( outputPath && outputPath.endsWith(".html") ) {
 			let minified = htmlmin.minify(content, {
 				minifyCSS: true,
@@ -22,10 +22,11 @@ module.exports = (eleventyConfig) => {
 		return content;
 	});
 
-  eleventyConfig.addPassthroughCopy("src/images");
+	eleventyConfig.addPassthroughCopy("src/images");
 	eleventyConfig.addPassthroughCopy('src/CNAME');
 
-  return {
-    dir: { input: "src" },
-  };
+	return {
+		dir: { input: "src" },
+		markdownTemplateEngine: "njk"
+	};
 };
